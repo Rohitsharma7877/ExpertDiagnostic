@@ -1,38 +1,33 @@
+/* App.css */
 .App {
-  text-align: center;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50; /* Ensure it's on top of other elements */
+  height: 4rem; /* Match your navbar height */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Add padding to the content to ensure it doesn't overlap the navbar */
+.content {
+  padding-top: 4rem; /* Adjust based on the height of your navbar */
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Optionally, for mobile responsiveness, you can add a media query */
+@media (max-width: 768px) {
+  .content {
+    padding-top: 3.5rem; /* Adjust for smaller screen sizes if necessary */
   }
 }

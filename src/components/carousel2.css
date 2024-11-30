@@ -1,0 +1,71 @@
+
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  
+.coursel-main{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid rgb(250, 5, 5); */
+}
+
+.coursel-main1{
+  height: auto;
+  width: 100%;
+  padding-top: 5vh;
+  font-size: 7.5vh;
+  font-weight: bold;
+  /* border: 2px solid black; */
+
+}
+
+.happy{
+    /* border: 1px solid red; */
+    justify-content: center;
+    text-align: center;
+}
+.coursel-tag{
+  font-size: 18px;
+  padding-bottom: 5vh;
+  justify-content: center;
+  text-align: center;
+  /* border: 2px solid rgb(6, 230, 17); */
+  border-radius: 25px;
+  background: rgb(236, 234, 234);
+  height: 10px;
+  width: 29vh;
+  margin: -70px auto 0; 
+ }
+
+ .slick-prev,
+ .slick-next {
+   font-size: 30px;
+   color: #1a1818;
+   background-color: rgb(187, 182, 182);
+   z-index: 10; /* Ensure they are above other elements */
+ }
+ 
+ .slick-prev {
+   left: 20px;
+   bottom: 40px;
+ }
+ 
+ .slick-next {
+   right: 20px;
+   bottom: 40px;
+ }
+ 
+
+

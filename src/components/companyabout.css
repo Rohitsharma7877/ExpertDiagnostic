@@ -1,0 +1,116 @@
+.about-main1{
+    height: auto;
+    width: 100%;
+    /* border: 1px solid black; */
+    padding-top: 1.5%;
+    /* margin-top: 6.3%; */
+    /* background-color: #adadad; */
+}
+.about-main2{
+    height: auto;
+    width: 95%;
+    /* border: 1px solid rgb(250, 1, 1); */
+    box-sizing: border-box;
+    margin: 4% auto;
+}
+.about-box1{
+    height: 5vh;
+    width: 30%;
+    /* border: 1px solid rgb(250, 1, 1); */
+    margin-left: 10%;
+    
+}
+.about-box1 p{
+    text-align: left;
+    height: 100%;
+    width: 100%;
+    font-size: 3vh;
+    font-weight: 500;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+
+}
+
+.about-box2{
+    height: auto;
+    width: 40%;
+    margin-top: 1%;
+    /* border: 1px solid rgb(250, 1, 1); */
+    margin-left: 10%;
+}
+.about-box2 h1{
+    text-align: left;
+    /* height: 100%; */
+    width: 100%;
+    font-size: 8vh;
+    font-weight: bold;
+    display: flex;
+    /* border: 1px solid rgb(250, 1, 1); */
+    align-items: center;
+    color: #000;
+}
+.about-box3{
+    background-image: url(assests/background.jpg);
+    height: 50vh;
+    width: 100%;
+    margin-top: 2%;
+    background-size: contain;
+    background-attachment: fixed;
+    /* border: 1px solid rgb(250, 1, 1); */
+    font-weight: 500;
+    font-size: 1.4rem;
+    padding-top: 10vh;
+    color: rgb(7, 7, 7);
+    /* padding-left: 10vh; */
+    text-align: center;
+    justify-content: center;
+}
+.about-box4{
+    height: auto;
+    width: 90%;
+    /* border: 1px solid rgb(250, 1, 1); */
+    margin-left: 10%;
+    margin-top: 2%;
+    color: black;
+}
+.about-box4 p{
+    height: 100%;
+    font-size: 3.1vh;
+    font-weight: 500;
+    display: flex;
+    /* border: 1px solid rgb(250, 1, 1); */
+    align-items: center;
+    text-align: left;
+    color: gray;
+}
+.about-box5{
+    height: auto;
+    width: 40%;
+    /* border: 1px solid rgb(250, 1, 1); */
+    margin-left: 10%;
+    margin-top: 2%;
+}
+.about-list ul{
+    font-size: 2.4vh;
+    font-weight: bold;
+}
+
+.about-list ul li{
+    display: flex;
+    align-items: center;
+}
+
+.about-list ul p {
+    width: 5%;
+    margin-top: 2vh;
+    font-size: 3vh;
+}
+
+.about-list ul h1 {
+    /* border: 1px solid black; */
+    text-align: center;
+    width: 90%;
+    text-align: left;
+    margin-top: 2vh;
+}

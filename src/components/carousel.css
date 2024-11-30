@@ -1,0 +1,115 @@
+.carousel-main1{
+    height: 150vh;
+    width: 100%;
+    /* border: 1px solid red; */
+    /* padding-top: 64px; 
+    margin-top: 64px; */
+}
+.carousel-box-container{
+    margin: 4%;
+   
+  
+}
+.carousel-box1{
+    height: 130vh;
+    width: 96%;
+    /* margin: 4%; */
+    /* border: 1px solid rgb(15, 15, 15); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-box2{
+    height: 130vh;
+    width: 100%;
+    /* margin: 4%; */
+    /* border: 1px solid rgb(15, 15, 15); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-box3{
+    height: 130vh;
+    width: 100%;
+    /* margin: 4%; */
+    /* border: 1px solid rgb(15, 15, 15); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-image1{
+    height: 120vh;
+    width: 40%;
+    margin: 0.5%;
+    /* border: 1px solid rgb(15, 15, 15); */
+}
+.carousel-photo1{
+    height: 50vh;
+    width: 100%;
+    /* margin: 0.5%; */
+    /* border: 1px solid rgb(253, 7, 7); */
+}
+.carousel-photo1 img{
+    height: 45vh;
+    width: 100%;
+}
+
+.carousel-image2{
+    height: 120vh;
+    width: 55%;
+    /* margin: 0.5%; */
+    /* border: 1px solid rgb(15, 15, 15); */
+}
+.carousel-head{
+    height: 10vh;
+    width: 100%;
+    /* margin: 0.5%; */
+    /* border: 1px solid rgb(15, 15, 15); */
+    text-align: left;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    font-size: 4vh;
+    font-weight: bold;
+}
+.carousel-pargh{
+    height: auto;
+    width: 100%;
+    /* margin: 0.5%; */
+    /* border: 1px solid rgb(15, 15, 15); */
+    text-align: left;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5vh;
+    font-weight: bold;
+}
+
+.carousel-img{
+    height: 30vh;
+    width: 100%;
+    /* margin: 0.5%; */
+    /* border: 1px solid rgb(15, 15, 15); */
+    /* text-align: left; */
+    margin-top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-image3{
+    height: 120vh;
+    width: 100%;
+    /* margin: 0.5%; */
+    /* border: 1px solid rgb(15, 15, 15); */
+}
+.carousel-photo2{
+    height: 120vh;
+    width: 100%;
+    /* margin: 0.5%; */
+    /* border: 1px solid rgb(253, 7, 7); */
+}
+.carousel-photo2 img{
+    height: 110vh;
+    width: 93%;
+}
