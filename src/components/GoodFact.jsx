@@ -10,7 +10,7 @@ const GoodFact = () => {
                 <p>Our­Philosophy</p>
             </div>
             <div className='mliora-box2'>
-                <h1>MELIORA!</h1>
+                <h1>DIAGNOSTICS!</h1>
             </div>
             <div className='mliora-box3'></div>
             <div className='mliora-box4'>

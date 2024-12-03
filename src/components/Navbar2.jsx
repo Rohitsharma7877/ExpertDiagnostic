@@ -31,25 +31,25 @@ const Navbar2 = () => {
             </Link>
             <ul className="dropdown-menu">
               <li>
-                <Link to="/lab-radiology/section1">MRI</Link>
+                <Link to="/lab-radiology/mri">MRI</Link>
               </li>
               <li>
-                <Link to="/lab-radiology/section2">CT Scan</Link>
+                <Link to="/lab-radiology/ct-scan">CT Scan</Link>
               </li>
               <li>
-                <Link to="/lab-radiology/section3">X-Ray</Link>
+                <Link to="/lab-radiology/x-ray">X-Ray</Link>
               </li>
               <li>
-                <Link to="/lab-radiology/section4">Ultra-Sound</Link>
+                <Link to="/lab-radiology/ultra-sound">Ultra-Sound</Link>
               </li>
               <li>
-                <Link to="/lab-radiology/section2">Mammography</Link>
+                <Link to="/lab-radiology/mammography">Mammography</Link>
               </li>
               <li>
-                <Link to="/lab-radiology/section3">Lab Test</Link>
+                <Link to="/lab-radiology/lab-test">Lab Test</Link>
               </li>
               <li>
-                <Link to="/lab-radiology/section4">TMT</Link>
+                <Link to="/lab-radiology/tmt">TMT</Link>
               </li>
             </ul>
           </li>
@@ -62,40 +62,48 @@ const Navbar2 = () => {
             </Link>
             <ul className="dropdown-menu">
               <li>
-                <Link to="/facilities/section1">ECG</Link>
+                <Link to="/facilities/ecg">ECG</Link>
               </li>
               <li>
-                <Link to="/facilities/section2">Bone Density Test</Link>
+                <Link to="/facilities/bone-density-test">
+                  Bone Density Test
+                </Link>
               </li>
               <li>
-                <Link to="/facilities/section3">EEG</Link>
+                <Link to="/facilities/eeg">EEG</Link>
               </li>
               <li>
-                <Link to="/facilities/section4">Pulmonary Function Test</Link>
+                <Link to="/facilities/pulmonary-function-test">
+                  Pulmonary Function Test
+                </Link>
               </li>
               <li>
-                <Link to="/facilities/section1">Covid Testing</Link>
+                <Link to="/facilities/covid-testing">Covid Testing</Link>
               </li>
               <li>
-                <Link to="/facilities/section2">Lab Testing (Laboratory)</Link>
+                <Link to="/facilities/lab-testing">
+                  Lab Testing (Laboratory)
+                </Link>
               </li>
               <li>
-                <Link to="/facilities/section3">Digital X-Ray</Link>
+                <Link to="/facilities/digital-X-ray">Digital X-Ray</Link>
               </li>
               <li>
-                <Link to="/facilities/section4">Health Checkups</Link>
+                <Link to="/facilities/health-checkups">Health Checkups</Link>
               </li>
               <li>
-                <Link to="/facilities/section1">Radiology & Imaging</Link>
+                <Link to="/facilities/radiology-imaging">
+                  Radiology & Imaging
+                </Link>
               </li>
               <li>
-                <Link to="/facilities/section2">TMT</Link>
+                <Link to="/facilities/tmt">TMT</Link>
               </li>
               <li>
-                <Link to="/facilities/section3">Mammography</Link>
+                <Link to="/facilities/mammography">Mammography</Link>
               </li>
               <li>
-                <Link to="/facilities/section4">Ultra Sonography</Link>
+                <Link to="/facilities/ultra-sonography">Ultra Sonography</Link>
               </li>
             </ul>
           </li>

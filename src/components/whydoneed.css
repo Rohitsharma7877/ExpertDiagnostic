@@ -1,0 +1,103 @@
+
+.whydoneed-main1 {
+    height: 150vh; 
+    width: 100%; 
+    background-color: rgb(243, 239, 239); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    padding: 4%; 
+    box-sizing: border-box; 
+    /* border: 1px solid black; */
+   
+}
+
+
+.whydoneed-main2 {
+    height: 100%; 
+    width: 96%; 
+    background-color: rgb(243, 239, 239); 
+    margin: auto; 
+     /* border: 1px solid red;  */
+    box-sizing: border-box; 
+    display: flex;
+}
+
+.whydoneed-box1{
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid green; */
+}
+
+.whydoneed-box1-header{
+    height: 15vh;
+    width: 100%;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whydoneed-box1-header h1{
+    font-size: 5.4vh;
+    font-weight: 700;
+    color: #eb7801;
+}
+
+.whydoneed-box1-pragha{
+    height: auto;
+    width: 100%;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whydoneed-box1-pragha p{
+    height: 20vh;
+    font-size: 3vh;
+    font-weight: 400;
+    padding-left: 5%;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.checklist ul {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 5%; /* Remove padding around the list */
+    margin: 0; /* Remove margin around the list */
+  }
+  
+  .checklist li {
+    position: relative; /* Set positioning for pseudo-element */
+    margin-bottom: 15px; /* Space between items */
+    font-size: 20px; /* Adjust font size */
+    color: #333; /* Text color */
+    font-family: Arial, sans-serif; /* Font styling */
+    line-height: 1.5; /* Better line spacing */
+    padding-left: 25px; /* Space for the checkmark */
+  }
+  
+  .checklist li:before {
+    content: '✔'; /* Checkmark symbol */
+    position: absolute; /* Position relative to the list item */
+    left: 0; /* Align to the left */
+    color: orange; /* Checkmark color */
+    font-size: 18px; /* Adjust checkmark size */
+  }
+  .whydoneed-box2{
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid green; */
+}
+
+  .whydoneed-doctor{
+    height: 120vh;
+  }
+
+  .whydoneed-doctor img{
+    height: 130vh;
+    object-fit: contain;
+
+  }
+  
