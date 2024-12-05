@@ -3,7 +3,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Navbar2 from './components/Navbar2';
 import Routers from './components/Routers';
-import Footer from './components/Footer/Footer';
+// import Footer from './components/Footer/Footer';
 import Footer1 from './components/Footer/Footer1';
 
 
@@ -15,8 +15,8 @@ function App() {
       <Navbar2 />
       <Routers />
 
-        <Footer1/>
-      {/* <Footer/> */}
+      <Footer1/>
+      
     </div>
   );
 }

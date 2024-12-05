@@ -35,10 +35,12 @@
     /* border: 1px solid red; */
     justify-content: center;
     text-align: center;
+    font-family: "El Messiri", sans-serif;
 }
 .coursel-tag{
   font-size: 18px;
   padding-bottom: 5vh;
+  display: flex;
   justify-content: center;
   text-align: center;
   /* border: 2px solid rgb(6, 230, 17); */
@@ -47,7 +49,9 @@
   height: 10px;
   width: 29vh;
   margin: -70px auto 0; 
+  font-family: "El Messiri", sans-serif;
  }
+ 
 
  .slick-prev,
  .slick-next {

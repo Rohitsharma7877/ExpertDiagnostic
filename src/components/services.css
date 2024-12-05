@@ -1,3 +1,9 @@
+/* @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap'); */
+/* Apply El Messiri globally or specific sections */
+body {
+  font-family: "El Messiri", sans-serif;
+}
+
 /* Main container */
 .services-container {
     padding: 2rem;

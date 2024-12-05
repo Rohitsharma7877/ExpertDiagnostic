@@ -1,5 +1,6 @@
 import React from "react";
 import "./expertAdvised.css";
+import expert from './assests/expertAdvised.png'
 
 const ExpertAdvised = () => {
   return (
@@ -21,7 +22,7 @@ const ExpertAdvised = () => {
           <div className="beeEverything-heading3">
             <div className="beeEverything-heading3-img">
               <img
-                src="https://img.freepik.com/premium-vector/health-app-flat-vector-premium-download_203633-10650.jpg?w=740"
+                src={expert}
                 alt=""
               />
             </div>

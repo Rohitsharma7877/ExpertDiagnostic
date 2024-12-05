@@ -38,7 +38,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="h-16 shadow-md bg-white fixed w-full z-40">
+    <header className="el-messiri-navbar h-16 shadow-md bg-white fixed w-full z-40">
       <div className="container mx-auto flex items-center justify-between px-12 h-full">
         <button
           onClick={() => setMenuDisplay((prev) => !prev)}
@@ -59,7 +59,7 @@ const Navbar = () => {
 
         <div className="hidden lg:flex items-start justify-center flex-grow pr-15">
           <div className="flex items-center justify-center max-w-sm w-full mx-auto border rounded-full focus-within:shadow pl-2">
-            <input
+            <input 
               type="text"
               placeholder="Search product here..."
               className="w-full outline-none"

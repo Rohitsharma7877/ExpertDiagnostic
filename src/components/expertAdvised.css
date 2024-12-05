@@ -1,81 +1,94 @@
-
-.beeEverything-main1{
+.beeEverything-main1 {
     height: 55rem;
     width: 100%;
-    /* border: 1px solid black; */
-}
-.beeEverything-main2{
+    font-family: "El Messiri", sans-serif;
+  }
+  
+  .beeEverything-main2 {
     height: auto;
     width: 90%;
-    /* border: 1px solid black; */
     margin: 6%;
     display: flex;
-    
-}
-.beeEverything-box1{
+    font-family: "El Messiri", sans-serif;
+  }
+  
+  .beeEverything-box1 {
     height: auto;
     width: 60%;
-    /* border: 1px solid black; */
     margin: 1%;
-}
-
-.beeEverything-heading1{
+    font-family: "El Messiri", sans-serif;
+  }
+  
+  .beeEverything-heading1 {
     height: auto;
     width: 90%;
-    /* border: 1px solid black; */
     margin: 1%;
-}
-.beeEverything-heading1-pargh{
+    font-family: "El Messiri", sans-serif;
+  }
+  
+  .beeEverything-heading1-pargh {
     height: auto;
     width: 90%;
-    /* border: 1px solid black; */
     text-align: left;
     font-size: 3vh;
     font-weight: bold;
     color: gray;
-}
-.beeEverything-heading2{
+    font-family: "El Messiri", sans-serif;
+  }
+  
+  .beeEverything-heading2 {
     height: auto;
     width: 90%;
-    /* border: 1px solid black; */
     margin: 1%;
-}
-.beeEverything-heading2-head{
+    font-family: "El Messiri", sans-serif;
+  }
+  
+  .beeEverything-heading2-head {
     height: auto;
     width: 90%;
-    /* border: 1px solid black; */
     text-align: left;
     font-size: 7vh;
+    color: #eb7801;
     font-weight: bold;
-    
-}
-.beeEverything-heading3{
+    font-family: "El Messiri", sans-serif;
+  }
+  h1 {
+    color: #eb7801;
+    font-weight: bold;
+    /* font-size: 3vh; */
+  }
+  
+  .beeEverything-heading3 {
     height: auto;
     width: 80%;
-    /* border: 1px solid black; */
     margin: 3%;
-}
-.beeEverything-heading3-img img{
+    font-family: "El Messiri", sans-serif;
+  }
+  
+  .beeEverything-heading3-img img {
     height: auto;
     width: 100%;
-}
-.beeEverything-box2{
+  }
+  
+  .beeEverything-box2 {
     height: auto;
     width: 100%;
-    /* border: 1px solid black; */
     margin: 1%;
-}
-.beeEverything-box2-heading{
+    font-family: "El Messiri", sans-serif;
+  }
+  
+  .beeEverything-box2-heading {
     height: auto;
     width: 95%;
-    /* border: 1px solid black; */
     margin: 5%;
     text-align: left;
     font-size: 2.9vh;
     font-weight: bold;
-    
-
-}
-.beeEverything-box2-heading p{
+    font-family: "El Messiri", sans-serif;
+  }
+  
+  .beeEverything-box2-heading p {
     color: gray;
-}
+    font-family: "El Messiri", sans-serif;
+  }
+  

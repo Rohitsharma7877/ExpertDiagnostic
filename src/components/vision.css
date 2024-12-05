@@ -13,6 +13,7 @@
     font-weight: bold;
     color: #eb7801;
     margin-bottom: 20px;
+    font-family: 'El Messiri', sans-serif;
     /* border: 1px solid red; */
   }
   
@@ -61,15 +62,17 @@
     font-weight: bold;
     color: #603c86;
     margin-bottom: 10px;
+    font-family: 'El Messiri', sans-serif;
     /* border: 1px solid red; */
   }
   
   /* Card Description */
   .card-description {
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 400;
     color: #555;
     color: black;
+    font-family: 'El Messiri', sans-serif;
     /* border: 1px solid red; */
   }
   

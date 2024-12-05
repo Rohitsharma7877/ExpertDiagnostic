@@ -1,3 +1,13 @@
+/* navbar2.css */
+
+/* Apply El Messiri font style globally for the navbar */
+.el-messiri-navbar {
+  font-family: 'El Messiri', sans-serif; /* Apply El Messiri font */
+  font-weight: 700; /* Set font-weight to bold */
+  font-optical-sizing: auto; /* Use auto optical sizing for better legibility */
+  font-style: normal; /* Use normal font style */
+}
+
 .main1 {
   height: 40px;
   width: 100%;
@@ -82,4 +92,4 @@
   .nav-links {
     flex-direction: column;
   }
-} 
+}

@@ -1,8 +1,8 @@
 import React from "react";
 import "./vision.css";
 import vision from '../components/assests/visionlogo.png'
-import mission from '../components/assests/mission.png'
-import goal from '../components/assests/goall.png'
+import mission from '../components/assests/missssionn.png'
+import goal from '../components/assests/valueIcons.png'
 
 
 const Vision = () => {
@@ -14,22 +14,21 @@ const Vision = () => {
           <img src={vision} alt="Vision Logo" className="card-logo" />
           <h3 className="card-title">Vision</h3>
           <p className="card-description">
-            “To provide quality Pre-Hospital and primary care”
+          "Providing precise, innovative, and compassionate diagnostic services that are accessible and affordable for everyone."
           </p>
         </div>
         <div className="card">
           <img src={mission} alt="Mission Logo" className="card-logo" />
           <h3 className="card-title">Mission</h3>
           <p className="card-description">
-            “To operate a chain of world-class medical facilities”
+          "Delivering accurate and timely diagnostics through advanced technology and expertise for every patient."
           </p>
         </div>
         <div className="card">
           <img src={goal} alt="Goal Logo" className="card-logo" />
-          <h3 className="card-title">Our Goal</h3>
+          <h3 className="card-title">Our Value</h3>
           <p className="card-description">
-            “To deliver high-quality medical care in a patient-friendly,
-            cost-effective”
+          "Transforming lives through continuous improvement of healthcare delivery."
           </p>
         </div>
       </div>

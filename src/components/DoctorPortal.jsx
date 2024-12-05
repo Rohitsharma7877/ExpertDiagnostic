@@ -1,7 +1,5 @@
-import React from "react";
-import "./patientPortal.css";
-// import { FaCalendarCheck } from 'react-icons/fa';
-// import { FaPhone, FaWhatsapp, FaEnvelope, FaGlobe } from 'react-icons/fa';
+import React from 'react'
+import './doctorportal.css'
 import {
   FaPhone,
   FaWhatsapp,
@@ -10,32 +8,22 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 
-const PatientPortal = () => {
+const DoctorPortal = () => {
   return (
-    <div className="patient-portal">
-      {/* Header Section */}
-      <div className="header-section">
-        <div className="overlay">
-          <div className="quick-actions">
-            <div className="action">
-              {/* <FaCalendarCheck className="icon" /> */}
-              <div>
-                <img
-                  src="https://www.shutterstock.com/image-vector/male-doctor-smiling-happy-face-600nw-2481032615.jpg"
-                  alt=""
-                />
-              </div>
-              <p>BOOK YOUR APPOINTMENT</p>
-            </div>
-          </div>
-          <div className="buttons">
-            <button className="btn">Book me</button>
-          </div>
+    <div className="doctorPortal-main1">
+    <div className="doctorPortal-main2">
+      <div className="doctorPortal-box">
+        <div className="doctorPortal-title-box">
+          <h1 className="doctorPortal-title">Patient Registration</h1>
+          <div className="doctorPortal-buttons">
+          <button className="doctorPortal-btn">Book Now</button>
         </div>
-      </div>
+        </div>
+     </div>
+    </div>
 
-      {/* Contact Section */}
-      <div className="contact-section">
+     {/* Contact Section */}
+     <div className="contact-section">
         <div className="contact-info">
           <FaPhone className="contact-icon" />
           <p>+91 0123456789</p>
@@ -64,8 +52,8 @@ const PatientPortal = () => {
           Hassan, Karnataka 573201
         </p>
       </div>
-    </div>
-  );
-};
+  </div>
+  )
+}
 
-export default PatientPortal;
+export default DoctorPortal

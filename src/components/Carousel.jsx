@@ -3,6 +3,17 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './carousel.css'
+import heart from './assests/ecgIconsss.png'
+import ecgGraph from './assests/ecggraphImage.png'
+import ecggraphh from './assests/ecglove.png'
+import ultraIcons from './assests/ultraSoundPreparee.png'
+import ultraSecond from './assests/ultrasoundSecondImage.png'
+import ultraSoundThird from './assests/ultrasonographyDoctor.png'
+import xRay from './assests/x-rayIcons.png'
+import xraysecond from './assests/xRayImage2.png'
+import xrayThird from './assests/xraythirdd.png'
+
+
 
 export default class Carousel extends Component {
     render() {
@@ -29,36 +40,27 @@ export default class Carousel extends Component {
             <div className='carousel-box1'>
                  <div className='carousel-image1'>
                     <div className='carousel-photo1'>
-                        <img src='https://medicality.health/images/our-work/Group-35.png' alt=''/>
+                        <img src={heart} alt=''/>
                     </div>
                 </div>
                 <div className='carousel-image2'>
                     <div className='carousel-head'>
-                        <h1>Peak Heart - Website <br/> Development</h1>
-                       
+                        <h1>ECG OR EKG (Electrocardiogram)</h1>
+                      
                     </div>
                     <div className='carousel-pargh'>
                     <p> 
-                        <br/>Branding is not just about creating an
-                        <br/> exceptional logo but much more than that.
-                        <br/> With our comprehensive digital marketing 
-                        <br/>approach, we designed a tailored website for 
-                        <br/> Peak Heart. By executing result-driven SEO
-                        <br/> tactics, we elevated every aspect of the 
-                        <br/> practices as well as patients and propelled 
-                        <br/> them to become trusted
-                        <br/> partners for being the 
-                        <br/>best multispeciality hospital in USA.            
+                    The heart generates electrical impulses that trigger contractions, measurable via a painless Electrocardiogram (ECG). This non-invasive test reveals the heart's electrical activity, helping detect irregularities or conditions. ECG is crucial for diagnosing and monitoring cardiac health, offering valuable insights into overall function.      
                         </p>
-                        <br/><h2>View Peak Heart Website</h2>
+                        {/* <br/><h2>View Peak Heart Website</h2> */}
                     </div>
                     <div className='carousel-img'>
-                        <img src='https://medicality.health/images/our-work/Peakheart_macbook@2x.png' alt=''/>
+                        <img src={ecgGraph} alt=''/>
                     </div>
                 </div>
                 <div className='carousel-image3'>
                 <div className='carousel-photo2'>
-                        <img src='https://medicality.health/images/our-work/peakheart-phone.png' alt=''/>
+                        <img src={ecggraphh} alt=''/>
                     </div>
                 </div>
             </div>
@@ -68,36 +70,27 @@ export default class Carousel extends Component {
             <div className='carousel-box2'>
                  <div className='carousel-image1'>
                     <div className='carousel-photo1'>
-                        <img src='https://thebrandbee.com/assets/imgs/work/vert-logo.png' alt=''/>
+                        <img src={ultraIcons} alt=''/>
                     </div>
                 </div>
                 <div className='carousel-image2'>
                     <div className='carousel-head'>
-                        <h1>Peak Heart - Website <br/> Development</h1>
+                        <h1>Ultrasonography - Ultrasound</h1>
                        
                     </div>
                     <div className='carousel-pargh'>
                     <p> 
-                        <br/>Branding is not just about creating an
-                        <br/> exceptional logo but much more than that.
-                        <br/> With our comprehensive digital marketing 
-                        <br/>approach, we designed a tailored website for 
-                        <br/> Peak Heart. By executing result-driven SEO
-                        <br/> tactics, we elevated every aspect of the 
-                        <br/> practices as well as patients and propelled 
-                        <br/> them to become trusted
-                        <br/> partners for being the 
-                        <br/>best multispeciality hospital in USA.            
+                    Ultrasonography is a safe, non-invasive imaging method that uses sound waves to create detailed internal body images. A transducer and ultrasound gel emit high-frequency sound waves, which reflect off tissues and organs. These reflections are converted into real-time images by a computer. Unlike X-rays, ultrasound involves no radiation, ensuring safer diagnostics.       
                         </p>
-                        <br/><h2>View Peak Heart Website</h2>
+                        {/* <br/><h2>View Peak Heart Website</h2> */}
                     </div>
                     <div className='carousel-img'>
-                        <img src='https://medicality.health/images/our-work/Peakheart_macbook@2x.png' alt=''/>
+                        <img src={ultraSecond} alt=''/>
                     </div>
                 </div>
                 <div className='carousel-image3'>
                 <div className='carousel-photo2'>
-                        <img src='https://thebrandbee.com/assets/imgs/work/vert-phone.png' alt=''/>
+                        <img src={ultraSoundThird} alt=''/>
                     </div>
                 </div>
             </div>
@@ -107,36 +100,27 @@ export default class Carousel extends Component {
             <div className='carousel-box3'>
                  <div className='carousel-image1'>
                     <div className='carousel-photo1'>
-                        <img src='https://thebrandbee.com/assets/imgs/work/Athena-Logo.png' alt=''/>
+                        <img src={xRay} alt=''/>
                     </div>
                 </div>
                 <div className='carousel-image2'>
                     <div className='carousel-head'>
-                        <h1>Peak Heart - Website <br/> Development</h1>
+                        <h1>CT- Scan</h1>
                        
                     </div>
                     <div className='carousel-pargh'>
                     <p> 
-                        <br/>Branding is not just about creating an
-                        <br/> exceptional logo but much more than that.
-                        <br/> With our comprehensive digital marketing 
-                        <br/>approach, we designed a tailored website for 
-                        <br/> Peak Heart. By executing result-driven SEO
-                        <br/> tactics, we elevated every aspect of the 
-                        <br/> practices as well as patients and propelled 
-                        <br/> them to become trusted
-                        <br/> partners for being the 
-                        <br/>best multispeciality hospital in USA.            
+                    This 16-slice CT machine delivers high-speed, 3D imaging with low-dose radiation, diagnosing conditions like aortic aneurysms, stenosis, and kidney stones. Non-invasive and versatile, it aids cardiologists, vascular surgeons, and urologists. It’s also used for neurological, abdominal, and thoracic evaluations. 
                         </p>
-                        <br/><h2>View Peak Heart Website</h2>
+                        {/* <br/><h2>View Peak Heart Website</h2> */}
                     </div>
                     <div className='carousel-img'>
-                        <img src='https://medicality.health/images/our-work/Peakheart_macbook@2x.png' alt=''/>
+                        <img src={xraysecond} alt=''/>
                     </div>
                 </div>
                 <div className='carousel-image3'>
                 <div className='carousel-photo2'>
-                        <img src='https://thebrandbee.com/assets/imgs/work/Athena-phone-copy.png' alt=''/>
+                        <img src={xrayThird} alt=''/>
                     </div>
                 </div>
             </div>

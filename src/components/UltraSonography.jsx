@@ -12,8 +12,6 @@ const UltraSonography = () => {
             <button className="ultrasound-btn">Book Now</button>
           </div>
           </div>
-
-          
         </div>
       </div>
     </div>

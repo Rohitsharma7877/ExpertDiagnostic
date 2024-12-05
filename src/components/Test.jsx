@@ -13,30 +13,17 @@ const Test = () => {
             <div className='casestudies-box1'>
                 <div className='casestudies-heading'>
                     <div className='casestudies-title'>
-                        <h1>Igniting success through our Performance 
-                        <br/>Marketing & Ad Campaign Mastery</h1>
+                        <h1>Radiology Test</h1>
                     </div>
                     <div className='casestudies-paragh'>
-                        <p1>With our innovative strategies and meticulous 
-                        community <br/>management, we ignited a staggering 300% month-over-month 
-                        <br/>increase in footfall at stores within just 6 months. Through 
-                        targeted <br/>online campaigns, we generated a surge in customer queries and 
-                        <br/>amplified market coverage, resulting in a remarkable upswing in 
-                        <br/>website-driven sales</p1>
+                        <p>Radiology tests use advanced imaging technologies like X-rays, MRIs, and CT scans to examine the body’s internal structures. These tests play a crucial role in diagnosing medical conditions early and guiding treatment decisions. By providing clear visuals, radiology enhances patient care and helps doctors deliver more accurate diagnoses.</p>
                         <br/>
                         <br/>
                         <h1>Capabilities Enabled</h1>
                         <br/>
-                        <h4>Brand & Communication Strategy|
-                        Packaging Design|
-                        <br/>Website Development & Management|
-                        Social Media Marketing|
-                        <br/>Ad Campaign Strategy|
-                        Sales/Offline Footfalls Generation|
-                        <br/>Photoshoots & Video Shoots|
-                        Email Marketing</h4>
+                        <h4>Radiology tests use advanced imaging technologies like MRI, CT scans, and X-rays to provide detailed insights for accurate diagnosis. These capabilities help detect diseases early and guide treatment decisions, improving patient outcomes.</h4>
                     </div>
-                    <div className='casestudies-btn'>
+                    <div className='casestudies-buttons'>
                     <button  className='btn-started'>Know More<span><FaArrowRightLong /></span> </button>
                     </div>
                 </div>
@@ -57,27 +44,17 @@ const Test = () => {
                 </div>
                 <div className='casestudies-heading'>
                     <div className='casestudies-title'>
-                        <h1>Soaring reach & engagement with our Social Media Marketing Skills</h1>
+                        <h1>Lab Test</h1>
                     </div>
                     <div className='casestudies-paragh'>
-                        <p1>Our expert team optimized online campaigns for maximum impact and 
-                        <br/>precise audience targeting, resulting in an unparalleled surge of 
-                        <br/>success. By crafting engaging content specifically tailored for Kumon's 
-                        <br/>social media pages, we elevated brand awareness and sparked 
-                        <br/>remarkable audience engagement.</p1>
+                        <p>Lab tests are crucial for accurate diagnosis, offering precise data that empowers doctors to create personalized treatment plans. From blood work to genetic analysis, these tests uncover hidden health issues early, leading to better outcomes. With advanced technology, lab tests are transforming healthcare, ensuring proactive and efficient care.</p>
                         <br/>
                         <br/>
 
                         <h1>Capabilities Enabled</h1>
                         <br/>
 
-                        <h4>Lead Generation|
-Social Media Marketing|
-Ad Campaign Strategy|
-<br/>Content Marketing|
-Search Engine Optimization|
-Office Branding|
-<br/>Kumon Centres Branding</h4>
+                        <h4>Lab tests enable precise and early detection of health conditions, providing crucial data for accurate diagnoses. With advanced technologies, they empower healthcare providers to tailor treatments, enhancing patient care and outcomes.</h4>
                     </div>
                     <div className='casestudies-btn'>
                     <button  className='btn-started'>Know More<span><FaArrowRightLong /></span> </button>
@@ -90,27 +67,15 @@ Office Branding|
             <div className='casestudies-box1'>
             <div className='casestudies-heading'>
                     <div className='casestudies-title'>
-                        <h1>Empowering LeasePlan With Our Lead 
-                        <br/>Generation Triumph</h1>
+                        <h1>Healt Package</h1>
                     </div>
                     <div className='casestudies-paragh'>
-                        <p1>By leveraging our expertise, we ignited heightened engagement among 
-                        <br/>LeasePlan's employees, amplifying their brand equity and surpassing 
-                        <br/>annual targets. The results were astounding, as LeasePlan now secures 
-                        <br/>over 5,000 car leases monthly, a remarkable growth of over 200 times 
-                        <br/>in just 8-9 years. Additionally, our strategy led to the onboarding of 50 
-                        <br/>times more clients, expanding their customer base exponentially.</p1>
+                        <p>Health packages offer comprehensive screenings to assess overall well-being, providing a holistic approach to preventive care. By combining multiple tests, they enable early detection of potential health risks and empower individuals to take proactive steps toward a healthier future. These packages ensure personalized health insights, fostering a long-lasting commitment to wellness.</p>
                         <br/>
                         <br/>
                         <h1>Capabilities Enabled</h1>
                         <br/>
-                        <h4>Website Development & Management|
-                        <br/>Brand & Communication Strategy|
-                        Ongoing Communication Design|
-                        <br/>Social Media Marketing|
-                        Lead Generation|
-                        Email Marketing|
-                        <br/>Research & Analytics</h4>
+                        <h4>Health packages enable early detection of health issues through a combination of essential tests, providing a comprehensive view of one's well-being. They empower individuals with actionable insights, facilitating timely interventions and proactive health management.</h4>
                     </div>
                     <div className='casestudies-btn'>
                     <button  className='btn-started'>Know More<span><FaArrowRightLong /></span> </button>
@@ -133,28 +98,15 @@ Office Branding|
                 </div>
                 <div className='casestudies-heading'>
                     <div className='casestudies-title'>
-                        <h1>Skyrocketing Revenue Success With Our 
-                        <br/>Sales/ROI Generation </h1>
+                        <h1>MRI Test</h1>
                     </div>
                     <div className='casestudies-paragh'>
-                        <p1>Through our strategic efforts, UrbanBed established itself as a premium 
-                        <br/>brand in the foam mattress industry. We achieved an impressive ROAS 
-                        <br/>of 3-5x across platforms like Instagram and Google, while consistently 
-                        <br/> exceeding expectations on Amazon with a remarkable ROAS of over 12x 
-                        <br/>in the work-from-home accessories category. </p1>
+                        <p>MRI tests offer unparalleled clarity in imaging, providing detailed views of internal organs and tissues without the need for invasive procedures. This advanced technology aids in early diagnosis, enabling precise treatment planning for a wide range of conditions. With its ability to detect abnormalities early, MRI tests play a crucial role in improving patient outcomes and care.</p>
                         <br/>
                         <br/>
                         <h1>Capabilities Enabled</h1>
                         <br/>
-                        <h4>Brand Identity Development|
-                        Brand & Communication Strategy|
-                        <br/>Brand & Marketing Collaterals Design|
-                        Social Media Marketing|
-                        <br/>Ad Campaign Strategy|
-                        Sales/ROI Generation|
-                        <br/>Website Development & Management|
-                        Email Marketing|
-                        <br/>Search Engine Optimization</h4>
+                        <h4>MRI tests enable high-resolution imaging of soft tissues, providing detailed insights for accurate diagnosis. This non-invasive technology supports early detection, monitoring, and effective treatment planning for various medical conditions.</h4>
                     </div>
                     <div className='casestudies-btn'>
                     <button  className='btn-started'>Know More<span><FaArrowRightLong /></span> </button>

@@ -1,115 +1,154 @@
+body {
+    font-family: "El Messiri", sans-serif;
+}
 .carousel-main1{
-    height: 150vh;
+    height: auto;
     width: 100%;
     /* border: 1px solid red; */
     /* padding-top: 64px; 
     margin-top: 64px; */
 }
 .carousel-box-container{
-    margin: 4%;
+    margin: 4% ;
    
   
 }
-.carousel-box1{
-    height: 130vh;
-    width: 96%;
-    /* margin: 4%; */
+.carousel-box1 {
+    height: 120vh;
+    width: 95%;
     /* border: 1px solid rgb(15, 15, 15); */
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.carousel-box2{
-    height: 130vh;
-    width: 100%;
-    /* margin: 4%; */
-    /* border: 1px solid rgb(15, 15, 15); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.carousel-box3{
-    height: 130vh;
-    width: 100%;
-    /* margin: 4%; */
-    /* border: 1px solid rgb(15, 15, 15); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
 }
 
 .carousel-image1{
-    height: 120vh;
+    height: 100%;
     width: 40%;
     margin: 0.5%;
     /* border: 1px solid rgb(15, 15, 15); */
 }
 .carousel-photo1{
-    height: 50vh;
-    width: 100%;
-    /* margin: 0.5%; */
+    height: 30%;
+    width: 90%;
+    object-fit: cover;
+    margin: 1% auto;
     /* border: 1px solid rgb(253, 7, 7); */
 }
 .carousel-photo1 img{
-    height: 45vh;
+    height: 100%;
     width: 100%;
+    /* border: 1px solid rgb(253, 7, 7); */
 }
 
-.carousel-image2{
+
+.carousel-box2{
     height: 120vh;
+    width: 95%;
+    /* margin: 2%; */
+    /* border: 1px solid rgb(15, 15, 15); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-image2{
+    height: 100%;
     width: 55%;
     /* margin: 0.5%; */
     /* border: 1px solid rgb(15, 15, 15); */
 }
 .carousel-head{
-    height: 10vh;
+    height: 10%;
     width: 100%;
-    /* margin: 0.5%; */
+    /* margin: 1% auto; */
     /* border: 1px solid rgb(15, 15, 15); */
-    text-align: left;
+    /* text-align: left; */
     display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    font-size: 4vh;
-    font-weight: bold;
-}
-.carousel-pargh{
-    height: auto;
-    width: 100%;
-    /* margin: 0.5%; */
-    /* border: 1px solid rgb(15, 15, 15); */
-    text-align: left;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
-    font-size: 2.5vh;
-    font-weight: bold;
+    
 }
-
-.carousel-img{
-    height: 30vh;
+.carousel-head h1{
+    height: auto;
+    width: 90%;
+    margin: 1% auto;
+    font-size: 4vh;
+    font-weight: bold;
+    color: #eb7801;
+    /* align-items: center; */
+    font-family: "El Messiri", sans-serif;
+    /* border: 1px solid rgb(240, 8, 8); */
+}
+.carousel-pargh{
+    height: 40%;
     width: 100%;
     /* margin: 0.5%; */
     /* border: 1px solid rgb(15, 15, 15); */
     /* text-align: left; */
-    margin-top: 15%;
+    
+  
+}
+.carousel-pargh p{
+    height: 95%;
+    width: 90%;
+    margin: 1% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.8vh;
+    /* border: 1px solid rgb(247, 7, 7); */
+    font-weight: bold;
+    font-family: "El Messiri", sans-serif;
+}
+
+.carousel-img{
+    height: auto;
+    width: 100%;
+    /* margin: 0.5%; */
+    /* border: 1px solid rgb(15, 15, 15); */
+    /* text-align: left; */
+    /* margin-top: 2%; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.carousel-image3{
+.carousel-img img{
+    height: 90%;
+    width: 90%;
+    object-fit: contain;
+   
+    /* margin: 2% auto; */
+    /* border: 1px solid rgb(253, 0, 0); */
+
+}
+.carousel-box3{
     height: 120vh;
+    width: 95%;
+    /* margin: 2%; */
+    /* border: 1px solid rgb(15, 15, 15); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.carousel-image3{
+    height: 100%;
     width: 100%;
     /* margin: 0.5%; */
     /* border: 1px solid rgb(15, 15, 15); */
 }
 .carousel-photo2{
-    height: 120vh;
-    width: 100%;
-    /* margin: 0.5%; */
+    height: 80%;
+    width: 90%;
+    margin: 2% auto;
     /* border: 1px solid rgb(253, 7, 7); */
 }
 .carousel-photo2 img{
-    height: 110vh;
-    width: 93%;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }

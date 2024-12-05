@@ -1,9 +1,9 @@
 /* Main container */
 .main-container{
     height: auto;
-    /* 
+    background-color: #603c86;
     
-    /* border: 1px solid rgb(250, 1, 1); */
+    /* border: 1px solid rgb(250, 1, 1);  */
     /* margin-left: 10%; */
     margin-top: 1%; 
     width: full;
@@ -19,7 +19,8 @@
     /* display: flex; */
     /* border: 1px solid rgb(250, 1, 1); */
     align-items: center;
-    color: #000;
+    color: #eb7801;
+    font-family: 'El Messiri', sans-serif;
 }
 
 .team-container1 {
@@ -27,10 +28,12 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
+    /* border: 1px solid rgb(250, 1, 1); */
 }
 
 .team-grid {
     display: grid;
+    /* background: #fff; */
     grid-template-columns: repeat(5, 1fr); /* 5 columns in a row */
     gap: 20px; /* Spacing between cards */
     width: 100%;
@@ -44,6 +47,7 @@
     padding: 15px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'El Messiri', sans-serif;
 }
   
 .team-card:hover {

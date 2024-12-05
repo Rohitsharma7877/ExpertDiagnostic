@@ -113,28 +113,30 @@ const Carousel2 = () => {
       >
         <h1 className="happy">Happy words from our valuable clients!</h1>
       </div>
-      <div className="coursel-tag">Testimonials</div>
-      <div className="coursel-main">
+      <div className="coursel-tag">
+      <h2>Testimonials</h2>
+      </div>
+      <div className=" mt-6 coursel-main ">
         <div className="w-full m-auto ">
-          <div className="mb-70  ">
+          <div className="  ">
             <Slider {...settings}>
               {data.map((d) => (
-                <div className="  bg-white h-auto text-black borde border-gray-300  rounded-xl">
-                  <div className="h-auto rounded-t-xl flex justify-center items-center">
+                <div className="  bg-white h-auto text-black   rounded-xl ">
+                  <div className="  h-auto rounded-t-xl flex justify-center items-center ">
                     <img
                       src={d.img}
                       alt=""
-                      className="h-auto w-30 rounded-full pt-3 mt-12"
+                      className="h-35 w-35 rounded-full"
                     />
                   </div>
-                  <div className="flex flex-col justify-center items-center gap-4 p-20">
-                    <p className="text-xl font-semibold borde border-gray-300 rounded-full bg-gray-200">
+                  <div className="flex flex-col justify-center items-center gap-4 p-10 ">
+                    <p className="text-sm font-semibold rounded-full bg-gray-100 flex justify-center items-center w-auto px-4 py-2 font-el-messiri">
                       {d.name}
                     </p>
-                    <p className="text-lg font-semibold  text-gray-500 leading-7 text-left">
+                    <p className="text-[15px] font-semibold  text-gray-500 leading-7 text-left font-el-messiri">
                       {d.review}
                     </p>
-                    <p className="text-xl font-semibold ">{d.position}</p>
+                    <p className="text-xl font-semibold font-el-messiri">{d.position}</p>
                   </div>
                 </div>
               ))}

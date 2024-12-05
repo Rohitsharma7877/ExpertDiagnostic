@@ -7,11 +7,9 @@ const CompanyAbout = () => {
     return (
         <div className='about-main1'>
             <div className='about-main2'>
-                <div className='about-box1'>
-                    <p>Our­Philosophy</p>
-                </div>
+                
                 <div className='about-box2'>
-                    <h1>About!</h1>
+                    <h1>About Us!</h1>
                 </div>
                 <div className='about-box3'>
                 {/* Meliora is a Latin adjective meaning "better". It may be used in the accusative and substantively */}

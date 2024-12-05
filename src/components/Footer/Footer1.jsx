@@ -68,7 +68,7 @@ const Footer1 = () => {
                     </li>
 
                     <li>
-                        <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Works </a>
+                        <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Career </a>
                     </li>
 
                     <li>
@@ -78,17 +78,9 @@ const Footer1 = () => {
             </div>
 
             <div>
-                <p class="text-sm font-semibold tracking-widest text-gray-400 uppercase">Help</p>
+                <p class="text-sm font-semibold tracking-widest text-gray-400 uppercase">Policy</p>
 
                 <ul class="mt-6 space-y-4">
-                    <li>
-                        <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Carrier </a>
-                    </li>
-
-                    <li>
-                        <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Policy </a>
-                    </li>
-
                     <li>
                         <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Terms of use </a>
                     </li>
@@ -96,6 +88,17 @@ const Footer1 = () => {
                     <li>
                         <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Cookie Policy </a>
                     </li>
+
+                    <li>
+                        <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Desclaimer </a>
+                    </li>
+
+                    <li>
+  <a href="#" title="" class="flex text-[11px] text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
+    <p>Expert diagnostics ensure accurate identification, thorough </p>
+  </a>
+</li>
+
                 </ul>
             </div>
 

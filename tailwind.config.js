@@ -6,7 +6,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        purpleCustom: '#603c86',  // Add your custom color here
+        purpleCustom: '#603c86',  
+      },
+      fontFamily: {
+        'el-messiri': ['"El Messiri"', 'sans-serif'],  // Your custom font
       },
     },
   },

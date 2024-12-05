@@ -35,6 +35,7 @@ const WhyDoNeed = () => {
         </div>
         <div className="whydoneed-box2">
           <div className="whydoneed-doctor">
+          
             <img src={ultrSoundDoctor} alt="whydoneedImage"/>
           </div>
         </div>

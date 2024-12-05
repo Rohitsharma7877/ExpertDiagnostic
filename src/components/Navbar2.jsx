@@ -16,7 +16,7 @@ const Navbar2 = () => {
 
   return (
     <div className="main1">
-      <nav className="navbar">
+      <nav className="navbar el-messiri-navbar"> {/* Apply the font class here */}
         <ul className="nav-links">
           <li>{/* <Link to="/hh">Home</Link> */}</li>
           <li>
