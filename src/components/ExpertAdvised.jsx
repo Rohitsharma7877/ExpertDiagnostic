@@ -1,6 +1,6 @@
 import React from "react";
 import "./expertAdvised.css";
-import expert from './assests/expertAdvised.png'
+import expert from './assests/ExpertAdvisedImage.jpg'
 
 const ExpertAdvised = () => {
   return (
@@ -15,7 +15,7 @@ const ExpertAdvised = () => {
           <div className="beeEverything-heading2">
             <div className="beeEverything-heading2-head">
               <h1>
-                Expert-Adviced
+              Expert-Uniquenes
               </h1>
             </div>
           </div>
@@ -30,6 +30,7 @@ const ExpertAdvised = () => {
         </div>
         <div className="beeEverything-box2">
           <div className="beeEverything-box2-heading">
+          <h1 className='beeEverything-box2-heading-title'>Expert Advised</h1>
             <p>
               Becoming an expert in diagnostics requires sharp clinical
               reasoning, continuous learning, and staying updated with
@@ -39,15 +40,12 @@ const ExpertAdvised = () => {
               excel in creating comprehensive differential diagnoses, ensuring
               no condition is overlooked. Collaboration with specialists and
               awareness of cognitive biases are crucial to avoid errors and
-              refine judgment. Leveraging advanced diagnostic tools and
-              technologies ensures accuracy and timely care. Empathy, critical
-              thinking, and consistent follow-up are essential to provide the
-              best outcomes for patients.
-              <br />
+              refine judgment. 
+              
             </p>
-            <br />
-            <h1>Key aspects of expert diagnostics:</h1>
-            <br />
+            <br/>
+            <h1 className='beeEverything-box2-heading-title'>Key aspects of expert diagnostics:</h1>
+            
             {/* <br/> */}
 
             <p>
@@ -60,8 +58,8 @@ const ExpertAdvised = () => {
               tailored solutions, leading to optimal patient outcomes.
             </p>
             <br />
-            <h1>Appropriate diagnostic tool usage:</h1>
-            <br />
+            <h1 className='beeEverything-box2-heading-title'>Appropriate diagnostic tool usage:</h1>
+            
             <p>
               Utilize laboratory tests, imaging studies, and other diagnostic
               modalities effectively. Understand the limitations of each test

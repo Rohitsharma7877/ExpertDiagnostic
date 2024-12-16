@@ -2,14 +2,15 @@
     height: auto;
     /* border: 1px solid black; */
     width: 100%; /* Use 100% instead of 'full' */
+    padding-top: 17vh;
 }
 
 .ultrasound-main2 {
     height: 80vh; /* Fills the parent container */
     width: 100%;
-    /* background-image: url(assests/ultraSOUND.png); */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
-    url("./assests/ultraSOUND.png") ;
+    background-image: url(assests/ultraSOUND.png);
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+    url("./assests/ultraSOUND.png") ; */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

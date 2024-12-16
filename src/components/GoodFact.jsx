@@ -7,10 +7,10 @@ const GoodFact = () => {
     <div className="mliora-main1">
       <div className="mliora-main2">
         <div className="mliora-box1">
-          <p>Our­Philosophy</p>
+          <p>Our Value</p>
         </div>
         <div className="mliora-box2">
-          <h1>DIAGNOSTICS!</h1>
+          <h1>Expert-Diagnostics!</h1>
         </div>
         <div className="mliora-box3"></div>
         <div className="mliora-box4">

@@ -1,17 +1,27 @@
 /* navbar2.css */
 
 /* Apply El Messiri font style globally for the navbar */
-.el-messiri-navbar {
-  font-family: 'El Messiri', sans-serif; /* Apply El Messiri font */
-  font-weight: 700; /* Set font-weight to bold */
-  font-optical-sizing: auto; /* Use auto optical sizing for better legibility */
-  font-style: normal; /* Use normal font style */
-}
+/* .el-messiri-navbar {
+  font-family: 'El Messiri', sans-serif; 
+  font-weight: 700; 
+  font-optical-sizing: auto; 
+  font-style: normal; 
+} */
 
 .main1 {
   height: 40px;
   width: 100%;
+
   margin-top: 64px;
+  background-color: white;
+  position: fixed; 
+  z-index: 1000;
+  /* position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; */
+  /* border: 1px solid red; */
 }
 
 .navbar {
@@ -19,7 +29,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-color: #603c86;
+  /* background-color: #603c86; */
 }
 
 .nav-links {
@@ -27,16 +37,18 @@
   list-style: none;
 }
 
-.nav-links li {
-  margin: 0 20px;
-  position: relative; /* For dropdown positioning */
-}
+
 
 .nav-links li a {
-  color: white;
+  color: #603c86;
   text-decoration: none;
   font-size: 15px;
   font-weight: bold;
+}
+.nav-links li {
+  /* margin-top: 1; */
+  margin: 0 20px;
+  position: relative; 
 }
 
 .nav-links li a:hover {
@@ -44,9 +56,9 @@
 }
 
 .dropdown-menu {
-  display: none; /* Initially hidden */
-  position: absolute; /* Positioned relative to parent */
-  top: 100%; /* Directly below the parent */
+  display: none; 
+  position: absolute; 
+  top: 100%; 
   left: 0;
   background-color: #603c86;
   padding: 10px;
@@ -85,6 +97,188 @@
   margin-left: 5px;
   font-size: 12px;
   color: #f0a500;
+}
+
+/* Lab Test div*/
+
+.dropdown2-menu2 {
+  display: none; 
+  position: absolute; 
+  top: 100%; 
+  left: 0;
+  background: white;
+  border: 3px solid #603c86;
+  padding: 10px;
+  list-style: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 900px;
+}
+
+.dropdown2-menu2 li {
+  margin: 0;
+}
+
+.dropdown2-menu2 li a {
+  font-size: 2vh;
+  font-weight: 800;
+  /* font-weight: normal; */
+  color: #603c86;
+  padding: 5px 10px;
+  transition: background 0.3s;
+}
+
+.dropdown2-menu2 li a:hover {
+  background-color: #f0a500;
+  color: #603c86;
+  border-radius: 3px;
+}
+.dropdown2-menu2 li p{
+  font-size: 11px;
+}
+
+/* Show dropdown menu on hover */
+.dropdown:hover .dropdown2-menu2 {
+  display: block;
+}
+
+/* Down arrow icon */
+.down-icon {
+  margin-left: 5px;
+  font-size: 12px;
+  color: #f0a500;
+}
+
+.droupdown-grid-box{
+/* width: ; */
+background: white;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+}
+
+.droupdown-flex-box{
+  display: flex;
+}
+
+ /* Modal styles */
+ .form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  /* border: 1px solid red; */
+}
+.form-wrapper {
+  display: flex;
+  width: 80%;
+  max-width: 900px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Image section */
+.form-image-section {
+  flex: 1;
+  background: #f3f3f3; /* Backup background in case image doesn't load */
+}
+
+.form-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.form-container {
+  flex: 1;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Close icon positioning */
+.form-close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+.form-close-icon:hover {
+  transform: scale(1.1); /* Add a hover effect for the close icon */
+}
+
+.book-test-form input,
+.book-test-form textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.book-test-form button {
+  background-color: #5e2d89;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.book-test-form button:hover {
+  background-color: #eb7801;
+}
+.form-submit-btn{
+  background-color: #eb7801;
+}
+
+.terms-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the checkbox and label */
+  margin: 10px 0;
+  justify-content: center;
+  /* border: 1px solid red; */
+}
+
+.terms-container input[type="checkbox"] {
+  width: 18px; /* Adjust size of checkbox */
+  height: 18px;
+  accent-color: #5e2d89; /* Customize checkbox color */
+  cursor: pointer;
+}
+
+.terms-container label {
+  font-size: 14px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.terms-container label a {
+  color: #5e2d89;
+  text-decoration: none;
+}
+
+.terms-container label a:hover {
+  text-decoration: underline;
 }
 
 /* Responsive Design */

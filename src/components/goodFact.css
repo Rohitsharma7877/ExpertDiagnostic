@@ -6,13 +6,16 @@ body {
     height: auto;
     width: 100%;
     padding-top: 1.5%;
+    /* border: 1px solid red; */
 }
 
 .mliora-main2 {
     height: auto;
-    width: 85%;
+    width: 90%;
     box-sizing: border-box;
     margin: 4% auto;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 .mliora-box1 {

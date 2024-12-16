@@ -1,24 +1,16 @@
-import './App.css';
-import React from 'react';
-import Navbar from './components/Navbar';
-import Navbar2 from './components/Navbar2';
-import Routers from './components/Routers';
-// import Footer from './components/Footer/Footer';
-import Footer1 from './components/Footer/Footer1';
-
-
+import "./App.css";
+import React from "react";
+import Routers from "./components/Routers";
+import NavBarPage from "./components/pages/NavBarPage";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Navbar2 />
+      <NavBarPage />
       <Routers />
-
-      <Footer1/>
-      
+      <Footer />
     </div>
   );
 }
-
 export default App;

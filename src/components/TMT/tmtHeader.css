@@ -1,0 +1,78 @@
+.tmtHeader-main1 {
+  height: auto;
+  /* border: 1px solid black; */
+  width: 100%; /* Use 100% instead of 'full' */
+  padding-top: 17vh;
+}
+
+.tmtHeader-main2 {
+  height: 80vh; /* Fills the parent container */
+  width: 100%;
+  background-image: url("./tmtImage1.jpg");
+  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+  url("./assests/tmtHeader.jpg") ; */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+
+
+.tmtHeader-box{
+  height: auto;
+  width: 50%;
+  /* border: 1px solid black; */
+  box-sizing: border-box;
+  /* margin: 13% 5% 10% 2%; */
+  /* justify-content: center; */
+  /* text-align: start; */
+  /* align-items: center; */
+}
+.tmtHeader-title-box{
+  height: auto;
+  width: full;
+  /* border: 1px solid rgb(185, 14, 14); */
+  justify-content: center;
+  /* text-align: start; */
+  align-items: center;
+  padding: 22% 5% 10% 10%;
+}
+.tmtHeader-title{
+  font-size: 10.5vh;
+  font-weight: 500;
+  /* width: auto; */
+  /* border: 1px solid rgb(20, 185, 14); */
+  color: #eb7801;
+  /* justify-content: center; */
+  /* text-align: start; */
+  /* align-items: center; */
+}
+
+.tmtHeader-title2{
+  height: auto;
+  width: 80%;
+  color: black;
+  font-family: 'El Messiri', sans-serif;
+  /* border: 1px solid rgb(20, 185, 14); */
+}
+.tmtHeader-buttons {
+  display: flex;
+  justify-content: start;
+  margin-top: 3%;
+  /* gap: 5px; */
+}
+
+.tmtHeader-btn {
+  background-color: #5e2d89;
+  color: #fff;
+  border: none;
+  /* margin: 2% 5% 10% 2%; */
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.tmtHeader-btn:hover {
+  background-color: #7737a1;
+}
