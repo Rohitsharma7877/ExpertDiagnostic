@@ -1,6 +1,6 @@
 import React from 'react'
 import './WhatisMMGP.css'
-import mmgg2 from './mmgg2.jpeg'
+import mmgg2 from './MRImomgrimg2.jpeg'
 
 const WhatisMMGP = () => {
   return (

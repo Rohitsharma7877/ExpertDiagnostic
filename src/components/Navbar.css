@@ -1,0 +1,51 @@
+/* General navbar styling */
+.el-messiri-navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+  
+  /* Background image changes for smaller screens */
+  @media (max-width: 768px) {
+    .el-messiri-navbar {
+      background-image: url('./assests/navbckimg.png'); /* Use a smaller background image */
+      background-size: cover;
+      background-position: center;
+    }
+  
+    /* Hide search bar and login/signup on mobile */
+    .search-bar-container,
+    .flex.items-center.pl-15 {
+      display: none;
+    }
+  
+    /* Adjust spacing for mobile */
+    .container {
+      justify-content: space-between;
+      padding: 0 1rem;
+    }
+  
+    /* Ensure logo, Book Your Test, and Upload Prescription remain visible */
+    .flex.items-center.justify-center {
+      flex: 1;
+      justify-content: flex-start;
+    }
+  
+    /* Book Your Test and Upload Prescription styling */
+    ul {
+      display: flex;
+      gap: 1rem;
+    }
+  
+    ul li button,
+    ul li a {
+      font-size: 12px;
+      padding: 0.5rem 1rem;
+      text-align: center;
+    }
+  }
+  

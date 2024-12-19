@@ -1,6 +1,6 @@
 import React from 'react'
 import "./WhatisXRay.css"
-import XRay from './XRay.jpg'
+import XRay from './xrayimg7.jpg'
 
 const WhatisXRay = () => {
   return (

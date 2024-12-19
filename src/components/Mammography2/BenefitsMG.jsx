@@ -1,6 +1,6 @@
 import React from "react";
 import "./BenefitsMG.css";
-import img3 from "./img3.jpeg";
+import img3 from "./memooimg5.jpeg";
 
 const BenefitsMG = () => {
   return (

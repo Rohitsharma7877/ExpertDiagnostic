@@ -4,95 +4,90 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 60px 20px 20px 120px;
-    gap: 20px; /* Reduced gap */
+    gap: 20px;
     background-color: #f4f5f7;
     border-radius: 12px;
+    padding-top: 17vh;
+    /* border: 1px solid red; */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  }
-  
-  /* Header section styles */
-  .contactus-header {
+}
+
+/* Header section styles */
+.contactus-header {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    gap: 20px; /* Reduced gap */
-  }
-  
-  /* Left side of contact section (form) */
-  .contactus-left {
+    gap: 20px;
+}
+
+/* Left side of contact section (form) */
+.contactus-left {
     flex: 1;
-    max-width: 45%; /* Reduced width */
-    padding: 30px; /* Reduced padding */
+    max-width: 45%;
+    padding: 30px;
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .contactus-left:hover {
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12); /* Deeper shadow on hover */
-  }
-  
-  .contactus-title {
-    font-size: 2.2rem; /* Reduced title size */
+}
+
+.contactus-left:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.contactus-title {
+    font-size: 2.2rem;
     font-weight: 700;
-    color: #eb7801; /* Vibrant accent color */
+    color: #eb7801;
     margin-bottom: 15px;
-  }
-  
-  .contactus-description {
-    font-size: 1.1rem; /* Slightly smaller description */
+}
+
+.contactus-description {
+    font-size: 1.1rem;
     color: #000000;
     line-height: 1.7;
     margin-bottom: 20px;
     font-weight: 400;
     text-align: left;
-  }
-  
-  .contactus-form {
+}
+
+.contactus-form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Reduced gap */
-  }
-  
-  .contactus-form-group {
+    gap: 15px;
+}
+
+.contactus-form-group {
     display: flex;
     flex-direction: column;
-  }
-  
-  /* label {
-    font-size: 1.1rem;
-    color: #000000;
-    margin-bottom: 8px;
-    font-weight: 500;
-  } */
-  
-  .inputName,
-  textarea {
-    padding: 12px; 
-    font-size: 1rem; 
+}
+
+.inputName,
+textarea {
+    padding: 12px;
+    font-size: 1rem;
     border-radius: 8px;
     border: 1px solid #ddd;
     background-color: #f8f8f8;
     outline: none;
     transition: border 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .inputName:focus,
-  textarea:focus {
-    border-color: #eb7801; 
+}
+
+.inputName:focus,
+textarea:focus {
+    border-color: #eb7801;
     box-shadow: 0 0 6px rgba(235, 120, 1, 0.3);
-  }
-  
-  textarea {
+}
+
+textarea {
     resize: none;
-    min-height: 100px; 
-  }
-  
-  /* Submit Button Styling */
-  .contactus-submit-button {
-    padding: 12px 24px; /* Reduced padding */
-    font-size: 1.2rem; /* Reduced font size */
+    min-height: 100px;
+}
+
+/* Submit Button Styling */
+.contactus-submit-button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
     background-color: #603c86;
     color: white;
     border: none;
@@ -101,48 +96,49 @@
     transition: background-color 0.3s ease, transform 0.3s ease;
     font-weight: bold;
     text-transform: uppercase;
-  }
-  
-  .contactus-submit-button:hover {
-    background-color: #eb7801; /* Slightly darker on hover */
-    transform: translateY(-2px); /* Button lift effect */
-  }
-  
-  .contactus-submit-button:active {
-    transform: translateY(0); /* Reset on click */
-  }
-  
-  /* Right side of the contact section (map) */
-  .contactus-right {
+}
+
+.contactus-submit-button:hover {
+    background-color: #eb7801;
+    transform: translateY(-2px);
+}
+
+.contactus-submit-button:active {
+    transform: translateY(0);
+}
+
+/* Right side of the contact section (map) */
+.contactus-right {
     flex: 1;
-    max-width: 45%; /* Reduced width */
-    padding: 50px; /* Reduced padding */
+    max-width: 45%;
+    padding: 50px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .contactus-right:hover {
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12); /* Deeper shadow on hover */
-  }
-  
-  .contactus-map-title {
-    font-size: 2.2rem; /* Reduced map title size */
+}
+
+.contactus-right:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.contactus-map-title {
+    font-size: 2.2rem;
     color: #eb7801;
     margin-bottom: 20px;
     font-weight: 600;
-  }
-  
-  .contactus-map-container {
+}
+
+.contactus-map-container {
+  position: relative;
+  z-index: 1;
     height: 400px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 8px 35px rgba(0, 0, 0, 0.1);
-  }
-  
-  b {
+}
+
+b {
     color: #603c86;
     font-size: 1rem;
-  }
-  
+}

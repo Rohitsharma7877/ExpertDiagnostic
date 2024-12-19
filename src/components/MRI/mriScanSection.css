@@ -11,6 +11,7 @@
 .mriscan-text {
   flex: 1; /* Takes up available space */
   padding: 20px;
+  
 }
 
 .mriscan-text h1 {

@@ -358,61 +358,7 @@ const Navbar2 = () => {
             </ul>
           </li>
 
-          {/* <li>
-            <Link to="/about">About Us</Link>
-          </li> */}
-          {/* <li className="dropdown">
-            <Link to="/facilities">
-              Facilities <span className="down-icon">▼</span>
-            </Link>
-            <ul className="dropdown-menu">
-              <li>
-                <Link to="/facilities/ecg">ECG</Link>
-              </li>
-              <li>
-                <Link to="/facilities/bone-density-test">
-                  Bone Density Test
-                </Link>
-              </li>
-              <li>
-                <Link to="/facilities/ultra-sonography">Ultra Sonography</Link>
-              </li>
-              <li>
-                <Link to="/facilities/eeg">EEG</Link>
-              </li>
-              <li>
-                <Link to="/facilities/pulmonary-function-test">
-                  Pulmonary Function Test
-                </Link>
-              </li>
-              <li>
-                <Link to="/facilities/covid-testing">Covid Testing</Link>
-              </li>
-              <li>
-                <Link to="/facilities/lab-testing">
-                  Lab Testing (Laboratory)
-                </Link>
-              </li>
-              <li>
-                <Link to="/facilities/digital-X-ray">Digital X-Ray</Link>
-              </li>
-              <li>
-                <Link to="/facilities/health-checkups">Health Checkups</Link>
-              </li>
-              <li>
-                <Link to="/facilities/radiology-imaging">
-                  Radiology & Imaging
-                </Link>
-              </li>
-              <li>
-                <Link to="/facilities/tmt">TMT</Link>
-              </li>
-              <li>
-                <Link to="/facilities/mammography">Mammography</Link>
-              </li>
-              
-            </ul>
-          </li> */}
+          
           <li className="dropdown">
             <Link to="/health-package">
               Expert Care Package <span className="down-icon">▼</span>
@@ -443,9 +389,7 @@ const Navbar2 = () => {
               <FaPhoneVolume className="text-[18px] " />
               <div className="text-left text-[#f0a500]">
                 +91 0123456789
-                {/* <span className="text-sm text-gray-500">
-                  info@exportDiagnostics.in
-                </span> */}
+                
               </div>
             </Link>
           </li>

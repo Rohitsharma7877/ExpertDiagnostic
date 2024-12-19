@@ -1,6 +1,6 @@
 import React from "react";
 import "./BenefitsMMGP.css";
-import img3 from "./mmggg2.jpeg";
+import img3 from "./mmgg2.jpeg";
 
 const BenefitsMMGP = () => {
   return (

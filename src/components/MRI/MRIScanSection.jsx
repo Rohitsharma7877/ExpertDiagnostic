@@ -1,6 +1,6 @@
 import React from "react";
 import "./mriScanSection.css"; // Import the updated CSS file
-import image from "./pexels-shvetsa-4226123.jpg"; // Replace with the appropriate MRI image path
+import image from "./mriimgg3.jpeg"; // Replace with the appropriate MRI image path
 
 const MRIScanSection = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import './benefitsCTScan.css'
-import img3 from './img3.jpg'
+import img3 from './ctimg4.jpg'
 
 const BenefitsCTScan = () => {
   return (

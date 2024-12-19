@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { IoClose } from "react-icons/io5"; // Import the close icon
 import doctor from './indianGroupDoctors.jpg'
 import "./ctScanHeader.css";
-// import { FaRadiation } from "react-icons/fa";
-// import { BsPersonStanding } from "react-icons/bs";
-// import { FaUserDoctor } from "react-icons/fa6";
 
 const CTScanHeader = () => {
   const [showForm, setShowForm] = useState(false);

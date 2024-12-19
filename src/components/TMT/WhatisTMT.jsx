@@ -1,6 +1,6 @@
 import React from 'react'
 import './WhatisTMT.css'
-import tmtimg2 from './tmtimg2.jpg'
+import tmtimg2 from './tmtt.jpeg'
 
 const WhatisTMT = () => {
   return (

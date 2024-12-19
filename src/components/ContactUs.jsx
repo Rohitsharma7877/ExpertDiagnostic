@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaHeart, FaHeartbeat } from "react-icons/fa"; // Import icons from react-icons
+// import { FaHeart, FaHeartbeat } from "react-icons/fa"; // Import icons from react-icons
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "./contactus.css";
 import "./leaflet.css";

@@ -1,6 +1,6 @@
 import React from "react";
 import "./WhatisMG.css";
-import img2 from "./img2.jpeg";
+import img2 from "./memoimg6.jpeg";
 
 const WhatisMG = () => {
   return (

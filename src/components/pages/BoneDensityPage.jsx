@@ -1,16 +1,19 @@
 import React from 'react'
-import BoneDensity from '../BoneDensity'
-import WhatBoneDensity from '../WhatBoneDensity'
-import Osteoporosis from '../Osteoporosis'
-import WhoShouldBMD from '../WhoShouldBMD'
+import BoneDensityHome from '../BoneDensity/BoneDensityHome'
+// import BoneDensity from '../BoneDensity/BoneDensity'
+// import WhatBoneDensity from '../BoneDensity/WhatBoneDensity'
+// import Osteoporosis from '../BoneDensity/Osteoporosis'
+// import WhoShouldBMD from '../BoneDensity/WhoShouldBMD'
 
 const BoneDensityPage = () => {
   return (
     <>
-        <BoneDensity/>
+        {/* <BoneDensity/>
         <WhatBoneDensity/>
         <Osteoporosis/>
-        <WhoShouldBMD/>
+        <WhoShouldBMD/> */}
+
+        <BoneDensityHome/>
     </>
   )
 }
