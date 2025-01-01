@@ -1,5 +1,5 @@
 .whyshouldCTScan-main1{
-    height: 70vh; 
+    height: auto; 
     width: 100%; 
     background-color: white; 
     display: flex; 
@@ -110,3 +110,41 @@
     color: #eb7801;
     font-size: 18px;
 }
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .whyshouldCTScan-main2 {
+        flex-direction: column; /* Stack content vertically */
+    }
+
+    .whyshouldCTScan-box1,
+    .whyshouldCTScan-box2 {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .whyshouldCTScan-header h1 {
+        font-size: 2rem; /* Adjust for smaller screens */
+    }
+
+    .whyshouldCTScan-point p {
+        font-size: 1rem;
+    }
+
+    .whyshouldCTScan-checklist li {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .whyshouldCTScan-header h1 {
+        font-size: 1.8rem; /* Further adjust for very small screens */
+    }
+
+    .whyshouldCTScan-point p {
+        font-size: 0.9rem;
+    }
+
+    .whyshouldCTScan-checklist li {
+        font-size: 0.8rem;
+    }
+}
+

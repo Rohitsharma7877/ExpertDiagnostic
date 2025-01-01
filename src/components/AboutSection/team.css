@@ -126,4 +126,67 @@
     font-family: "El Messiri", sans-serif;
   }
   
-  
+  /* Mobile View Styles */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 80px;
+  }
+
+  .main-container h1 {
+    font-size: 6vh; /* Smaller font size for headings */
+    text-align: center; /* Center-align the heading for mobile */
+  }
+
+  .team-container1 {
+    padding: 10px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for better fit on small screens */
+    gap: 10px; /* Reduce gap for smaller devices */
+  }
+
+  .flip-card-inner {
+    height: 250px; /* Adjust height for smaller screens */
+  }
+
+  .team-image {
+    width: 70%; /* Reduce image size */
+  }
+
+  .team-title {
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .team-designation {
+    font-size: 0.9rem;
+  }
+
+  .team-description {
+    font-size: 10px; /* Adjust description font size */
+    padding-top: 5%; /* Adjust padding for better fit */
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: repeat(1, 1fr); /* Single column for very small screens */
+  }
+
+  .flip-card-inner {
+    height: 200px; /* Further adjust card height */
+  }
+
+  .team-title {
+    font-size: 0.9rem;
+  }
+
+  .team-designation {
+    font-size: 0.8rem;
+  }
+
+  .team-description {
+    font-size: 9px;
+  }
+}

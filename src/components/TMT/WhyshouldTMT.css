@@ -1,5 +1,5 @@
 .whyshouldTMT-main1{
-    height: 70vh; 
+    height: auto; 
     width: 100%; 
     background-color: white; 
     display: flex; 
@@ -109,4 +109,42 @@
     left: 0;
     color: #eb7801;
     font-size: 18px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .whyshouldTMT-main2 {
+        flex-direction: column; /* Stack content vertically */
+    }
+
+    .whyshouldTMT-box1,
+    .whyshouldTMT-box2 {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .whyshouldTMT-header h1 {
+        font-size: 2rem; /* Adjust for smaller screens */
+    }
+
+    .whyshouldTMT-point p {
+        font-size: 1rem;
+    }
+
+    .whyshouldTMT-checklist li {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .whyshouldTMT-header h1 {
+        font-size: 1.8rem; /* Further adjust for very small screens */
+    }
+
+    .whyshouldTMT-point p {
+        font-size: 0.9rem;
+    }
+
+    .whyshouldTMT-checklist li {
+        font-size: 0.8rem;
+    }
 }

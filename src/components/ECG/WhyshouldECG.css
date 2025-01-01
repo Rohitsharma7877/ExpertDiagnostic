@@ -1,5 +1,5 @@
 .whyshouldECG-main1{
-    height: 70vh; 
+    height: auto; 
     width: 100%; 
     background-color: white; 
     display: flex; 
@@ -109,4 +109,42 @@
     left: 0;
     color: #eb7801;
     font-size: 18px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .whyshouldECG-main2 {
+        flex-direction: column; /* Stack content vertically */
+    }
+
+    .whyshouldECG-box1,
+    .whyshouldECG-box2 {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .whyshouldECG-header h1 {
+        font-size: 2rem; /* Adjust for smaller screens */
+    }
+
+    .whyshouldECG-point p {
+        font-size: 1rem;
+    }
+
+    .whyshouldECG-checklist li {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .whyshouldECG-header h1 {
+        font-size: 1.8rem; /* Further adjust for very small screens */
+    }
+
+    .whyshouldECG-point p {
+        font-size: 0.9rem;
+    }
+
+    .whyshouldECG-checklist li {
+        font-size: 0.8rem;
+    }
 }

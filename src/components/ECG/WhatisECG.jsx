@@ -34,7 +34,6 @@ const WhatisECG = () => {
                 Non-Invasive & Quick: The test is painless, quick, and requires
                 no incisions or injections.
               </li>
-              
             </ul>
           </div>
         </div>

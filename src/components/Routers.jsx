@@ -18,6 +18,12 @@ import EEGPage from "./pages/EEGPage";
 import PulmonaryFunctionTestPage from "./pages/PulmonaryFunctionTestPage";
 import UploadPrescription from "./UploadPrescription";
 import AboutPage from "./pages/AboutPage";
+import SignUpPage from "./pages/SignUpPage";
+import LoginPage from "./pages/LoginPage";
+import CartPage from "./pages/CartPage";
+import DownloadReportPage from "./pages/DownloadReportPage";
+import HomeCollection from "./HomeCollection";
+import BookAppointment from "./BookAppointment";
 // import About from "./AboutSection/About";
 
 
@@ -27,8 +33,13 @@ const Routers = () => {
       <Route path="/" element={<HomePage />} />
       {/* <Route path="/patient-portal" element={<PatientPortal />} /> */}
       <Route path="/doctor-portal" element={<DoctorPortal />} />
-
       <Route path="/upload-prescription" element={<UploadPrescription />} />
+      <Route path="/cart" element={<CartPage />} />
+      <Route path="/sign-up" element={<SignUpPage />} />
+      <Route path="/log-in" element={<LoginPage />} />
+      <Route path="/download-report" element={<DownloadReportPage />} />
+      <Route path="/home-collection" element={<HomeCollection />} />
+      <Route path="/book-appointment" element={<BookAppointment />} />
 
       
 

@@ -114,7 +114,7 @@
     background-color: #eb7801;
   }
   
-  .book-now-form {
+  .header-book-now-form {
     position: absolute;
     top: 25px;
     bottom: 5%;
@@ -141,7 +141,7 @@
     }
   }
   
-  .book-now-form h2 {
+  .header-book-now-form h2 {
     color: #603c86;
     text-align: left;
     font-size: 3.3vh;
@@ -152,11 +152,11 @@
     text-transform: uppercase;
   }
   
-  .form-group {
+  .header-form-group {
     margin-bottom: 5px;
   }
   
-  .form-group label {
+  .header-form-group label {
     display: block;
     font-weight: 600;
     margin-bottom: 1px;
@@ -164,7 +164,7 @@
     font-size: 14px;
   }
   
-  .form-group input {
+  .header-form-group input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -173,7 +173,7 @@
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
   }
   
-  .form-group input:focus {
+  .header-form-group input:focus {
     border-color: #eb7801;
     box-shadow: 0 0 8px rgba(235, 120, 1, 0.3);
     outline: none;
@@ -210,6 +210,6 @@
     font-style: italic;
   }
   
-  .book-now-form:hover {
+  .header-book-now-form:hover {
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
   }

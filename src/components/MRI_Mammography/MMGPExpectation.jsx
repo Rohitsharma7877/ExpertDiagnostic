@@ -19,7 +19,7 @@ const MMGPExpectation = () => {
           }`}
           onClick={() => handleClick("before")}
         >
-          Before the Test
+          Before Test
         </button>
         <button
           className={`ct-section-button ${
@@ -27,7 +27,7 @@ const MMGPExpectation = () => {
           }`}
           onClick={() => handleClick("during")}
         >
-          During the Test
+          During Test
         </button>
         <button
           className={`ct-section-button ${
@@ -35,7 +35,7 @@ const MMGPExpectation = () => {
           }`}
           onClick={() => handleClick("after")}
         >
-          After the Test
+          After Test
         </button>
       </div>
 

@@ -110,3 +110,41 @@
     color: #eb7801;
     font-size: 18px;
 }
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .whyshouldMMGP-main2 {
+        flex-direction: column; /* Stack content vertically */
+    }
+
+    .whyshouldMMGP-box1,
+    .whyshouldMMGP-box2 {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .whyshouldMMGP-header h1 {
+        font-size: 2rem; /* Adjust for smaller screens */
+    }
+
+    .whyshouldMMGP-point p {
+        font-size: 1rem;
+    }
+
+    .whyshouldMMGP-checklist li {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .whyshouldMMGP-header h1 {
+        font-size: 1.8rem; /* Further adjust for very small screens */
+    }
+
+    .whyshouldMMGP-point p {
+        font-size: 0.9rem;
+    }
+
+    .whyshouldMMGP-checklist li {
+        font-size: 0.8rem;
+    }
+}

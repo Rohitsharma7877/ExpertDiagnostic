@@ -1,6 +1,7 @@
 import React from "react";
 import "./companyabout.css";
 // import { RxDotFilled } from "react-icons/rx";
+import abtvideo from "./aboutVideo.mp4";
 
 const CompanyAbout = () => {
   return (
@@ -9,9 +10,15 @@ const CompanyAbout = () => {
         <div className="about-box2">
           <h1>About Us!</h1>
         </div>
+
+        {/* video */}
         <div className="about-box3">
-          {/* Meliora is a Latin adjective meaning "better". It may be used in the accusative and substantively */}
+          <video className="background-video" autoPlay loop muted>
+            <source src={abtvideo} type="video/mp4" />
+            Your video tag.
+          </video>
         </div>
+
         <div className="about-box4">
           <p>
             Expert Diagnostics fills the long-awaited gap for high-end
@@ -34,24 +41,6 @@ const CompanyAbout = () => {
             exceptional healthcare, making it a trusted name in the region.
           </p>
         </div>
-        {/* <div className="about-box5">
-          <div className="about-list">
-            <ul>
-              <li>
-                <p>
-                  <RxDotFilled />
-                </p>
-                <h1>MELIORA BRANDS</h1>
-              </li>
-              <li>
-                <p>
-                  <RxDotFilled />
-                </p>
-                <h1>MELIORA PRODUCTS </h1>
-              </li>
-            </ul>
-          </div>
-        </div> */}
       </div>
     </div>
   );

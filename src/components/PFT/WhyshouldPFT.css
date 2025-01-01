@@ -1,5 +1,5 @@
 .whyshouldPFT-main1{
-    height: 70vh; 
+    height: auto; 
     width: 100%; 
     background-color: white; 
     display: flex; 
@@ -103,10 +103,48 @@
 }
 
 
-.whyshouldCTScan-checklist li:before {
+.whyshouldPFT-checklist li:before {
     content: '✔';
     position: absolute;
     left: 0;
     color: #eb7801;
     font-size: 18px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .whyshouldPFT-main2 {
+        flex-direction: column; /* Stack content vertically */
+    }
+
+    .whyshouldPFT-box1,
+    .whyshouldPFT-box2 {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .whyshouldPFT-header h1 {
+        font-size: 2rem; /* Adjust for smaller screens */
+    }
+
+    .whyshouldPFT-point p {
+        font-size: 1rem;
+    }
+
+    .whyshouldPFT-checklist li {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .whyshouldPFT-header h1 {
+        font-size: 1.8rem; /* Further adjust for very small screens */
+    }
+
+    .whyshouldPFT-point p {
+        font-size: 0.9rem;
+    }
+
+    .whyshouldPFT-checklist li {
+        font-size: 0.8rem;
+    }
 }

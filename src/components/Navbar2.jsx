@@ -1,15 +1,30 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./navbar2.css";
-import { FaPhoneVolume } from "react-icons/fa6";
+import { FaPlus, FaMinus, FaPhoneVolume } from "react-icons/fa6";
 import { IoMdCloudDownload } from "react-icons/io";
 import { LuDot } from "react-icons/lu";
-import doctor from './assests/indianGroupDoctors.jpg'
+// import doctor from './assests/indianGroupDoctors.jpg'
 import { IoClose } from "react-icons/io5";
-
+import { RxHamburgerMenu } from "react-icons/rx";
+import "./navbar2.css";
 
 const Navbar2 = () => {
   const [showForm, setShowForm] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState(null);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+    setOpenSubmenu(null);
+  };
+
+  const toggleSubmenu = (menu) => {
+    setOpenSubmenu(openSubmenu === menu ? null : menu); // Toggle submenu
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
 
   const handleBookNowClick = () => {
     setShowForm(true);
@@ -20,8 +35,8 @@ const Navbar2 = () => {
   };
 
   return (
-    <div className="main1">
-      <nav className="navbar el-messiri-navbar">
+    <div className="navbar-container">
+      <nav className="desktop-navbar ">
         <ul className="nav-links ">
           <li>
             <Link to="/doctor-portal">Doctor Portal</Link>
@@ -38,9 +53,7 @@ const Navbar2 = () => {
                   <div className="droupdown-grid-box">
                     <div className="droupdown-list-tag1">
                       <li>
-                        <Link to="#">
-                          HAEMATOLOGY TESTS
-                        </Link>
+                        <Link to="#">HAEMATOLOGY TESTS</Link>
                         <div style={{ display: "flex", alignItems: "center" }}>
                           <LuDot style={{ marginRight: "8px" }} />
                           <p style={{ color: "#eb7801" }}>
@@ -89,16 +102,13 @@ const Navbar2 = () => {
                         <div style={{ display: "flex", alignItems: "center" }}>
                           <LuDot style={{ marginRight: "8px" }} />
                           <p style={{ color: "#eb7801" }}>Semen Analysis</p>
-                        </div>    
+                        </div>
                       </li>
                     </div>
 
-
-                <div className="droupdown-list-tag2">
+                    <div className="droupdown-list-tag2">
                       <li>
-                        <Link to="#">
-                          LIVER FUNCTION TESTS
-                        </Link>
+                        <Link to="#">LIVER FUNCTION TESTS</Link>
                         <div style={{ display: "flex", alignItems: "center" }}>
                           <LuDot style={{ marginRight: "8px" }} />
                           <p style={{ color: "#eb7801" }}>Semen Prepration</p>
@@ -148,7 +158,6 @@ const Navbar2 = () => {
                           <p style={{ color: "#eb7801" }}>Stool</p>
                         </div>
                       </li>
-                      
                     </div>
                     <div className="droupdown-list-tag1">
                       <li>
@@ -207,9 +216,7 @@ const Navbar2 = () => {
                     </div>
                     <div className="droupdown-list-tag1">
                       <li>
-                        <Link to="#">
-                          BODY FLUID ANALYSIS
-                        </Link>
+                        <Link to="#">BODY FLUID ANALYSIS</Link>
                         <div style={{ display: "flex", alignItems: "center" }}>
                           <LuDot style={{ marginRight: "8px" }} />
                           <p style={{ color: "#eb7801" }}>Cell Count</p>
@@ -321,7 +328,9 @@ const Navbar2 = () => {
                 <Link to="/radiology-test/x-ray">X-Ray</Link>
               </li>
               <li>
-                <Link to="/radiology-test/ultrasonography">Ultrasonography</Link>
+                <Link to="/radiology-test/ultrasonography">
+                  Ultrasonography
+                </Link>
               </li>
             </ul>
           </li>
@@ -334,6 +343,7 @@ const Navbar2 = () => {
               <li>
                 <Link to="/special-test/tmt">TMT</Link>
               </li>
+
               <li>
                 <Link to="/special-test/mri-mammography">MRI Mammography</Link>
               </li>
@@ -344,7 +354,9 @@ const Navbar2 = () => {
                 <Link to="/special-test/ecg">ECG</Link>
               </li>
               <li>
-                <Link to="/special-test/bone-density-test">Bone Density Test</Link>
+                <Link to="/special-test/bone-density-test">
+                  Bone Density Test
+                </Link>
               </li>
 
               <li>
@@ -358,28 +370,18 @@ const Navbar2 = () => {
             </ul>
           </li>
 
-          
           <li className="dropdown">
-            <Link to="/health-package">
+            <Link to="#">
               Expert Care Package <span className="down-icon">▼</span>
             </Link>
             <ul className="dropdown-menu">
               <li>
-                <Link to="/health-package/section1">Section 1</Link>
-              </li>
-              <li>
-                <Link to="/health-package/section2">Section 2</Link>
-              </li>
-              <li>
-                <Link to="/health-package/section3">Section 3</Link>
-              </li>
-              <li>
-                <Link to="/health-package/section4">Section 4</Link>
+                <Link to="/health-package/section1">Coming Soon...</Link>
               </li>
             </ul>
           </li>
           <li>
-            <Link to="/mobile" className="flex items-start gap-2">
+            <Link to="/download-report" className="flex items-start gap-2">
               <IoMdCloudDownload className="text-[18px] " />
               <div className="text-left text-[#f0a500]">Download Report</div>
             </Link>
@@ -387,31 +389,221 @@ const Navbar2 = () => {
           <li>
             <Link to="/mobile" className="flex items-start gap-2">
               <FaPhoneVolume className="text-[18px] " />
-              <div className="text-left text-[#f0a500]">
-                +91 0123456789
-                
-              </div>
+              <div className="text-left text-[#f0a500]">+91 0123456789</div>
             </Link>
           </li>
         </ul>
       </nav>
 
-      {showForm && (
+      {/* Navbar for Mobile */}
+      <nav className=" mobile-navbar">
+        <button className="hamburger-icon" onClick={toggleSidebar}>
+          <RxHamburgerMenu size={24} />
+        </button>
+      </nav>
+
+      {/* Sidebar Drawer */}
+      <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
+        <div className="sidebar-content">
+          <button className="close-icon" onClick={closeSidebar}>
+            <IoClose size={24} />
+          </button>
+          <ul className="sidebar-links">
+            <li>
+              <Link to="/doctor-portal" onClick={closeSidebar}>
+                Doctor Portal
+              </Link>
+            </li>
+
+            {/* Lab Test Menu */}
+            <li>
+              <div
+                className="submenu-header"
+                onClick={() => toggleSubmenu("labTest")}
+              >
+                <span>Lab Test</span>
+                {openSubmenu === "labTest" ? (
+                  <FaMinus className="submenu-icon" />
+                ) : (
+                  <FaPlus className="submenu-icon" />
+                )}
+              </div>
+              {openSubmenu === "labTest" && (
+                <ul className="slider-dropdown-menu">
+                  <li>
+                    <Link to="/lab-test/mri" onClick={closeSidebar}>
+                      MRI
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/lab-test/ct-scan" onClick={closeSidebar}>
+                      CT-Scan
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+
+            <li>
+              <div
+                className="submenu-header"
+                onClick={() => toggleSubmenu("radiologyTest")}
+              >
+                <span>Radiology Test</span>
+                {openSubmenu === "radiologyTest" ? (
+                  <FaMinus className="submenu-icon" />
+                ) : (
+                  <FaPlus className="submenu-icon" />
+                )}
+              </div>
+              {openSubmenu === "radiologyTest" && (
+                <ul className="slider-dropdown-menu">
+                  <li>
+                    <Link to="/radiology-test/mri" onClick={closeSidebar}>
+                      MRI
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/radiology-test/ct-scan" onClick={closeSidebar}>
+                      CT-Scan
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/radiology-test/x-ray" onClick={closeSidebar}>
+                      X-Ray
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/radiology-test/ultrasonography"
+                      onClick={closeSidebar}
+                    >
+                      Ultrasonography
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+
+            <li>
+              <div
+                className="submenu-header"
+                onClick={() => toggleSubmenu("specialTest")}
+              >
+                <span>Special Test</span>
+                {openSubmenu === "specialTest" ? (
+                  <FaMinus className="submenu-icon" />
+                ) : (
+                  <FaPlus className="submenu-icon" />
+                )}
+              </div>
+              {openSubmenu === "specialTest" && (
+                <ul className="slider-dropdown-menu">
+                  <li>
+                    <Link to="/special-test/tmt" onClick={closeSidebar}>
+                      TMT
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/special-test/mri-mammography"
+                      onClick={closeSidebar}
+                    >
+                      MRI Mammography
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/special-test/mammography" onClick={closeSidebar}>
+                      Mammography
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/special-test/ecg" onClick={closeSidebar}>
+                      ECG
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/special-test/bone-density-test"
+                      onClick={closeSidebar}
+                    >
+                      Bone Density Test
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/special-test/eeg" onClick={closeSidebar}>
+                      EEG
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/special-test/pulmonary-function-test"
+                      onClick={closeSidebar}
+                    >
+                      Pulmonary Function Test
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+
+            {/* <li>
+              <Link to="/radiology-test" onClick={closeSidebar}>
+                Expert Care Package
+              </Link>
+            </li> */}
+
+            <li>
+              <div
+                className="submenu-header"
+                onClick={() => toggleSubmenu("ExpertCarePackage")}
+              >
+                <span>Expert Care Package</span>
+                {openSubmenu === "ExpertCarePackage" ? (
+                  <FaMinus className="submenu-icon" />
+                ) : (
+                  <FaPlus className="submenu-icon" />
+                )}
+              </div>
+              {openSubmenu === "ExpertCarePackage" && (
+                <ul className="slider-dropdown-menu">
+                  <li>
+                    <Link to="/health-package/#" onClick={closeSidebar}>
+                      Coming Soon...
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+
+            <li>
+              <Link to="/download-report" onClick={closeSidebar}>
+                Download Report
+              </Link>
+            </li>
+            <li>
+              <Link to="/mobile" onClick={closeSidebar}>
+                +91 0123456789
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {isSidebarOpen && <div className="overlay" onClick={closeSidebar}></div>}
+
+      {/* {showForm && (
         <div className="form-overlay">
-          <div className="form-wrapper">
-            {/* Left Section: Image */}
+          <div className="form-wrapper"> 
             <div className="form-image-section">
               <img
                 src={doctor}
                 alt="Doctors"
                 className="form-image"
               />
-            </div>
-
-            {/* Right Section: Form */}
+            </div>  
             <div className="form-container">
-              {/* Close Icon */}
-              <button className="form-close-icon" onClick={handleCloseForm}>
+                <button className="form-close-icon" onClick={handleCloseForm}>
                 <IoClose size={24} color="#f44336" />
               </button>
               <h2>Book Your Tests</h2>
@@ -424,9 +616,10 @@ const Navbar2 = () => {
                 </button>
               </form>
             </div>
+
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

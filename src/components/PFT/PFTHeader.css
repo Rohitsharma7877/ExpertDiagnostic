@@ -75,6 +75,8 @@
   .PFTHeader-btn:hover {
     background-color: #7737a1;
   }
+
+  
   /* Modal styles */
   .form-overlay {
     position: fixed;
@@ -160,19 +162,19 @@
     background-color: #7737a1;
   }
   
-  .terms-container {
+  /* .terms-container {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between the checkbox and label */
+    gap: 10px; 
     margin: 10px 0;
     justify-content: center;
-    /* border: 1px solid red; */
+    
   }
   
   .terms-container input[type="checkbox"] {
-    width: 18px; /* Adjust size of checkbox */
+    width: 18px; 
     height: 18px;
-    accent-color: #5e2d89; /* Customize checkbox color */
+    accent-color: #5e2d89; 
     cursor: pointer;
   }
   
@@ -189,4 +191,149 @@
   
   .terms-container label a:hover {
     text-decoration: underline;
+  } */
+
+  /* Responsive styles using Media Queries */
+
+/* Mobile-first approach */
+@media (max-width: 768px) {
+  .PFTHeader-main2 {
+    height: auto;
+    padding: 5vh 0;
   }
+
+  .PFTHeader-box {
+    width: 100%;
+    padding: 0 10%;
+  }
+
+  .PFTHeader-title-box {
+    padding: 10% 5%;
+    text-align: center;
+  }
+
+  .PFTHeader-title {
+    font-size: 6vh;
+  }
+
+  .PFTHeader-title2 {
+    width: 90%;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .PFTHeader-buttons {
+    justify-content: center;
+    margin-top: 5%;
+  }
+
+  .PFTHeader-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .form-wrapper {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .form-image-section {
+    width: 100%;
+    height: 50%;
+  }
+
+  .form-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .book-test-form button {
+    font-size: 14px;
+  }
+
+  .terms-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .terms-container input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Tablet and larger devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .PFTHeader-main2 {
+    height: auto;
+    padding: 10vh 0;
+  }
+
+  .PFTHeader-box {
+    width: 60%;
+    padding: 0 10%;
+  }
+
+  .PFTHeader-title {
+    font-size: 8vh;
+  }
+
+  .PFTHeader-title2 {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .PFTHeader-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .form-wrapper {
+    width: 85%;
+  }
+
+  .form-container {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .book-test-form button {
+    font-size: 16px;
+  }
+}
+
+/* Desktop and larger devices */
+@media (min-width: 1025px) {
+  .PFTHeader-main2 {
+    height: 80vh;
+  }
+
+  .PFTHeader-box {
+    width: 50%;
+  }
+
+  .PFTHeader-title {
+    font-size: 10.5vh;
+  }
+
+  .PFTHeader-title2 {
+    font-size: 18px;
+  }
+
+  .PFTHeader-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .form-wrapper {
+    width: 60%;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+
+  .book-test-form button {
+    font-size: 16px;
+  }
+}

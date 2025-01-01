@@ -20,7 +20,7 @@ const ECGExpectation = () => {
           }`}
           onClick={() => handleClick("before")}
         >
-          Before the Test
+          Before Test
         </button>
         <button
           className={`eg-section-button ${
@@ -28,7 +28,7 @@ const ECGExpectation = () => {
           }`}
           onClick={() => handleClick("during")}
         >
-          During the Test
+          During Test
         </button>
         <button
           className={`eg-section-button ${
@@ -36,7 +36,7 @@ const ECGExpectation = () => {
           }`}
           onClick={() => handleClick("after")}
         >
-          After the Test
+          After Test
         </button>
       </div>
 

@@ -1,62 +1,46 @@
+/* Main Container Styles */
 .doctorPortal-main1 {
   height: auto;
-  padding-top: 17vh;
-  /* border: 1px solid black; */
+  padding-top: 18vh;
   width: 100%; 
 }
 
 .doctorPortal-main2 {
-  height: 80vh; /* Fills the parent container */
+  height: 80vh;
   width: 100%;
-  /* background-image: url(assests/doctorPortal.png); */
   background: url("./doctorPrtimg1.jpg") no-repeat center center/cover;
-
-  
 }
 
-
-.doctorPortal-box{
+.doctorPortal-box {
   height: auto;
   width: 50%;
-  /* border: 1px solid black; */
   box-sizing: border-box;
-  /* margin: 13% 5% 10% 2%; */
-  /* justify-content: center; */
-  /* text-align: start; */
-  /* align-items: center; */
 }
-.doctorPortal-title-box{
+
+.doctorPortal-title-box {
   height: auto;
   width: full;
-  /* border: 1px solid rgb(185, 14, 14); */
   justify-content: center;
-  /* text-align: start; */
   align-items: center;
   padding: 22% 5% 10% 10%;
 }
-.doctorPortal-title{
+
+.doctorPortal-title {
   font-size: 10.5vh;
   font-weight: 500;
-  /* width: auto; */
-  /* border: 1px solid rgb(20, 185, 14); */
   color: #eb7801;
-  /* justify-content: center; */
-  /* text-align: start; */
-  /* align-items: center; */
 }
 
 .doctorPortal-buttons {
   display: flex;
   justify-content: start;
   margin-top: 3%;
-  /* gap: 5px; */
 }
 
 .doctorPortal-btn {
   background-color: #5e2d89;
   color: #fff;
   border: none;
-  /* margin: 2% 5% 10% 2%; */
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -67,7 +51,7 @@
   background-color: #eb7801;
 }
 
-
+/* Contact Section */
 .contact-section {
   display: flex;
   justify-content: space-around;
@@ -94,7 +78,6 @@
   color: #ffffff;
 }
 
-
 /* Locations Section */
 .locations-section {
   display: flex;
@@ -106,12 +89,12 @@
   color: #5e2d89;
   font-family: 'El Messiri', sans-serif;
 }
-.locations-icon{
+.locations-icon {
   font-size: 20px;
   color: #603c86;
-} 
+}
 
-/* Modal styles */
+/* Modal Styles */
 .form-overlay {
   position: fixed;
   top: 0;
@@ -122,8 +105,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid red; */
 }
+
 .form-wrapper {
   display: flex;
   width: 80%;
@@ -134,10 +117,9 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Image section */
 .form-image-section {
   flex: 1;
-  background: #f3f3f3; /* Backup background in case image doesn't load */
+  background: #f3f3f3;
 }
 
 .form-image {
@@ -157,7 +139,6 @@
   text-align: center;
 }
 
-/* Close icon positioning */
 .form-close-icon {
   position: absolute;
   top: 10px;
@@ -165,11 +146,6 @@
   background: none;
   border: none;
   cursor: pointer;
-}
-
-
-.form-close-icon:hover {
-  transform: scale(1.1); /* Add a hover effect for the close icon */
 }
 
 .book-test-form input,
@@ -189,40 +165,70 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 10px;
 }
 
 .book-test-form button:hover {
   background-color: #7737a1;
 }
 
-.terms-container {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Space between the checkbox and label */
-  margin: 10px 0;
-  justify-content: center;
-  /* border: 1px solid red; */
-}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .doctorPortal-main2 {
+    height: auto;
+    padding: 2vh 0;
+  }
 
-.terms-container input[type="checkbox"] {
-  width: 18px; /* Adjust size of checkbox */
-  height: 18px;
-  accent-color: #5e2d89; /* Customize checkbox color */
-  cursor: pointer;
-}
+  .doctorPortal-box {
+    width: 100%;
+    padding: 0 10%;
+  }
 
-.terms-container label {
-  font-size: 14px;
-  line-height: 1.5;
-  cursor: pointer;
-}
+  .doctorPortal-title-box {
+    padding: 10% 5%;
+    text-align: center;
+  }
 
-.terms-container label a {
-  color: #5e2d89;
-  text-decoration: none;
-}
+  .doctorPortal-title {
+    font-size: 5vh;
+  }
 
-.terms-container label a:hover {
-  text-decoration: underline;
+  .doctorPortal-title2 {
+    width: 90%;
+    font-size: 12px;
+    text-align: center;
+  }
+  .contact-section {
+    flex-direction: column; /* Stack contact info vertically */
+    gap: 11px;
+  }
+.contact-icon{
+  font-size: 15px; 
+}
+  .contact-info {
+    font-size: 14px; /* Adjust font size */
+  }
+  .locations-section {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .doctorPortal-buttons {
+    justify-content: center;
+    margin-top: 2%;
+  }
+
+  .form-wrapper {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .form-image-section {
+    width: 100%;
+    height: 50%;
+  }
+
+  .form-container {
+    width: 100%;
+    padding: 15px;
+  }
 }

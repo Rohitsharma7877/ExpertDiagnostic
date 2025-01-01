@@ -13,10 +13,10 @@ function Header() {
       </video>
 
       {/* Book Now Form */}
-      <div className="book-now-form">
+      <div className="header-book-now-form">
         <h2>Book Test Now!</h2>
         <form>
-          <div className="form-group">
+          <div className="header-form-group">
             <label>Name:</label>
             <input
               type="text"
@@ -26,7 +26,7 @@ function Header() {
             />
           </div>
 
-          <div className="form-group">
+          <div className="header-form-group">
             <label>Mobile Number:</label>
             <input
               type="tel"
@@ -37,7 +37,7 @@ function Header() {
             />
           </div>
 
-          <div className="form-group">
+          <div className="header-form-group">
             <label>Appointment Date:</label>
             <input
               type="date"
@@ -46,7 +46,7 @@ function Header() {
             />
           </div>
 
-          <div className="form-group">
+          <div className="header-form-group">
             <label>Pincode:</label>
             <input
               type="text"

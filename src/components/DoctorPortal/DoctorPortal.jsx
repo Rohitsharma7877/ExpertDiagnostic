@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { FaPhoneVolume } from "react-icons/fa6"; // Import the close icon
-import doctor from './indianGroupDoctors.jpg'
+import doctor from './indianGroupDoctors.jpg';
 import "./doctorportal.css";
 import {
   FaPhone,
@@ -33,7 +33,9 @@ const DoctorPortal = () => {
               delivery and efficient management.
             </p>
             <div className="doctorPortal-buttons">
-              <button className="doctorPortal-btn" onClick={handleBookNowClick}>Book Now</button>
+              <button className="doctorPortal-btn" onClick={handleBookNowClick}>
+                Book Now
+              </button>
             </div>
           </div>
         </div>
@@ -64,8 +66,8 @@ const DoctorPortal = () => {
         <FaMapMarkerAlt className="locations-icon" />
         <p className="text-gray text-sm">
           <span className="text-black">Address: </span>
-          Expert Diagnostics Ground Floor Sri Venkatadri Arcade <br/>(Next to
-          Reliance Smart) 3rd Cross, 1st Main K R Puram, Hassan - 573201
+          Expert Diagnostics Ground Floor Sri Venkatadri Arcade <br />
+          (Next to Reliance Smart) 3rd Cross, 1st Main K R Puram, Hassan - 573201
         </p>
       </div>
       {showForm && (
@@ -73,11 +75,7 @@ const DoctorPortal = () => {
           <div className="form-wrapper">
             {/* Left Section: Image */}
             <div className="form-image-section">
-              <img
-                src={doctor}
-                alt="Doctors"
-                className="form-image"
-              />
+              <img src={doctor} alt="Doctors" className="form-image" />
             </div>
 
             {/* Right Section: Form */}
@@ -103,4 +101,4 @@ const DoctorPortal = () => {
   );
 };
 
-export default DoctorPortal;  
+export default DoctorPortal;

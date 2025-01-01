@@ -1,51 +1,92 @@
-/* General navbar styling */
-.el-messiri-navbar {
+.nav-form-overlay {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    z-index: 1000;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
+    justify-content: center;
+    z-index: 1000;
+    /* border: 1px solid red; */
   }
   
-  /* Background image changes for smaller screens */
-  @media (max-width: 768px) {
-    .el-messiri-navbar {
-      background-image: url('./assests/navbckimg.png'); /* Use a smaller background image */
-      background-size: cover;
-      background-position: center;
-    }
+  .book-test-container {
+    position: relative; /* To position the close button inside this container */
+    text-align: center;
+    padding: 20px;
+    font-family: 'El Messiri', sans-serif;
+    width: 50%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+    border-radius: 8px;
+    overflow: hidden;
+    /* border: 1px solid red; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
   
-    /* Hide search bar and login/signup on mobile */
-    .search-bar-container,
-    .flex.items-center.pl-15 {
-      display: none;
-    }
+  .book-test-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
   
-    /* Adjust spacing for mobile */
-    .container {
-      justify-content: space-between;
-      padding: 0 1rem;
-    }
+  .form-close-iconss {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
   
-    /* Ensure logo, Book Your Test, and Upload Prescription remain visible */
-    .flex.items-center.justify-center {
-      flex: 1;
-      justify-content: flex-start;
-    }
+  .form-close-iconss:hover {
+    transform: scale(1.2);
+  }
   
-    /* Book Your Test and Upload Prescription styling */
-    ul {
-      display: flex;
-      gap: 1rem;
-    }
+  .options-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    /* border: 1px solid red; */
+  }
   
-    ul li button,
-    ul li a {
-      font-size: 12px;
-      padding: 0.5rem 1rem;
-      text-align: center;
-    }
+  .option-card {
+    border: 1px solid #cce7e7;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    /* display: flex; */
+    /* justify-content: center; */
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+    /* border: 1px solid red; */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .option-card img {
+    width: 60%;
+
+    height: auto;
+    margin-bottom: 10px;
+    display: flex;
+    margin-left: 15%;
+    justify-content: center;
+    /* border: 1px solid red; */
+  }
+  
+  .option-card p {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
   }
   

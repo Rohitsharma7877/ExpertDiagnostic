@@ -74,3 +74,50 @@
     color: #603c86;
     font-weight: bold;
   }
+  /* Mobile Styles */
+@media (max-width: 768px) {
+  .whatisBoneDensity-container {
+    flex-direction: column; /* Stack columns vertically */
+    margin: 20px; /* Reduce margin on mobile */
+  }
+
+  .whatisBoneDensity-text {
+    padding: 10px;
+  }
+
+  .whatisBoneDensity-text h1 {
+    font-size: 20px; /* Smaller font for mobile */
+    text-align: center;
+  }
+
+  .whatisBoneDensity-text p {
+    font-size: 14px; /* Smaller text for mobile */
+    text-align: center;
+  }
+
+  .whatisBoneDensity-image {
+    margin-top: 20px; /* Add margin for spacing */
+    width: 100%;
+  }
+
+  .whatisBoneDensity-image img {
+    max-width: 100%; /* Make the image take full width */
+  }
+
+  .whatisBoneDensity-scanlist li {
+    font-size: 0.9rem; /* Smaller font on mobile */
+    padding: 5px 10px;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .whatisBoneDensity-container {
+    flex-direction: row; /* Keep the layout as row for tablets */
+    gap: 15px;
+  }
+
+  .whatisBoneDensity-image img {
+    max-width: 400px; /* Reduce image size on tablets */
+  }
+}

@@ -1,0 +1,233 @@
+/* General Styling */
+.HomeCollection-main{
+  /* height: 90vh; */
+  width: 100%;
+  /* border: 1px solid red; */
+  padding-top: 17vh;
+}
+.HomeCollection-container {
+display: flex; /* Add flexbox */
+justify-content: space-between; 
+align-items: center; 
+width: 80%;
+/* height: 80vh; */
+margin: 2rem auto;
+/* border: 1px solid red; */
+font-family: Arial, sans-serif;
+color: #333;
+gap: 2rem; 
+}
+
+.HomeCollection-image-container {
+width: 45%; 
+height: auto;
+text-align: center; 
+/* border: 1px solid red; */
+border-radius: 10px;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.HomeCollection-image-container img {
+width: 100%; 
+height: 600px;
+object-fit: cover; 
+/* border: 1px solid red; */
+border-radius: 10px; 
+}
+
+
+.HomeCollection-form-container {
+/* border: 1px solid red; */
+height: auto;
+width: 45%; 
+}
+
+.HomeCollection-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #603c86;
+  margin-bottom: 0.5rem;
+}
+
+.HomeCollection-subheading {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Container */
+.HomeCollection-form-container {
+  width: 60%;
+  gap: 2rem;
+}
+
+.HomeCollection-details-form {
+  width: 80%;
+  font-size: 0.8rem;
+  display: flex;
+  text-align: start;
+  flex-direction: column;
+  gap: 0.5%;
+}
+
+.HomeCollection-details-form label {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.HomeCollection-details-form input {
+  padding: 0.5rem; 
+  height: 40px; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.8rem; 
+  outline: none;
+  margin-bottom: 0.3rem;
+  /* border: 1px solid red; */
+}
+
+.HomeCollection-details-form select {
+  padding: 0.4rem;
+  height: 40px; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  outline: none;
+  margin-bottom: 0.3rem;
+}
+
+.HomeCollection-details-form input:focus {
+  border-color: #0072ce;
+}
+
+.HomeCollection-submit-btn {
+  padding: 0.8rem;
+  background: linear-gradient(90deg, #603c86, #d06601);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.HomeCollection-submit-btn:hover {
+  background-color: #6e2c94;
+}
+
+.HomeCollection-login-link {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.login-link {
+  color: #603c86;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-link:hover {
+  color: #d06601;
+}
+
+.HomeCollection-details-form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.HomeCollection-details-form div input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  outline: none;
+ 
+}
+
+.HomeCollection-gender{
+  font-size: 0.8rem;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  color: #666;
+  margin-bottom: 0.3rem;
+  width: 35%;
+}
+.HomeCollection-bookNow{
+  font-size: 0.8rem;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  margin-bottom: 0.3rem;
+  border-radius: 4px;
+  outline: none;
+  color: #666;
+  width: 35%;
+}
+.HomeCollection-state{
+  font-size: 0.8rem;
+  width: 35%;
+  
+  color: #666;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  margin-bottom: 0.3rem;
+}
+
+
+
+
+/* Mobile Version Styling */
+@media (max-width: 768px) {
+.HomeCollection-container {
+  flex-direction: column; /* Stack elements vertically */
+  width: 90%; /* Make container slightly smaller */
+  gap: 1.5rem; /* Reduce spacing */
+}
+
+.HomeCollection-image-container,
+.HomeCollection-form-container {
+  width: 100%; /* Full width for mobile */
+  height: auto; /* Allow dynamic height */
+}
+
+.HomeCollection-image-container img {
+  height: auto; /* Allow image to scale */
+  max-height: 400px; /* Optional: Limit max height */
+}
+
+ .HomeCollection-details-form input {
+  font-size: 0.8rem; /* Slightly smaller input fields */
+}
+
+.HomeCollection-submit-btn {
+  font-size: 0.9rem;
+ 
+  padding: 0.7rem; 
+}
+}
+
+/* Optional: Smaller Screens (e.g., Phones) */
+@media (max-width: 480px) {
+.HomeCollection-main {
+  padding-top: 10vh; /* Adjust padding for smaller viewports */
+}
+
+.HomeCollection-heading {
+  font-size: 1.5rem; /* Smaller heading */
+}
+
+.HomeCollection-subheading {
+  font-size: 0.9rem;
+}
+
+.HomeCollection-submit-btn {
+  font-size: 0.8rem;
+}
+}

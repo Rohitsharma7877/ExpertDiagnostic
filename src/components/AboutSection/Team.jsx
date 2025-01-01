@@ -8,7 +8,7 @@ const team = [
       "https://res.cloudinary.com/duw27lpbe/image/upload/v1733395581/Vijay_bt068t.jpg",
     name: "Dr. Vijay",
     designation: "Radiology Department",
-    description:"Dr. Vijay N. Raj, a distinguished radiologist with an MBBS from AIMS and DMRD/DNB from Manipal Hospital, has extensive expertise in neuroimaging, musculoskeletal, and cross-sectional radiology. With over six years as Head of Radiology in an 80-bedded multispecialty hospital, he has worked in top institutions like Manipal and Apollo Hospitals, contributing to peer-reviewed publications. A member of IRIA, Dr. Vijay is renowned for his clinical precision and passion for advanced imaging techniques.",
+    description:"Dr. Vijay N. Raj, a distinguished radiologist with an MBBS from AIMS and DMRD/DNB from Manipal Hospital, excels in neuroimaging, musculoskeletal, and cross-sectional radiology. With over six years leading the Radiology Department in a multispecialty hospital, he has contributed to top institutions like Manipal and Apollo Hospitals and peer-reviewed publications. A member of IRIA, he is celebrated for his clinical precision and expertise.",
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const team = [
       "https://res.cloudinary.com/duw27lpbe/image/upload/v1733395110/Prathiksha_llzepb.jpg",
     name: "Dr. Prateeksha",
     designation: "Radiology Department",
-    description:"Dr. Pratheeksha H.K., an accomplished obstetrician and gynecologist, is a GOLD medalist and best outgoing postgraduate from SDM Medical College, Dharwad. With expertise in obstetric and gynecological surgeries, growth scans, and high-risk pregnancy care, she serves as a consultant at Sahyaadri Multispeciality Hospital, Hassan. Dr. Pratheeksha is renowned for her academic excellence, research contributions, and commitment to delivering precise clinical diagnoses and compassionate care.",
+    description:"Dr. Pratheeksha H.K., a GOLD medalist and best outgoing postgraduate from SDM Medical College, is a skilled obstetrician and gynecologist. As a consultant at Sahyaadri Multispeciality Hospital, Hassan, she excels in surgeries, growth scans, and high-risk pregnancy care, combining academic excellence with compassionate care.",
   },
   {
     id: 4,
@@ -32,7 +32,7 @@ const team = [
       "https://res.cloudinary.com/dngcmfwpg/image/upload/v1733459755/Dr.Priyanka-removebg-preview_twwplv.png",
     name: "Dr. Priyanka",
     designation: "Radiology Department",
-    description:"Dr. Priyanka Gowda C.D., a consultant dermatologist, cosmetologist, and dermato-surgeon, holds an MD from JSS Medical College and a fellowship in dermatosurgery from CUTIS Hospital, Bangalore. Practicing at SSM Hospital, Hassan, she excels in medical and surgical dermatology and has published significant research on psoriasis in IJDVL. As a member of IADVL and ACIS, her expertise and contributions reflect a strong dedication to advancing dermatological care.",
+    description:"Dr. Priyanka Gowda C.D., a consultant dermatologist and dermato-surgeon with an MD from JSS Medical College, specializes in medical and surgical dermatology. Practicing at SSM Hospital, Hassan, she is a published researcher on psoriasis and a member of IADVL and ACIS, dedicated to advancing dermatological care.",
   },
   {
     id: 5,

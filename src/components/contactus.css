@@ -142,3 +142,93 @@ b {
     color: #603c86;
     font-size: 1rem;
 }
+
+
+@media (max-width: 768px) {
+    /* General Container adjustments for small screens */
+    .contactus-container {
+      flex-direction: column;
+      padding: 20px;
+      gap: 30px;
+      padding-top: 10vh;
+    }
+  
+    /* Adjust Header section layout */
+    .contactus-header {
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    /* Full-width for both form and map on mobile */
+    .contactus-left,
+    .contactus-right {
+      max-width: 100%;
+      padding: 20px;
+    }
+  
+    /* Adjust Form Inputs and Button */
+    .inputName,
+    textarea {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  
+    .contactus-submit-button {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+  
+    /* Map adjustments */
+    .contactus-map-container {
+      height: 300px; /* Reduce height for smaller screens */
+    }
+  
+    .contactus-title {
+      font-size: 1.8rem;
+      text-align: center; /* Center the title on mobile */
+    }
+  
+    .contactus-description {
+      font-size: 1rem;
+      text-align: center;
+    }
+  
+    .contactus-map-title {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .contactus-container {
+      padding: 15px;
+      gap: 20px;
+      padding-top: 18vh;
+    }
+  
+    .contactus-title,
+    .contactus-map-title {
+      font-size: 1.5rem;
+    }
+  
+    .contactus-description {
+      font-size: 0.9rem;
+    }
+  
+    .inputName,
+    textarea {
+      font-size: 0.85rem;
+      padding: 8px;
+    }
+  
+    .contactus-submit-button {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  
+    .contactus-map-container {
+      height: 250px; /* Reduce map height further for smaller screens */
+    }
+  }
+  

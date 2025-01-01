@@ -1,7 +1,6 @@
-import React from 'react'
-import './WhatisUTS.css'
+import React from "react";
+import "./WhatisUTS.css";
 import utimage2 from "./utsound2.jpg";
-
 
 const WhatisUTS = () => {
   return (
@@ -13,7 +12,13 @@ const WhatisUTS = () => {
         <h1>What is Ultrasonography?</h1>
         <div className="whatisUTS-list">
           <p>
-          Ultrasonography, or ultrasound, is a diagnostic imaging technique that uses high-frequency sound waves to create real-time images of internal organs, tissues, and blood flow. It is commonly used for pregnancy monitoring, detecting abnormalities, and guiding procedures like biopsies. This non-invasive and radiation-free method provides safe and quick insights into various medical conditions.
+            Ultrasonography, or ultrasound, is a diagnostic imaging technique
+            that uses high-frequency sound waves to create real-time images of
+            internal organs, tissues, and blood flow. It is commonly used for
+            pregnancy monitoring, detecting abnormalities, and guiding
+            procedures like biopsies. This non-invasive and radiation-free
+            method provides safe and quick insights into various medical
+            conditions.
           </p>
           <div className="whatisUTS-scanlist">
             <ul>
@@ -23,7 +28,8 @@ const WhatisUTS = () => {
               </li>
               <li>
                 <span className="check-icon">✔</span>
-                Safe, non-invasive, and widely used for pregnancy and diagnostics.
+                Safe, non-invasive, and widely used for pregnancy and
+                diagnostics.
               </li>
               <li>
                 <span className="check-icon">✔</span>
@@ -33,14 +39,12 @@ const WhatisUTS = () => {
                 <span className="check-icon">✔</span>
                 Ideal for emergency medical situations.
               </li> */}
-            
             </ul>
           </div>
-          
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default WhatisUTS
+export default WhatisUTS;

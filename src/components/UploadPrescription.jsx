@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import "./UploadPrescription.css";
+import uploadPrcpt from './assests/uploadPrcptn.png'
 
 const UploadPrescription = () => {
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
-    pincode: "",
+    // pincode: "",
   });
 
   const [uploadedFile, setUploadedFile] = useState(null);
@@ -30,7 +31,7 @@ const UploadPrescription = () => {
     e.preventDefault();
 
     // Check if the uploaded file and all form fields are filled
-    if (formData.name && formData.mobile && formData.pincode && uploadedFile) {
+    if (formData.name && formData.mobile  && uploadedFile) {
       console.log("Form Data:", formData);
       console.log("Uploaded File:", uploadedFile);
 
@@ -41,7 +42,7 @@ const UploadPrescription = () => {
       setFormData({
         name: "",
         mobile: "",
-        pincode: "",
+        // pincode: "",
       });
 
       setUploadedFile(null);
@@ -53,13 +54,18 @@ const UploadPrescription = () => {
   return (
     <div className="upload-prescription-main">
       <div className="upload-prescription-container">
-        <h2 className="heading">Upload prescription</h2>
-        <p className="subheading">
-          Save time, ensure privacy, and enjoy 24/7 accessibility with our
-          Streamlined process.
-        </p>
+        {/* Left Side - Image */}
+        <div className="image-container">
+          <img src={uploadPrcpt} alt="Prescription Illustration" />
+        </div>
 
+        {/* Right Side - Form */}
         <div className="form-container">
+          <h2 className="heading">Upload - Prescription</h2>
+          <p className="subheading">
+           Save time, stay private & access 24/7 with our streamlined process.
+          </p>
+
           {/* File Upload Box */}
           <div className="file-upload" {...getRootProps()}>
             <input {...getInputProps()} />
@@ -97,7 +103,7 @@ const UploadPrescription = () => {
               required
             />
 
-            <label htmlFor="pincode">Pincode</label>
+            {/* <label htmlFor="pincode">Pincode</label>
             <input
               type="text"
               id="pincode"
@@ -105,7 +111,7 @@ const UploadPrescription = () => {
               placeholder="Enter Your Area Pincode"
               value={formData.pincode}
               onChange={handleChange}
-            />
+            /> */}
 
             <button type="submit" className="submit-btn">
               Submit

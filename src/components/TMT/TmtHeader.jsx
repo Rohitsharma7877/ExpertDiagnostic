@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoClose } from "react-icons/io5"; // Import the close icon
-import doctor from './indianGroupDoctors.jpg'
+import doctor from "./indianGroupDoctors.jpg";
 import { FaHeart, FaHeartbeat, FaCalendarCheck } from "react-icons/fa"; // Import icons from react-icons
 
 import "./tmtHeader.css";
@@ -28,7 +28,9 @@ const TmtHeader = () => {
               you stay proactive about your heart care.
             </p>
             <div className="tmtHeader-buttons">
-              <button className="tmtHeader-btn" onClick={handleBookNowClick}>Book Now</button>
+              <button className="tmtHeader-btn" onClick={handleBookNowClick}>
+                Book Now
+              </button>
             </div>
           </div>
         </div>
@@ -38,11 +40,7 @@ const TmtHeader = () => {
           <div className="form-wrapper">
             {/* Left Section: Image */}
             <div className="form-image-section">
-              <img
-                src={doctor}
-                alt="Doctors"
-                className="form-image"
-              />
+              <img src={doctor} alt="Doctors" className="form-image" />
             </div>
 
             {/* Right Section: Form */}

@@ -1,268 +1,351 @@
 /* Diagnostic Service Container */
-.diagnosticservice-main{
-  height:auto ;
-    width: 100%;
-    /* border: 1px solid red; */
+.diagnosticservice-main {
+  height: auto;
+  width: 100%;
+  /* border: 1px solid red; */
 }
 .diagnosticservice-container {
-    /* margin-top: 450px; */
-    padding: 20px 50px;
-    text-align: center;
-    border-radius: 12px;
-    
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* margin-top: 450px; */
+  padding: 20px 50px;
+  text-align: center;
+  border-radius: 12px;
 
-  }
-  
-  .diagnosticservice-container h2 {
-    font-size: 40px;
-    color: #eb7801;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  /* Cards Section */
-  .diagnosticservice-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    /* border: 1px solid red; */
-  }
-  
-  .diagnosticservice-card:hover {
-    transform: translateY(-10px); /* Hover effect to lift the card */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
-  }
-  
-  .diagnosticservice-card {
-    width: calc(23% - 8px);
-    /* border: 1px solid red; */
-    /* background: linear-gradient(135deg, #fce4ec, #ffdfe9); */
-    background: linear-gradient(90deg, rgb(246, 245, 255) 0%, rgb(235, 184, 227) 50%, rgb(252, 236, 221) 100%);
-    /* background: linear-gradient(135deg, #f0f9ff, #b8f4fc); */
-    /* border: 1px solid #ddd; */
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Prevent content from overflowing */
-    position: relative;
-  }
-  
-  .diagnosticservice-card-image {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .diagnosticservice-card-title {
-    margin-top: 15px;
-    font-size: 18px;
-    color: #eb7801;
-    margin-bottom: 5px;
-  }
-  
-  .diagnosticservice-card-description {
-    font-size: 14px;
-    color: #000000;
-    margin-bottom: 10px;
-  }
-  
-  .diagnosticservice-actions {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-  }
-  
-  .diagnosticservice-booknow-button {
-    display: inline-block;
-    text-decoration: none;
-    color: #fff;
-    background-color: #603c86;
-    padding: 6px 10px;
-    width: 100%; /* Make the button take the full width of the card */
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-sizing: border-box; /* Ensure padding does not affect width calculation */
-  }
-  
-  .diagnosticservice-booknow-button:hover {
-    background-color: #eb7801;
-  }
-  
-  /* Modal Styles */
-  .diagnosticservice-modal-overlay {
-    /* border: 1px solid red; */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
-    align-items: flex-start;
-    padding-top: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .diagnosticservice-modal-content {
-    /* border: 1px solid red; */
-    display: flex;
-    background-color: white;
-    border-radius: 12px;
-    overflow: hidden;
-    width: 50%;
-    /* max-width: 700px; */
-    height: 450px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative; /* Ensure the parent has relative positioning */
-  }
-  
-  /* Modal Image */
-  
-  .diagnosticservice-modal-image {
-    flex: 0 0 50%; /* Set the width of the image to 40% (adjust as needed) */
-    background-size: cover;
-    background-position: center;
-    object-fit: contain;
-    
-  
-    /* width: 50%; */
-    height: 100%; /* Reduced height to make the image smaller */
-    border-radius: 0px 0 0 12px; /* Optional: Keep the rounded corners */
-    padding: 20px;
-    margin-left: 10px; /* Added space on the left */
-    margin-right: 10px; /* Added space on the right */
-    margin: auto;
-    display: flex;
-    justify-content: center; /* Centers the content inside the image container */
-    align-items: center; /* Centers the content inside the image container */
-  }
-  
-  /* Form-Specific Styles */
-  .diagnosticservice-modal-form {
-    flex: 1;
-    padding: 40px 20px 20px 20px; /* Added padding-top */
-    display: flex;
-    /* max-width: 50%; */
-    flex-direction: column;
-    /* gap: 1px; */
-    background: linear-gradient(135deg, #fff, #fff);
-    /* border: 1px solid red; */
-    /* border-radius: 12px; */
-    overflow-y: auto;
-    height: 100%;
-  }
-  
-  .diagnosticservice-modal-form h2 {
-    font-size: 22px; /* Smaller heading */
-    color: #eb7801;
-    font-weight: bold;
-    margin-bottom: 8px; /* Reduced margin */
-  }
-  
-  .diagser{
-    padding: 5px; /* Adjust padding to control the height */
-    line-height: 1.2;
-    border: 1px solid #ddd;
-    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
-    /* border: 1px solid red; */
-    border-radius: 5px;
-    background-color: #fff;
-    margin-bottom: 8px; /* Reduced margin for compact layout */
-    width: 100%; /* Ensure inputs take full width */
-    box-sizing: border-box; /* Prevent padding from affecting width */
-    font-size: 14px; /* Adjust font size if necessary */
-  }
-  
-  /* textarea {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.diagnosticservice-container h2 {
+  font-size: 40px;
+  color: #eb7801;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Cards Section */
+.diagnosticservice-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  /* border: 1px solid red; */
+}
+
+.diagnosticservice-card:hover {
+  transform: translateY(-10px); /* Hover effect to lift the card */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.diagnosticservice-card {
+  width: calc(20% - 10px);
+  background-color: #e6e6e6;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Prevent content from overflowing */
+  position: relative;
+}
+.diagnosticservice-card-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.diagnosticservice-card-title {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bolder;
+  border-radius: 3px;
+  background-color: #f7d6d6;
+  color: #eb7801;
+
+  margin-bottom: 5px;
+}
+
+.diagnosticservice-card-description {
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.diagnosticservice-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.diagnosticservice-booknow-button {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: #603c86;
+  padding: 6px 10px;
+  width: 100%; /* Make the button take the full width of the card */
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box; /* Ensure padding does not affect width calculation */
+}
+
+.diagnosticservice-booknow-button:hover {
+  background-color: #eb7801;
+}
+
+/* Modal Styles */
+.diagnosticservice-modal-overlay {
+  /* border: 1px solid red; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+  align-items: flex-start;
+  padding-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.diagnosticservice-modal-content {
+  /* border: 1px solid red; */
+  display: flex;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 50%;
+  /* max-width: 700px; */
+  height: 450px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative; /* Ensure the parent has relative positioning */
+}
+
+/* Modal Image */
+
+.diagnosticservice-modal-image {
+  flex: 0 0 50%; /* Set the width of the image to 40% (adjust as needed) */
+  background-size: cover;
+  background-position: center;
+
+  /* width: 50%; */
+  height: 50%; /* Reduced height to make the image smaller */
+  border-radius: 0px 0 0 12px; /* Optional: Keep the rounded corners */
+  padding: 20px;
+  margin-left: 10px; /* Added space on the left */
+  margin-right: 10px; /* Added space on the right */
+  margin: auto;
+  display: flex;
+  justify-content: center; /* Centers the content inside the image container */
+  align-items: center; /* Centers the content inside the image container */
+}
+
+/* Form-Specific Styles */
+/* Form-Specific Styles */
+.diagnosticservice-modal-form {
+  flex: 1;
+  padding: 40px 20px 20px 20px; /* Added padding-top */
+  display: flex;
+  /* max-width: 50%; */
+  flex-direction: column;
+  /* gap: 1px; */
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.diagnosticservice-modal-form h2 {
+  font-size: 22px; /* Smaller heading */
+  color: #eb7801;
+  font-weight: bold;
+  margin-bottom: 8px; /* Reduced margin */
+}
+
+.formBookNow input,
+.formBookNow textarea {
+  padding: 5px; /* Adjust padding to control the height */
+  line-height: 1.2;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 8px; /* Reduced margin for compact layout */
+  width: 100%; /* Ensure inputs take full width */
+  box-sizing: border-box; /* Prevent padding from affecting width */
+  font-size: 14px; /* Adjust font size if necessary */
+}
+
+.diagser {
+  padding: 5px; /* Adjust padding to control the height */
+  line-height: 1.2;
+  border: 1px solid #ddd;
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+  /* border: 1px solid red; */
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 8px; /* Reduced margin for compact layout */
+  width: 100%; /* Ensure inputs take full width */
+  box-sizing: border-box; /* Prevent padding from affecting width */
+  font-size: 14px; /* Adjust font size if necessary */
+}
+
+/* textarea {
     resize: vertical; 
     min-height: 60px;
   } */
-  
+
+input[type="submit"] {
+  background-color: #603c86;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 10px; /* Smaller padding */
+  font-size: 15px; /* Smaller font size */
+  width: 100%; /* Button spans the full width of the form */
+}
+
+input[type="submit"]:hover {
+  background-color: #eb7801;
+}
+/* Gender Selection */
+.diagnosticservice-gender-selection {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 8px;
+  gap: 6px; /* Smaller gap for gender selection */
+  margin-bottom: 8px; /* Reduced margin */
+}
+
+.diagnosticservice-gender-selection label {
+  font-size: 13px;
+  color: #333;
+}
+
+.diagnosticservice-gender-selection input {
+  margin-right: 5px;
+}
+
+/* Close Modal Button */
+.diagnosticservice-close-modal {
+  position: absolute; /* Position relative to the modal content */
+  top: 10px; /* Adjust to the top edge */
+  right: 40px; /* Adjust to the right edge */
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #eb7801;
+  z-index: 1; /* Ensure it's above other content */
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Style for the custom checkbox */
+input[type="checkbox"] {
+  width: 20px;
+  height: 30px;
+  top: 12px;
+  left: -10px;
+  border: 2px solid #ccc;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Custom checked style */
+input[type="checkbox"]:checked + label {
+  background-color: #eb7801;
+}
+
+/* Add a check mark inside the box when checked */
+input[type="checkbox"]:checked + label::after {
+  content: "✔";
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  color: white;
+}
+.diagnostic-Condition {
+  background-color: yellow;
+}
+
+/* Media Query for Tablet Devices */
+@media (max-width: 768px) {
+  .diagnosticservice-container {
+    padding: 15px 20px;
+  }
+
+  .diagnosticservice-card {
+    width: calc(50% - 10px); /* Reduce card width for smaller screens */
+  }
+
+  .diagnosticservice-card-title {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .diagnosticservice-booknow-button {
+    font-size: 16px; /* Adjust button font size */
+    padding: 5px 8px; /* Adjust padding */
+  }
+
+  .diagnosticservice-modal-content {
+    width: 80%; /* Make modal smaller on tablets */
+    height: auto; /* Adjust height dynamically */
+    flex-direction: column; /* Stack content vertically */
+  }
+
+  .diagnosticservice-modal-image {
+    height: 200px; /* Adjust modal image height */
+    margin: 0 auto; /* Center image */
+  }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+  .diagnosticservice-container {
+    padding: 10px 15px;
+  }
+
+  .diagnosticservice-card {
+    width: calc(100% - 10px); /* Make cards full width */
+  }
+
+  .diagnosticservice-card-title {
+    font-size: 14px; /* Further reduce font size */
+  }
+
+  .diagnosticservice-booknow-button {
+    font-size: 14px; /* Adjust button font size */
+    padding: 4px 6px; /* Adjust padding */
+  }
+
+  .diagnosticservice-modal-content {
+    width: 90%; /* Further reduce modal width */
+    height: auto; /* Adjust height dynamically */
+    flex-direction: column; /* Stack content vertically */
+  }
+
+  .diagnosticservice-modal-image {
+    height: 150px; /* Adjust modal image height */
+    margin: 0 auto; /* Center image */
+  }
+
+  .formBookNow input,
+  .formBookNow textarea {
+    font-size: 12px; /* Adjust input font size */
+  }
+
   input[type="submit"] {
-    background: linear-gradient(90deg, rgba(2,0,36,1) 22%, rgba(96,60,134,1) 57%, rgba(235,120,1,1) 84%);
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-    padding: 10px; /* Smaller padding */
-    font-size: 15px; /* Smaller font size */
-    width: 100%; /* Button spans the full width of the form */
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #eb7801;
-  }
-  
-  /* Gender Selection */
-  .diagnosticservice-gender-selection {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 8px;
-    gap: 6px; /* Smaller gap for gender selection */
-    margin-bottom: 8px; /* Reduced margin */
-  }
-  
-  .diagnosticservice-gender-selection label {
-    font-size: 13px;
-    color: #333;
-  }
-  
-  .diagnosticservice-gender-selection input {
-    margin-right: 5px;
-  }
-  
-  /* Close Modal Button */
-  .diagnosticservice-close-modal {
-    position: absolute; /* Position relative to the modal content */
-    top: 10px; /* Adjust to the top edge */
-    right: 40px; /* Adjust to the right edge */
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #000000;
-    z-index: 1; /* Ensure it's above other content */
-  }
-  
-  /* Hide the default checkbox */
-  input[type="checkbox"] {
-    display: none;
-  }
-  
-  /* Style for the custom checkbox */
-  input[type="checkbox"] {
-    width: 20px;
-    height: 30px;
-    top: 12px;
-    left: -10px;
-    border: 2px solid #ccc;
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-  }
-  
-  /* Custom checked style */
-  input[type="checkbox"]:checked + label {
-    background-color: #eb7801;
-  }
-  
-  /* Add a check mark inside the box when checked */
-  input[type="checkbox"]:checked + label::after {
-    content: "✔";
-    position: absolute;
-    top: 1px;
-    left: 2px;
-    color: white;
-  }
+    font-size: 14px; /* Adjust button font size */
+    padding: 8px; /* Adjust padding */
+}
+}

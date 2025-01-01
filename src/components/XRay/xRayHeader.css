@@ -191,3 +191,149 @@
 .terms-container label a:hover {
   text-decoration: underline;
 }
+
+
+/* Responsive styles using Media Queries */
+
+/* Mobile-first approach */
+@media (max-width: 768px) {
+  .xRayHeader-main2 {
+    height: auto;
+    padding: 5vh 0;
+  }
+
+  .xRayHeader-box {
+    width: 100%;
+    padding: 0 10%;
+  }
+
+  .xRayHeader-title-box {
+    padding: 10% 5%;
+    text-align: center;
+  }
+
+  .xRayHeader-title {
+    font-size: 6vh;
+  }
+
+  .xRayHeader-title2 {
+    width: 90%;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .xRayHeader-buttons {
+    justify-content: center;
+    margin-top: 5%;
+  }
+
+  .xRayHeader-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .form-wrapper {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .form-image-section {
+    width: 100%;
+    height: 50%;
+  }
+
+  .form-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .book-test-form button {
+    font-size: 14px;
+  }
+
+  .terms-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .terms-container input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Tablet and larger devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .xRayHeader-main2 {
+    height: auto;
+    padding: 10vh 0;
+  }
+
+  .xRayHeader-box {
+    width: 60%;
+    padding: 0 10%;
+  }
+
+  .xRayHeader-title {
+    font-size: 8vh;
+  }
+
+  .xRayHeader-title2 {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .xRayHeader-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .form-wrapper {
+    width: 85%;
+  }
+
+  .form-container {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .book-test-form button {
+    font-size: 16px;
+  }
+}
+
+/* Desktop and larger devices */
+@media (min-width: 1025px) {
+  .xRayHeader-main2 {
+    height: 80vh;
+  }
+
+  .xRayHeader-box {
+    width: 50%;
+  }
+
+  .xRayHeader-title {
+    font-size: 10.5vh;
+  }
+
+  .xRayHeader-title2 {
+    font-size: 18px;
+  }
+
+  .xRayHeader-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .form-wrapper {
+    width: 60%;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+
+  .book-test-form button {
+    font-size: 16px;
+  }
+}
