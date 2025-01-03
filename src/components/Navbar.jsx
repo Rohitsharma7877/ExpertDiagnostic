@@ -1,18 +1,22 @@
 import React, { useState } from "react";
 import { GrSearch } from "react-icons/gr";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "./assests/logo.png";
-import navbarImage from "./assests/navbckimg.png";
 import { IoClose } from "react-icons/io5";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoMdCloudUpload } from "react-icons/io";
-import "./Navbar.css";
+import { FcReadingEbook } from "react-icons/fc";
+import { TbNotebook } from "react-icons/tb";
+import { HiMenu } from "react-icons/hi";
+import logo from "./assests/logo.png";
+import navbarImage from "./assests/navbckimg.png";
 import homecollect from "./assests/homecollection1.png";
 import hospitalimage from "./assests/hospitalimage.png";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [showForm, setShowForm] = useState(false); // Controls modal visibility
   const [search, setSearch] = useState(""); // Controls search input
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Hamburger menu toggle
   const navigate = useNavigate();
   const searchInput = useLocation();
   const URLSearch = new URLSearchParams(searchInput?.search);
@@ -21,16 +25,6 @@ const Navbar = () => {
   if (searchQuery.length > 0) {
     setSearch(searchQuery[0]);
   }
-
-  const handleBookNowClick = () => {
-    // Open the modal form
-    setShowForm(true);
-  };
-
-  const handleCloseForm = () => {
-    console.log("Close button clicked");
-    setShowForm(false);
-};
 
   const handleSearch = (e) => {
     const { value } = e.target;
@@ -45,8 +39,9 @@ const Navbar = () => {
 
   return (
     <>
+      {/* Navbar Container */}
       <header
-        className="el-messiri-navbar h-16 shadow-md fixed w-full z-1000"
+        className="el-messiri-navbar h-16   fixed w-full z-50"
         style={{
           backgroundImage: `url(${navbarImage})`,
           backgroundSize: "cover",
@@ -54,105 +49,172 @@ const Navbar = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="container w-[100%] flex items-center justify-between px-5 h-full">
-          <div className="flex items-center justify-center">
-            <Link to={"/"}>
-              <img src={logo} alt="Logo" className="w-21 h-16 object-contain" />
-            </Link>
-          </div>
+        <div className="container flex items-center justify-between px-4 h-full">
+          {/* Logo */}
+          <Link to={"/"}>
+            <img 
+            src={logo} 
+            alt="Logo" 
+            className="w-[80%] h-16 object-contain" />
+          </Link>
 
-          <div className="hidden lg:flex items-start justify-center flex-grow pr-18 search-bar-container">
-            <div className="flex items-center justify-center max-w-sm w-full mx-auto border rounded-full focus-within:shadow pl-2 bg-transparent bg-white">
+          {/* Search Bar */}
+          <div className="flex-1 lg:flex items-center justify-center max-w-sm mx-auto w-11/12 sm:w-3/4 md:w-2/3 lg:w-full">
+            <div className=" search-bar flex items-center border rounded-full pl-2 bg-white w-full">
               <input
                 type="text"
                 placeholder="Search product here..."
-                className="w-full outline-none bg-transparent text-black placeholder-gray-500"
+                className="w-full outline-none bg-transparent text-black placeholder-gray-500 px-2"
                 onChange={handleSearch}
                 value={search}
               />
-              <div className="text-lg min-w-[50px] h-8 cursor-pointer bg-[#eb7801] flex items-center justify-center rounded-r-full text-white">
+              <button className="text-lg bg-orange-500 text-white p-2 rounded-full">
                 <GrSearch />
-              </div>
+              </button>
             </div>
-
-            <ul className="flex space-x-4 ml-4">
-              <li>
-                <button
-                  onClick={handleBookNowClick} // Open modal
-                  className="text-[#ffffff] no-underline text-[14px] font-bold py-2 px-4 block transition-all duration-300 hover:text-[#f0a500] italic"
-                >
-                  Book Your Test
-                </button>
-              </li>
-              <li>
-                <Link
-                  to="/upload-prescription"
-                  className="flex items-center gap-2 text-[#ffffff] no-underline text-[14px] font-bold py-2 px-4 block transition-all duration-300 hover:text-[#f0a500] italic"
-                >
-                  <IoMdCloudUpload className="text-[18px]" />
-                  Upload Prescription
-                </Link>
-              </li>
-            </ul>
           </div>
 
-          <div className="flex items-center gap-4 px-2 sm:ml-6">
-            <div>
-              <Link to={"/cart"} className="text-2xl relative">
-                <span>
-                  <FaShoppingCart />
-                </span>
-                <div className="bg-red-600 text-white w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-2 -right-3">
-                  <p className="text-sm">1</p>
-                </div>
-              </Link>
-            </div>
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <button
+              onClick={() => setShowForm(true)}
+              className=" flex items-center text-white text-sm font-bold py-2 px-4 hover:text-orange-500"
+            >
+              <TbNotebook  className="mr-1 relative -top-0 text-lg" />
+              Book Test
+            </button>
             <Link
-              to={"/log-in"}
-              className="px-5 py-1 rounded-full text-white bg-purpleCustom hover:bg-orange-700"
+              to="/upload-prescription"
+              className="flex items-center text-white text-sm font-bold py-2 px-4 hover:text-orange-500"
+            >
+              <IoMdCloudUpload className="mr-1 relative -top-0 text-lg " />
+              Upload Prescription
+            </Link>
+            <Link to="/cart" className="relative text-white text-lg">
+              <FaShoppingCart />
+              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-1">
+                1
+              </span>
+            </Link>
+            <Link
+              to="/log-in"
+              className="text-white bg-[#603c86] hover:bg-orange-700 px-4 py-2 rounded-full text-sm"
             >
               Login
             </Link>
             <Link
-              to={"/sign-up"}
-              className="px-5 py-1 rounded-full text-white bg-purpleCustom hover:bg-orange-700"
-              style={{ whiteSpace: "nowrap" }}
+              to="/sign-up"
+              className="text-white bg-[#603c86] hover:bg-orange-700 px-4 py-2 rounded-full text-sm"
             >
               Sign Up
             </Link>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden text-2xl text-white"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <HiMenu />
+          </button>
         </div>
-      </header>
-      {showForm && (
-        <div className="nav-form-overlay" onClick={handleCloseForm}>
-        <div
-      className="book-test-container"
-      onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
-    >
-            <button className="form-close-iconss" onClick={handleCloseForm}>
-              <IoClose size={24} color="#f44336" />
-            </button>
-            <h2>Book Your Test</h2>
-            <div className="options-container">
-              <div
-                className="option-card"
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden absolute top-30 left-0 w-full  bg-white shadow-md z-40">
+            <div className="flex flex-col items-start p-4 space-y-4">
+              <button
                 onClick={() => {
-                  setShowForm(false); // Close the form
-                  navigate("/home-collection"); // Navigate to Home Collection
+                  setShowForm(true);
+                  setIsMobileMenuOpen(false);
+                }}
+                className=" flex items-center text-gray-800 text-sm font-bold hover:text-orange-700"
+              >
+                <TbNotebook  className="mr-1 relative -top-0 text-lg" />
+                Book Test
+              </button>
+              <Link
+                to="/upload-prescription"
+                className="flex items-center text-gray-800 text-sm font-bold hover:text-orange-700"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <IoMdCloudUpload className="mr-1 relative -top-0 text-lg" />
+                Upload Prescription
+              </Link>
+              <Link
+                to="/cart"
+                className="flex items-center text-gray-800 text-sm font-bold hover:text-orange-700"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <FaShoppingCart className="mr-1 relative -top-0 text-lg" />
+                Cart
+              </Link>
+              <Link
+                to="/log-in"
+                className="text-sm font-bold text-white bg-[#603c86] hover:bg-orange-700 px-4 py-2 rounded-full"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Login
+              </Link>
+              <Link
+                to="/sign-up"
+                className="text-sm font-bold text-white bg-[#603c86] hover:bg-orange-700 px-4 py-2 rounded-full"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Sign Up
+              </Link>
+            </div>
+          </div>
+        )}
+      </header>
+
+      {/* Modal for Booking Tests */}
+      {showForm && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50"
+          onClick={() => setShowForm(false)}
+        >
+          <div
+            className="bg-white bg-opacity-90  p-4 md:p-8 w-[90%] md:w-[70%] lg:w-[50%] max-w-3xl rounded-lg shadow-lg relative flex flex-col items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-2 right-2 text-red-500"
+              onClick={() => setShowForm(false)}
+            >
+              <IoClose size={24} />
+            </button>
+            <h2 className="text-lg md:text-xl font-bold mb-4 text-center">
+              Book Your Test
+            </h2>
+            <div className="flex flex-col md:flex-row gap-6">
+              <div
+                className="flex flex-col items-center cursor-pointer  bg-white  rounded-lg p-4 transition-transform duration-300 hover:shadow-lg hover:scale-105 w-full md:w-1/2"
+                onClick={() => {
+                  setShowForm(false);
+                  navigate("/home-collection");
                 }}
               >
-                <img src={homecollect} alt="Home Collection" />
-                <p>Home Collection</p>
+                <img
+                  src={homecollect}
+                  alt="Home Collection"
+                  className="w-28 h-16 md:w-40 md:h-20 object-cover"
+                />
+                <p className="mt-5 text-sm md:text-base">Home Collection</p>
               </div>
               <div
-                className="option-card"
+                className="flex flex-col items-center cursor-pointer bg-white   rounded-lg p-4 transition-transform duration-300 hover:shadow-lg hover:scale-105 w-full md:w-1/2"
                 onClick={() => {
-                  setShowForm(false); // Close the form
-                  navigate("/book-appointment"); // Navigate to Book Appointment
+                  setShowForm(false);
+                  navigate("/book-appointment");
                 }}
               >
-                <img src={hospitalimage} alt="Book Your Appointment" />
-                <p>Book Appointment</p>
+                <img
+                  src={hospitalimage}
+                  alt="Book Appointment"
+                  className="w-28 h-16 md:w-40 md:h-20 object-cover"
+                />
+                <p className="mt-5 text-sm md:text-base">Book Appointment</p>
               </div>
             </div>
           </div>

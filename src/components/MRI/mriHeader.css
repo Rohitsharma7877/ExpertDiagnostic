@@ -1,11 +1,11 @@
 .mRIHeader-main1 {
   height: auto;
   width: 100%;
-  padding-top: 17vh;
+  padding-top: 18vh;
 }
 
 .mRIHeader-main2 {
-  height: 80vh;
+  height: 70vh;
   width: 100%;
   background-image: url("./mriimgg2.jpg");
   background-size: cover;
@@ -36,6 +36,17 @@
 .mRIHeader-title2 {
   width: 80%;
   font-family: 'El Messiri', sans-serif;
+}
+.mRIHeader-title2 {
+  color: #000000;
+  background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Adjust blur intensity */
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light box shadow */
+  display: flex;
+  padding: 1%;
 }
 
 .mRIHeader-buttons {
@@ -176,6 +187,10 @@
 
 /* Mobile-first approach */
 @media (max-width: 768px) {
+  .mRIHeader-main1{
+    margin: 0;
+    padding: 0;
+  }
   .mRIHeader-main2 {
     height: auto;
     padding: 5vh 0;

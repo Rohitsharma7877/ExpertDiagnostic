@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoClose } from "react-icons/io5"; // Import the close icon
-import doctor from './indianGroupDoctors.jpg'
+import doctor from "./indianGroupDoctors.jpg";
 import "./ctScanHeader.css";
 
 const CTScanHeader = () => {
@@ -20,11 +20,16 @@ const CTScanHeader = () => {
           <div className="ctscanHeader-title-box">
             <h1 className="ctscanHeader-title">CT Scan</h1>
             <p className="ctscanHeader-title2">
-            A 128-slice CT scan with cardiac CT capability provides high-resolution imaging for detailed assessments of the heart and other body parts. It ensures accurate diagnoses with faster scanning and enhanced clarity.
+              A 128-slice CT scan with cardiac CT capability provides
+              high-resolution imaging for detailed assessments of the heart and
+              other body parts. It ensures accurate diagnoses with faster
+              scanning and enhanced clarity.
             </p>
             <div className="ctscanHeader-buttons">
-            <button className="ctscanHeader-btn" onClick={handleBookNowClick}>Book Now</button>
-          </div>
+              <button className="ctscanHeader-btn" onClick={handleBookNowClick}>
+                Book Now
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -33,11 +38,7 @@ const CTScanHeader = () => {
           <div className="form-wrapper">
             {/* Left Section: Image */}
             <div className="form-image-section">
-              <img
-                src={doctor}
-                alt="Doctors"
-                className="form-image"
-              />
+              <img src={doctor} alt="Doctors" className="form-image" />
             </div>
 
             {/* Right Section: Form */}

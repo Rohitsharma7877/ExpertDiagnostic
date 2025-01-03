@@ -4,7 +4,7 @@
   margin-top: 64px;
   background-color: white;
   position: fixed;
-  z-index: 1000;
+  z-index: 9;
   /* border: 1px solid red; */
 }
 
@@ -17,6 +17,7 @@
   width: 100%;
   height: 45px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-top: none;
 }
 
 .nav-links {
@@ -85,9 +86,9 @@
   display: none;
   justify-content: space-between;
   align-items: center;
-  padding: 0 15px;
+  padding: 5px 15px;
   background-color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
 }
 
 .hamburger-icon {
@@ -98,7 +99,7 @@
 
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 10;
   left: 0;
   width: 250px;
   height: 100%;
@@ -118,14 +119,7 @@
   padding: 20px;
 }
 
-.close-icon {
-  /* background: none; */
-  /* border: none; */
-  /* font-size: 24px; */
-  /* color: #603c86; */
-  /* cursor: pointer; */
-  /* margin-left: auto; */
-}
+
 .close-icon {
   position: absolute;
   top: 15px; /* Distance from the top */
@@ -328,7 +322,7 @@
 /* Image section */
 .form-image-section {
   flex: 1;
-  background: #f3f3f3; /* Backup background in case image doesn't load */
+  background: #f3f3f3; 
 }
 
 .form-image {

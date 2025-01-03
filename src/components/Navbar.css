@@ -90,3 +90,14 @@
     font-weight: bold;
   }
   
+  @media (max-width: 640px) {
+    .search-bar {
+      width: 90%; 
+    }
+    .logo {
+      width: 20%; 
+      height: 4rem; 
+    }
+  }
+
+ 

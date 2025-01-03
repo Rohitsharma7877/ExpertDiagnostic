@@ -39,7 +39,7 @@ const Navbar2 = () => {
       <nav className="desktop-navbar ">
         <ul className="nav-links ">
           <li>
-            <Link to="/doctor-portal">Doctor Portal</Link>
+            <Link to="/patient-portal">Patient Portal</Link>
           </li>
 
           <li className="dropdown">
@@ -410,8 +410,8 @@ const Navbar2 = () => {
           </button>
           <ul className="sidebar-links">
             <li>
-              <Link to="/doctor-portal" onClick={closeSidebar}>
-                Doctor Portal
+              <Link to="/patient-portal" onClick={closeSidebar}>
+              Patient Portal
               </Link>
             </li>
 
@@ -431,15 +431,11 @@ const Navbar2 = () => {
               {openSubmenu === "labTest" && (
                 <ul className="slider-dropdown-menu">
                   <li>
-                    <Link to="/lab-test/mri" onClick={closeSidebar}>
-                      MRI
+                    <Link to="#" onClick={closeSidebar}>
+                      Book Now
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/lab-test/ct-scan" onClick={closeSidebar}>
-                      CT-Scan
-                    </Link>
-                  </li>
+                  
                 </ul>
               )}
             </li>
@@ -547,12 +543,6 @@ const Navbar2 = () => {
               )}
             </li>
 
-            {/* <li>
-              <Link to="/radiology-test" onClick={closeSidebar}>
-                Expert Care Package
-              </Link>
-            </li> */}
-
             <li>
               <div
                 className="submenu-header"
@@ -591,35 +581,6 @@ const Navbar2 = () => {
       </div>
 
       {isSidebarOpen && <div className="overlay" onClick={closeSidebar}></div>}
-
-      {/* {showForm && (
-        <div className="form-overlay">
-          <div className="form-wrapper"> 
-            <div className="form-image-section">
-              <img
-                src={doctor}
-                alt="Doctors"
-                className="form-image"
-              />
-            </div>  
-            <div className="form-container">
-                <button className="form-close-icon" onClick={handleCloseForm}>
-                <IoClose size={24} color="#f44336" />
-              </button>
-              <h2>Book Your Tests</h2>
-              <form className="book-test-form">
-                <input type="text" placeholder="Name" required />
-                <input type="email" placeholder="Email" required />
-                <textarea placeholder="Message" rows="5" required></textarea>
-                <button type="submit" className="form-submit-btn">
-                  Submit
-                </button>
-              </form>
-            </div>
-
-          </div>
-        </div>
-      )} */}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import './Cart.css'
-
+import "./Cart.css";
+import { GrSearch } from "react-icons/gr";
 
 const initialProducts = [
   {
@@ -15,13 +15,7 @@ const initialProducts = [
     name: "Covid Test",
     price: 220,
     quantity: 1,
-  },
-  {
-    id: 3,
-    name: "ECG Test",
-    price: 100,
-    quantity: 1,
-  },
+  }
 ];
 
 const Cart = () => {
@@ -67,9 +61,10 @@ const Cart = () => {
   };
 
   if (showMemberDetails) {
-    // Member Details Form
+    // Member Details Form will change
     return (
       <div
+        className="user-details-container"
         style={{
           padding: "20px",
           fontFamily: "Arial, sans-serif",
@@ -80,6 +75,7 @@ const Cart = () => {
       >
         <h3>User Details</h3>
         <div
+          className="form-section"
           style={{
             display: "flex",
             justifyContent: "space-between",
@@ -191,7 +187,7 @@ const Cart = () => {
                     width: "100%",
                     padding: "10px",
                     marginTop: "5px",
-                    boxSizing: "border-box", 
+                    boxSizing: "border-box",
                   }}
                 />
               </div>
@@ -212,6 +208,7 @@ const Cart = () => {
 
           {/* Payment Details Section */}
           <div
+            className="payment-section"
             style={{
               flex: 1,
               background: "#fff",
@@ -266,7 +263,7 @@ const Cart = () => {
               </button>
 
               <button
-              onClick={handleOpenPaymentModal}
+                onClick={handleOpenPaymentModal}
                 style={{
                   padding: "10px 20px",
                   background: "#007BFF",
@@ -282,129 +279,131 @@ const Cart = () => {
             </div>
           </div>
         </div>
-              {/* Payment Modal */}
-      {showPaymentModal && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            background: "rgba(0, 0, 0, 0.5)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex: 1000,
-          }}
-        >
+        {/* Payment Modal */}
+        {showPaymentModal && (
           <div
             style={{
-              background: "#fff",
-              borderRadius: "10px",
-              width: "400px",
-              padding: "20px",
-              textAlign: "center",
-              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              background: "rgba(0, 0, 0, 0.5)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              zIndex: 1000,
             }}
           >
-            <h3>Payment Form</h3>
-            <form>
-              <input
-                type="text"
-                placeholder="Card Number"
-                style={{
-                  width: "100%",
-                  padding: "10px",
-                  margin: "10px 0",
-                  border: "1px solid #ccc",
-                  borderRadius: "5px",
-                }}
-              />
-              <input
-                type="text"
-                placeholder="Cardholder Name"
-                style={{
-                  width: "100%",
-                  padding: "10px",
-                  margin: "10px 0",
-                  border: "1px solid #ccc",
-                  borderRadius: "5px",
-                }}
-              />
-              <input
-                type="date"
-                placeholder="Expiry Date"
-                style={{
-                  width: "100%",
-                  padding: "10px",
-                  margin: "10px 0",
-                  border: "1px solid #ccc",
-                  borderRadius: "5px",
-                }}
-              />
-              <input
-                type="text"
-                placeholder="CVV"
-                style={{
-                  width: "100%",
-                  padding: "10px",
-                  margin: "10px 0",
-                  border: "1px solid #ccc",
-                  borderRadius: "5px",
-                }}
-              />
-              <div>
-                <button
-                  type="button"
-                  onClick={handleClosePaymentModal}
+            <div
+              style={{
+                background: "#fff",
+                borderRadius: "10px",
+                width: "400px",
+                padding: "20px",
+                textAlign: "center",
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
+              }}
+            >
+              <h3>Payment Form</h3>
+              <form>
+                <input
+                  type="text"
+                  placeholder="Card Number"
                   style={{
-                    padding: "10px 20px",
-                    background: "#f44336",
-                    color: "#fff",
-                    border: "none",
+                    width: "100%",
+                    padding: "10px",
+                    margin: "10px 0",
+                    border: "1px solid #ccc",
                     borderRadius: "5px",
-                    marginRight: "10px",
-                    cursor: "pointer",
                   }}
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
+                />
+                <input
+                  type="text"
+                  placeholder="Cardholder Name"
                   style={{
-                    padding: "10px 20px",
-                    background: "#4CAF50",
-                    color: "#fff",
-                    border: "none",
+                    width: "100%",
+                    padding: "10px",
+                    margin: "10px 0",
+                    border: "1px solid #ccc",
                     borderRadius: "5px",
-                    cursor: "pointer",
                   }}
-                >
-                  Pay
-                </button>
-              </div>
-            </form>
+                />
+                <input
+                  type="date"
+                  placeholder="Expiry Date"
+                  style={{
+                    width: "100%",
+                    padding: "10px",
+                    margin: "10px 0",
+                    border: "1px solid #ccc",
+                    borderRadius: "5px",
+                  }}
+                />
+                <input
+                  type="text"
+                  placeholder="CVV"
+                  style={{
+                    width: "100%",
+                    padding: "10px",
+                    margin: "10px 0",
+                    border: "1px solid #ccc",
+                    borderRadius: "5px",
+                  }}
+                />
+                <div>
+                  <button
+                    type="button"
+                    onClick={handleClosePaymentModal}
+                    style={{
+                      padding: "10px 20px",
+                      background: "#f44336",
+                      color: "#fff",
+                      border: "none",
+                      borderRadius: "5px",
+                      marginRight: "10px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    style={{
+                      padding: "10px 20px",
+                      background: "#4CAF50",
+                      color: "#fff",
+                      border: "none",
+                      borderRadius: "5px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Pay
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
-      )}
+        )}
       </div>
     );
   }
 
   return (
     <div
+      className="cart-container"
       style={{
         padding: "20px",
         fontFamily: "Arial, sans-serif",
         background: "#f9f9f9",
         minHeight: "100vh",
         paddingTop: "20vh",
-        position: "relative",  //remove later
+        position: "relative", //remove later
       }}
     >
       <h3>Your Cart</h3>
       <div
+        className="cart-items-section"
         style={{
           display: "flex",
           justifyContent: "space-between",
@@ -422,7 +421,23 @@ const Cart = () => {
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
           }}
         >
-          <h4>Cart Items</h4>
+          <div className="cart-main2">
+            <div className="cart-box1">
+              <h4>Cart Items</h4>
+            </div>
+
+            <div className="cart-search-box">
+              <input
+                type="text"
+                placeholder="Search product here..."
+                className="cart-search-bar"
+              />
+              <button className="cart-search-icon">
+                <GrSearch />
+              </button>
+            </div>
+          </div>
+
           <hr />
           <div>
             {cartItems.map((item) => (
@@ -440,11 +455,10 @@ const Cart = () => {
                   <button
                     onClick={() => handleRemoveItem(item.id)}
                     style={{
-                      color: "#fff",
-                      background: "#f44336",
+                      color: "red",
                       border: "none",
-                      padding: "5px 10px",
-                      borderRadius: "5px",
+                      fontWeight: "bold",
+                      padding: "3px 10px",
                       cursor: "pointer",
                     }}
                   >
@@ -469,15 +483,16 @@ const Cart = () => {
                 borderRadius: "5px",
                 cursor: "pointer",
                 marginRight: "10px",
+                background: "linear-gradient(90deg, #603c86, #d06601)",
               }}
             >
-              Add More Test +
+              Add Test +
             </button>
             <button
               onClick={handleNext}
               style={{
                 padding: "10px 20px",
-                background: "linear-gradient(to right, #8E2DE2, #4A00E0)",
+                background: "#eb7801",
                 color: "#fff",
                 border: "none",
                 borderRadius: "5px",
@@ -488,50 +503,46 @@ const Cart = () => {
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Payment Details Section */}
-        <div
-          style={{
-            flex: 1,
-            background: "#fff",
-            borderRadius: "8px",
-            padding: "20px",
-            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-          }}
-        >
-          <h4>Payment Details</h4>
-          <hr />
-          {cartItems.map((item) => (
-            <div
-              key={item.id}
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginBottom: "10px",
-              }}
-            >
-              <p>{item.name}</p>
-              <p>₹{item.price}</p>
-            </div>
-          ))}
-          <hr />
+      {/* Payment Details Section */}
+      <div
+        className="payment-details-section"
+        style={{
+          flex: 1,
+          background: "#fff",
+          borderRadius: "8px",
+          padding: "20px",
+          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <h4>Payment Details</h4>
+        <hr />
+        {cartItems.map((item) => (
           <div
+            key={item.id}
             style={{
               display: "flex",
               justifyContent: "space-between",
-              marginTop: "20px",
+              marginBottom: "10px",
             }}
           >
-            <strong>Total Amount</strong>
-            <strong>₹{calculateTotal()}</strong>
+            <p>{item.name}</p>
+            <p>₹{item.price}</p>
           </div>
-             
-             
-
+        ))}
+        <hr />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            marginTop: "20px",
+          }}
+        >
+          <strong>Total Amount</strong>
+          <strong>₹{calculateTotal()}</strong>
         </div>
       </div>
-
-
     </div>
   );
 };
