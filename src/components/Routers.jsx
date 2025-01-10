@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-// import About from "./About";
+// import { useAuth } from "./AuthContext";
 import DownloadReport from "./DownloadReport";
 import HomePage from "./pages/HomePage";
 import ContactUs from "./ContactUs";
@@ -24,10 +24,16 @@ import CartPage from "./pages/CartPage";
 import DownloadReportPage from "./pages/DownloadReportPage";
 import HomeCollection from "./HomeCollection";
 import BookAppointment from "./BookAppointment";
+import PageDoesNot from "./PageDoesNot";
 // import About from "./AboutSection/About";
 
 
 const Routers = () => {
+
+  // const { isLoggedIn } = useAuth();
+
+
+
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
@@ -41,7 +47,10 @@ const Routers = () => {
       <Route path="/home-collection" element={<HomeCollection />} />
       <Route path="/book-appointment" element={<BookAppointment />} />
 
-      
+      {/* <Route
+        path="/book-appointment"
+        element={isLoggedIn ? <BookAppointment /> : <Navigate to="/log-in" />}
+      /> */}
 
       {/* Radiology-test Routes  */}
       <Route path="/radiology-test/mri" element={<MRIPage />} />
@@ -60,13 +69,11 @@ const Routers = () => {
 
       {/* Expert-Care-Package Routes  */}
       
-
-
-
-
       <Route path="/about" element={<AboutPage />} />
       <Route path="/download-report" element={<DownloadReport />} />
       <Route path="/contact-us" element={<ContactUs />} />
+
+      <Route path="*" element={<PageDoesNot />} />
 
 
     </Routes>

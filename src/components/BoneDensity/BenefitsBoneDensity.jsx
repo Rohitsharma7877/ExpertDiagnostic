@@ -1,6 +1,6 @@
 import React from 'react'
 import './BenefitsBoneDensity.css'
-import img3 from './whatdonedensity.webp'
+import img3 from './benifityofbonedensitytest.jpg'
 
 const BenefitsBoneDensity = () => {
   return (

@@ -22,7 +22,7 @@ const HomePage = () => {
       <div ref={diagnosticServiceRef}>
         <DiagnosticService />
       </div>
-      {!showDiagnosticService && <WhyChoose />}
+      <WhyChoose />
     </div>
   );
 };

@@ -1,286 +1,401 @@
 import React, { useState } from "react";
 import "./diagnosticsService.css";
-import d1 from "./d1.jpg";
-import d2 from "./d2.jpg";
-import d3 from "./d3.jpg";
-import d4 from "./d4.jpg";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { RiLuggageCartFill } from "react-icons/ri";
+import { RiCloseFill } from "react-icons/ri";
+import d1 from "./serviceMRI.jpg";
+import d2 from "./ctscancard.jpg";
+import d3 from "./xRayCard.jpeg";
+import d4 from "./ultrasoundCard.jpeg";
 import d5 from "./mammogramachine.jpg";
 import d6 from "./Treadmill-Header.jpg";
 import d7 from "./Portable-ECG-Machine.png";
 import d8 from "./1683702062645b412eb1c4e.jpg";
-import d9 from "./consultation.jpg"; 
-import d10 from "./ambulance.jpg"; 
-import d11 from "./hc.jpg"; 
-import d12 from "./lab.jpg"; 
+import d9 from "./consultation.jpg";
+import d10 from "./ambulance.jpg";
+import d11 from "./hc.jpg";
+import d12 from "./lab.jpg";
 
 const DiagnosticService = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    mobile: "",
+    age: "",
+    gender: "",
+    email: "",
+    pincode: "",
+    pickUpLocation: "",
+    dropLocation: "",
+    conditionTest: false,
+    bookingDate: new Date().toISOString().split("T")[0], // Initialize conditionTest
+  });
 
   const services = [
     {
       id: 9,
-      image: d9, // Consultation Image
+      image: d9,
       title: "Free Consultation",
       description: "Book a free consultation with our expert doctors.",
-      // formFields: [
-      //   { placeholder: "Consultation Type", type: "text" },
-      //   { placeholder: "Preferred Date", type: "date" },
-      // ],
     },
     {
       id: 10,
-      image: d10, // Ambulance Service Image
+      image: d10,
       title: "Ambulance Service",
       description:
         "We provide ambulance services for transportation and emergency needs.",
       formFields: [
         { placeholder: "Pick-Up Location", type: "text" },
         { placeholder: "Drop Location", type: "text" },
-        { label: "Condition Test Above 5000", type: "checkbox" }, // Checkbox with label
+        { label: "Condition Test Above 5000", type: "checkbox" },
       ],
     },
     {
       id: 11,
-      image: d11, // Home Collection Image
+      image: d11,
       title: "Home Collection",
       description:
         "We offer home collection services for lab tests and diagnostic samples.",
       formFields: [
-        { placeholder: "Pick-Up Address", type: "text" },
-        // { placeholder: "Test Type", type: "text" },
+        {
+          placeholder: "Pick-Up Address",
+          type: "text",
+          name: "pickUpLocation",
+        },
       ],
     },
     {
       id: 12,
-      image: d12, // Lab Test Image
+      image: d12,
       title: "Lab Test",
       description:
         "We provide a wide range of diagnostic lab tests to suit your needs.",
-      // formFields: [
-      //   { placeholder: "Test Type", type: "text" },
-      //   { placeholder: "Test Date", type: "date" },
-      // ],
     },
     {
       id: 1,
-      image: d1, // MRI image
+      image: d1,
       title: "MRI",
-      description: "We operate the latest generation MRI machines of 3 Tesla.",
-      // formFields: [
-      //   { placeholder: "Select MRI Type", type: "text" },
-      //   { placeholder: "MRI Duration", type: "number" },
-      // ],
+      description: "We utilize state-of-the-art 1.5 Tesla MRI machines for high-precision imaging, ensuring detailed diagnostics and accurate results.",
     },
     {
       id: 2,
-      image: d2, // CT image
-      title: "CT",
+      image: d2,
+      title: "CT-Scan",
       description:
-        "Dual slice, 16, 32, 64, and 128 slice CT scan systems installed at various centers.",
-      // formFields: [
-      //   { placeholder: "Select X-Ray Type", type: "text" },
-      //   { placeholder: "CT Scan Type", type: "text" },
-      // ],
+        " 128 slice CT scan systems are installed at various centers, providing advanced imaging for accurate.",
     },
     {
       id: 3,
-      image: d3, // X-Ray image
+      image: d3,
       title: "X-Ray",
       description:
-        "Comprehensive radiology services with the latest X-Ray equipment for accurate imaging.",
-      // formFields: [
-      //   { placeholder: "Select X-Ray Type", type: "text" },
-      //   { placeholder: "X-Ray Date", type: "date" },
-      // ],
+        "Providing comprehensive radiology services with state-of-the-art X-ray equipment for precise imaging.",
     },
     {
       id: 4,
-      image: d4, // Ultrasound image
+      image: d4,
       title: "UltraSound",
       description:
         "All sonography studies, including 2D / 4D imaging, routine scans, Doppler, and advanced diagnostic techniques.",
-      // formFields: [
-      //   { placeholder: "USG Type", type: "text" },
-      //   { placeholder: "Scan Date", type: "date" },
-      // ],
     },
     {
       id: 5,
-      image: d5, // Mammography image
+      image: d5,
       title: "Mammography",
       description:
-        "State-of-the-art mammography machines for early detection and prevention of breast cancer.",
-      // formFields: [
-      //   { placeholder: "Mammography Type", type: "text" },
-      //   { placeholder: "Mammography Date", type: "date" },
-      // ],
+        "Equipped with state-of-the-art mammography machines for early detection and prevention of breast cancer, accurate and timely results.",
     },
     {
       id: 6,
-      image: d6, // TMT image
+      image: d6,
       title: "TMT (Treadmill Test)",
       description:
-        "TMT for assessing cardiovascular health through exercise-induced stress tests.",
-      // formFields: [
-      //   { placeholder: "Test Duration", type: "number" },
-      //   { placeholder: "Test Date", type: "date" },
-      // ],
+        "Using TMT (Treadmill Test) to assess cardiovascular health through exercise stress tests, offering insights into heart function.",
     },
     {
       id: 7,
-      image: d7, // ECG image
+      image: d7,
       title: "ECG",
       description:
-        "Electrocardiogram (ECG) for diagnosing heart conditions using advanced ECG machines.",
-      // formFields: [
-      //   { placeholder: "ECG Type", type: "text" },
-      //   { placeholder: "ECG Date", type: "date" },
-      // ],
+        "Performing Electrocardiogram (ECG) to diagnose heart conditions with advanced ECG machines, ensuring accurate results.",
     },
     {
       id: 8,
-      image: d8, // Health Package image
+      image: d8,
       title: "Health Package",
       description:
-        "Comprehensive health checkup packages covering all major diagnostics and tests.",
-      // formFields: [
-      //   { placeholder: "Select Package Type", type: "text" },
-      //   { placeholder: "Package Duration", type: "number" },
-      // ],
+        "Offering comprehensive health checkup packages that cover all major diagnostics and tests, evaluation and proactive healthcare.",
     },
-    // New services added
   ];
 
   const handleOpenModal = (service) => {
     setSelectedService(service);
     setIsModalOpen(true);
+    setFormData({
+      name: "",
+      mobile: "",
+      age: "",
+      gender: "",
+      email: "",
+      pincode: "",
+      pickUpLocation: "", // Reset pickUpLocation
+      dropLocation: "", // Reset dropLocation
+      conditionTest: false, // Reset conditionTest
+    });
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setSelectedService(null);
+    setFormData({
+      name: "",
+      mobile: "",
+      age: "",
+      gender: "",
+      email: "",
+      pincode: "",
+      pickUpLocation: "", // Reset pickUpLocation
+      dropLocation: "", // Reset dropLocation
+      conditionTest: false, // Reset conditionTest
+    });
   };
 
-  
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    const conditionTest = formData.conditionTest === "on" ? true : false;
+
+    const formWithServiceData = {
+      ...formData,
+      service: selectedService.title,
+      conditionTest: formData.conditionTest,
+    };
+
+    try {
+      const response = await fetch("api call", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formWithServiceData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success("Appointment booked successfully!", {
+          autoClose: 500,
+          closeButton: false,
+        });
+        handleCloseModal();
+      } else {
+        toast.error("Error booking appointment: " + result.message, {
+          autoClose: 1000,
+          closeButton: true,
+        });
+      }
+    } catch (error) {
+      console.error("Network or Server Error:", error);
+      toast.error("Failed to book appointment.", {
+        autoClose: 2000,
+        closeButton: true,
+      });
+    }
+  };
+
   return (
     <div className="diagnosticservice-main">
-          <div className="diagnosticservice-container">
-    <h2>Our Diagnostic Center</h2>
-    <div className="diagnosticservice-cards">
-      {services.map((service) => (
-        <div key={service.id} className="diagnosticservice-card">
-          <img
-            src={service.image}
-            alt={service.title}
-            className="diagnosticservice-card-image"
-          />
-          <h3 className="diagnosticservice-card-title">{service.title}</h3>
-          <p className="diagnosticservice-card-description">
-            {service.description}
-          </p>
-          <div className="diagnosticservice-actions">
-            <button
-              className="diagnosticservice-booknow-button"
-              onClick={() => handleOpenModal(service)}
-            >
-              Book Now
-            </button>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    {isModalOpen && selectedService && (
-      <div
-        className="diagnosticservice-modal-overlay"
-        onClick={handleCloseModal}
-      >
-        <div
-          className="diagnosticservice-modal-content"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div
-            className="diagnosticservice-modal-image"
-            style={{ backgroundImage: `url(${selectedService.image})` }}
-          ></div>
-          <div className="diagnosticservice-modal-form">
-            <button
-              className="diagnosticservice-close-modal"
-              onClick={handleCloseModal}
-            >
-              &#x2715;
-            </button>
-            <h2>Book Appointment for {selectedService.title}</h2>
-            <form>
-              <input className="diagser" type="text" placeholder="Name" required />
-              <input
-              className="diagser"
-                type="text"
-                placeholder="Mobile"
-                pattern="^[0-9]{10}$"
-                required
+      <div className="diagnosticservice-container">
+        <h2>Our Diagnostic Center</h2>
+        <div className="diagnosticservice-cards">
+          {services.map((service) => (
+            <div key={service.id} className="diagnosticservice-card">
+              <img
+                src={service.image}
+                alt={service.title}
+                className="diagnosticservice-card-image"
               />
-              <input 
-              className="diagser"
-                type="number"
-                placeholder="Age"
-                min="1"
-                max="120"
-                required
-              />
-              <div className="diagnosticservice-gender-selection">
-                <label>
-                  <input className="diagser" type="radio" name="gender" value="Male" required />
-                  Male
-                </label>
-                <label>
-                  <input className="diagser" type="radio" name="gender" value="Female" required />
-                  Female
-                </label>
-                <label>
-                  <input className="diagser" type="radio" name="gender" value="Other" required />
-                  Other
-                </label>
+              <h3 className="diagnosticservice-card-title">{service.title}</h3>
+              <p className="diagnosticservice-card-description">
+                {service.description}
+              </p>
+              <div className="diagnosticservice-actions">
+                <button
+                  className="diagnosticservice-booknow-button"
+                  onClick={() => handleOpenModal(service)}
+                >
+                  {/* <RiLuggageCartFill className="diagnosticservice-icon" /> */}
+                  Book Now
+                </button>
               </div>
-              <input className="diagser" type="email" placeholder="Email" required />
-              <input
-              className="diagser"
-                type="text"
-                placeholder="Pincode"
-                pattern="^[0-9]{6}$"
-                required
-              />
-              {selectedService.formFields &&
-                selectedService.formFields.map((field, index) => (
-                  <div key={index}>
-                    {field.type === "checkbox" ? (
-                      <div>
-                        <input type="checkbox" id={`checkbox-${index}`} />
-                        <label htmlFor={`checkbox-${index}`}>
-                          {field.label}
-                        </label>
-                      </div>
-                    ) : (
-                      <input
-                        type={field.type}
-                        placeholder={field.placeholder}
-                        required
-                      />
-                    )}
-                  </div>
-                ))}
-              <input  type="submit" value="Submit" />
-            </form>
-          </div>
+            </div>
+          ))}
         </div>
+
+        {isModalOpen && selectedService && (
+          <div
+            className="diagnosticservice-modal-overlay"
+            onClick={handleCloseModal}
+          >
+            <div
+              className="diagnosticservice-modal-content"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div
+                className="diagnosticservice-modal-image"
+                style={{ backgroundImage: `url(${selectedService.image})` }}
+              ></div>
+              <div className="diagnosticservice-modal-form">
+                <button
+                  className="diagnosticservice-close-modal"
+                  onClick={handleCloseModal}
+                >
+                  <RiCloseFill className="diagnosticservice-close-icon" />
+                </button>
+                <h2>Book Appoinment for {selectedService.title}</h2>
+                <form onSubmit={handleFormSubmit} className="formBookNow">
+                  {/* input selection */}
+                  <input
+                    className="diagser"
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <input
+                    className="diagser"
+                    type="text"
+                    name="mobile"
+                    placeholder="Mobile"
+                    pattern="^[0-9]{10}$"
+                    value={formData.mobile}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <input
+                    className="diagser"
+                    type="email"
+                    placeholder="Email"
+                    required
+                  />
+                  <input
+                    className="diagser"
+                    type="number"
+                    name="age"
+                    placeholder="Age"
+                    min="1"
+                    max="120"
+                    value={formData.age}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <div className="diagnosticservice-gender-selection">
+                    <label>
+                      <input
+                        className="diagser"
+                        type="radio"
+                        name="gender"
+                        value="Male"
+                        onChange={handleInputChange}
+                      />{" "}
+                      Male
+                    </label>
+                    <label>
+                      <input
+                        className="diagser"
+                        type="radio"
+                        name="gender"
+                        value="Female"
+                        onChange={handleInputChange}
+                      />{" "}
+                      Female
+                    </label>
+                    <label>
+                      <input
+                        className="diagser"
+                        type="radio"
+                        name="gender"
+                        value="Other"
+                        onChange={handleInputChange}
+                      />{" "}
+                      Other
+                    </label>
+                  </div>
+
+                  <input
+                    className="diagser"
+                    type="text"
+                    name="pincode"
+                    placeholder="Pincode"
+                    pattern="^[0-9]{6}$"
+                    value={formData.pincode}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <input
+                    className="diagser"
+                    type="date"
+                    name="bookingDate"
+                    value={formData.bookingDate}
+                    onChange={handleInputChange}
+                    required
+                  />
+
+                  {selectedService.formFields &&
+                    selectedService.formFields.map((field, index) => (
+                      <div key={index}>
+                        {field.type === "checkbox" ? (
+                          <div className="diagnosticservice-checkbox">
+                            <label>
+                              <input
+                                type="checkbox"
+                                name="conditionTest"
+                                checked={formData.conditionTest}
+                                onChange={(e) =>
+                                  setFormData((prev) => ({
+                                    ...prev,
+                                    conditionTest: e.target.checked,
+                                  }))
+                                }
+                              />
+                              {field.label}
+                            </label>
+                          </div>
+                        ) : (
+                          <input
+                            type={field.type}
+                            name={field.name}
+                            placeholder={field.placeholder}
+                            value={formData[field.name] || ""}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        )}
+                      </div>
+                    ))}
+                  <button
+                    className="service-submit"
+                    type="submit"
+                    value="Submit"
+                  >Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        )}
+        <ToastContainer />
       </div>
-    )}
-  </div>
     </div>
-    
+  );
+};
 
-  )
-}
-
-export default DiagnosticService
+export default DiagnosticService;

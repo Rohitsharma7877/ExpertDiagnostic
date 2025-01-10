@@ -36,8 +36,9 @@
   
   .whatisBoneDensity-image img {
     width: 100%; 
-    max-width: 280px; 
-    
+    max-width: 290px; 
+    object-fit: cover;
+    /* border: 1px solid red; */
     border-radius: 10px; /* Add rounded corners to the image */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
   }

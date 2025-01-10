@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import "./HomeCollection.css";
 import homecollection from "./assests/homecc.jpg";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
 
 const HomeCollection = () => {
   const [formData, setFormData] = useState({
@@ -124,10 +129,7 @@ const HomeCollection = () => {
           <h2 className="HomeCollection-heading">Home Collection</h2>
 
           {/* input-form */}
-          <form
-            className="HomeCollection-details-form"
-            onSubmit={handleSubmit}
-          >
+          <form className="HomeCollection-details-form" onSubmit={handleSubmit}>
             <label htmlFor="name">NAME*</label>
             <input
               type="text"
@@ -139,9 +141,37 @@ const HomeCollection = () => {
               required
             />
             {errors.name && <span className="error-text">{errors.name}</span>}
+           
+            {/* <div className="HomeCollection-gender-section">
+            <FormControl>
+              <FormLabel id="demo-row-radio-buttons-group-label">
+                Gender
+              </FormLabel>
+              <RadioGroup
+                row
+                aria-labelledby="demo-row-radio-buttons-group-label"
+                name="row-radio-buttons-group"
+              >
+                <FormControlLabel
+                  value="female"
+                  control={<Radio />}
+                  label="Female"
+                />
+                <FormControlLabel
+                  value="male"
+                  control={<Radio />}
+                  label="Male"
+                />
+                <FormControlLabel
+                  value="other"
+                  control={<Radio />}
+                  label="Other"
+                />
+              </RadioGroup>
+            </FormControl>
+            </div> */}
+
             
-            {/* <div > */}
-            {/* <div > */}
             <label htmlFor="gender">Gender*</label>
               <select
               className="HomeCollection-gender"
@@ -159,28 +189,25 @@ const HomeCollection = () => {
               {errors.gender && (
                 <span className="error-text">{errors.gender}</span>
               )}
-            {/* </div> */}
-            {/* <div > */}
-            <label htmlFor="bookFor">Book For*</label>
-              <select
-              className="HomeCollection-bookNow"
-                id="bookFor"
-                name="bookFor"
-                value={formData.bookFor}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select Option</option>
-                <option value="own">Own</option>
-                <option value="relative">Relative/Guardians</option>
-              </select>
-              {errors.bookFor && (
-                <span className="error-text">{errors.bookFor}</span>
-              )}
-            {/* </div> */}
-              
 
-              
+            <label htmlFor="bookFor">Book For*</label>
+            <select
+              className="HomeCollection-bookNow"
+              id="bookFor"
+              name="bookFor"
+              value={formData.bookFor}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select Option</option>
+              <option value="own">Own</option>
+              <option value="relative">Relative/Guardians</option>
+            </select>
+            {errors.bookFor && (
+              <span className="error-text">{errors.bookFor}</span>
+            )}
+            {/* </div> */}
+
             {/* </div> */}
 
             <label htmlFor="email">Email*</label>
@@ -243,7 +270,7 @@ const HomeCollection = () => {
                 <div className="form-item">
                   <label htmlFor="state">State*</label>
                   <select
-                  className="HomeCollection-state"
+                    className="HomeCollection-state"
                     id="state"
                     name="state"
                     value={formData.state}
@@ -252,7 +279,7 @@ const HomeCollection = () => {
                   >
                     <option value="">Select State</option>
                     <option value="Karnataka">Karnataka</option>
-                   
+
                     {/* Add more states here */}
                   </select>
                   {errors.state && (
@@ -262,11 +289,17 @@ const HomeCollection = () => {
               </div>
             </div>
 
-            <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem", width: "35%" }}>
+            <div
+              style={{
+                display: "flex",
+                gap: "1rem",
+                marginBottom: "1rem",
+                width: "35%",
+              }}
+            >
               <div style={{ flex: 1 }}>
                 <label htmlFor="date">Date*</label>
                 <input
-                
                   type="date"
                   id="date"
                   name="date"
@@ -274,7 +307,7 @@ const HomeCollection = () => {
                   value={formData.date}
                   onChange={handleChange}
                   required
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                 />
                 {errors.date && (
                   <span className="error-text">{errors.date}</span>
@@ -290,7 +323,7 @@ const HomeCollection = () => {
                   value={formData.time}
                   onChange={handleChange}
                   required
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                 />
                 {errors.time && (
                   <span className="error-text">{errors.time}</span>
@@ -302,7 +335,7 @@ const HomeCollection = () => {
               type="submit"
               className="HomeCollection-submit-btn"
               disabled={isSubmitting}
-            //   style={{ marginTop: "1rem" }}
+              //   style={{ marginTop: "1rem" }}
             >
               {isSubmitting ? "Submitting..." : "Submit"}
             </button>

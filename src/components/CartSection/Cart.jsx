@@ -23,6 +23,8 @@ const Cart = () => {
   const [showMemberDetails, setShowMemberDetails] = useState(false);
   const navigate = useNavigate();
   const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [searchQuery, setSearchQuery] = useState(""); 
+
 
   const handleAddMoreTest = () => {
     navigate("/", { state: { showDiagnosticService: true } });
@@ -43,6 +45,14 @@ const Cart = () => {
       .reduce((acc, item) => acc + item.price * item.quantity, 0)
       .toFixed(2);
   };
+
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value); // Update the search query
+  };
+
+  const filteredItems = cartItems.filter((item) =>
+    item.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   const handleNext = () => {
     setShowMemberDetails(true);
@@ -426,11 +436,14 @@ const Cart = () => {
               <h4>Cart Items</h4>
             </div>
 
+        {/* Search Bar */}
             <div className="cart-search-box">
               <input
                 type="text"
                 placeholder="Search product here..."
                 className="cart-search-bar"
+                value={searchQuery}
+                onChange={handleSearch}
               />
               <button className="cart-search-icon">
                 <GrSearch />
@@ -440,7 +453,8 @@ const Cart = () => {
 
           <hr />
           <div>
-            {cartItems.map((item) => (
+          {filteredItems.length > 0 ? (
+            filteredItems.map((item) => (
               <div
                 key={item.id}
                 style={{
@@ -469,7 +483,12 @@ const Cart = () => {
                   ₹{(item.price * item.quantity).toFixed(2)}
                 </div>
               </div>
-            ))}
+                
+            ))
+            ) : (
+              <p>No items match your search.</p>
+            )}
+
           </div>
           {cartItems.length === 0 && <p>No items in the cart</p>}
           <div style={{ textAlign: "center", marginTop: "20px" }}>
@@ -489,7 +508,7 @@ const Cart = () => {
               Add Test +
             </button>
             <button
-              onClick={handleNext}
+              onClick={() => setShowMemberDetails(true)}
               style={{
                 padding: "10px 20px",
                 background: "#eb7801",

@@ -39,7 +39,7 @@ const Navbar2 = () => {
       <nav className="desktop-navbar ">
         <ul className="nav-links ">
           <li>
-            <Link to="/patient-portal">Patient Portal</Link>
+            <Link to="/patient-portal">Doctor Portal</Link>
           </li>
 
           <li className="dropdown">

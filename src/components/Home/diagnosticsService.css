@@ -9,7 +9,7 @@
   padding: 20px 50px;
   text-align: center;
   border-radius: 12px;
-
+  /* border: 1px solid red; */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -35,11 +35,11 @@
 }
 
 .diagnosticservice-card {
-  width: calc(20% - 10px);
-  background-color: #e6e6e6;
+  width: calc(24% - 5px);
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 12px;
-  padding: 20px;
+  /* padding: 1px; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -48,18 +48,20 @@
 }
 .diagnosticservice-card-image {
   width: 100%;
-  height: 160px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  /* border: 1px solid red; */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
 }
 
 .diagnosticservice-card-title {
-  margin-top: 15px;
+  margin-top: 1px;
   font-size: 18px;
-  font-weight: bolder;
-  border-radius: 3px;
-  background-color: #f7d6d6;
+  font-weight: 900;
+  /* border: 1px solid red; */
+  /* border-radius: 3px; */
+  /* background-color: #f7d6d6; */
   color: #eb7801;
 
   margin-bottom: 5px;
@@ -67,33 +69,48 @@
 
 .diagnosticservice-card-description {
   font-size: 14px;
-  color: #000000;
-  margin-bottom: 10px;
+  font-weight: 600;
+  color: #706a6a;
+  margin-bottom: 6px;
+height: auto;
+  /* border: 1px solid red; */
 }
 
 .diagnosticservice-actions {
   display: flex;
   justify-content: space-between;
+  /* border: 1px solid red; */
   gap: 10px;
 }
 
 .diagnosticservice-booknow-button {
-  display: inline-block;
+  display: flex; /* Enable flexbox for aligning icon and text */
+  align-items: center; /* Vertically align icon and text */
+  justify-content: center; /* Center content in the button */
   text-decoration: none;
   color: #fff;
   background-color: #603c86;
-  padding: 6px 10px;
+  padding: 5px 10px;
   width: 100%; /* Make the button take the full width of the card */
-  border-radius: 5px;
-  font-size: 18px;
+  border-radius: 0 0 5px 5px; /* Remove top border-radius, keep bottom */
+  font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   box-sizing: border-box; /* Ensure padding does not affect width calculation */
 }
 
+
 .diagnosticservice-booknow-button:hover {
   background-color: #eb7801;
 }
+
+.diagnosticservice-icon {
+  /* border: 1px solid red; */
+  margin-bottom: 3px;
+  margin-right: 8px; /* Add spacing between the icon and text */
+  font-size: 16px; /* Adjust the size of the icon relative to the text */
+}
+
 
 /* Modal Styles */
 .diagnosticservice-modal-overlay {
@@ -106,7 +123,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
   align-items: flex-start;
-  padding-top: 60px;
+  padding-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,7 +138,7 @@
   overflow: hidden;
   width: 50%;
   /* max-width: 700px; */
-  height: 450px;
+  height: 60vh;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative; /* Ensure the parent has relative positioning */
 }
@@ -134,7 +151,7 @@
   background-position: center;
 
   /* width: 50%; */
-  height: 50%; /* Reduced height to make the image smaller */
+  height: 60vh; /* Reduced height to make the image smaller */
   border-radius: 0px 0 0 12px; /* Optional: Keep the rounded corners */
   padding: 20px;
   margin-left: 10px; /* Added space on the left */
@@ -160,6 +177,25 @@
   height: 100%;
 }
 
+.diagnosticservice-modal-form::-webkit-scrollbar {
+  width: 8px; /* Scrollbar width */
+}
+
+.diagnosticservice-modal-form::-webkit-scrollbar-thumb {
+  background: #603c86; /* Scrollbar thumb color */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.diagnosticservice-modal-form::-webkit-scrollbar-thumb:hover {
+  background: #f0a500; /* Hover color for scrollbar thumb */
+}
+
+.diagnosticservice-modal-form::-webkit-scrollbar-track {
+  background: #f3f3f3; /* Scrollbar track color */
+  border-radius: 4px; /* Rounded corners for track */
+}
+
+
 .diagnosticservice-modal-form h2 {
   font-size: 22px; /* Smaller heading */
   color: #eb7801;
@@ -169,50 +205,50 @@
 
 .formBookNow input,
 .formBookNow textarea {
-  padding: 5px; /* Adjust padding to control the height */
+  padding: 5px;
   line-height: 1.2;
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #fff;
-  margin-bottom: 8px; /* Reduced margin for compact layout */
-  width: 100%; /* Ensure inputs take full width */
-  box-sizing: border-box; /* Prevent padding from affecting width */
-  font-size: 14px; /* Adjust font size if necessary */
+  margin-bottom: 8px; 
+  width: 100%; 
+  box-sizing: border-box; 
+  font-size: 14px;
 }
 
 .diagser {
-  padding: 5px; /* Adjust padding to control the height */
+  padding: 5px; 
   line-height: 1.2;
-  border: 1px solid #ddd;
+  border: none;
   /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
   /* border: 1px solid red; */
   border-radius: 5px;
   background-color: #fff;
   margin-bottom: 8px; /* Reduced margin for compact layout */
   width: 100%; /* Ensure inputs take full width */
-  box-sizing: border-box; /* Prevent padding from affecting width */
-  font-size: 14px; /* Adjust font size if necessary */
+  box-sizing: border-box; 
+  font-size: 14px; 
 }
 
-/* textarea {
-    resize: vertical; 
-    min-height: 60px;
-  } */
 
-input[type="submit"] {
+
+  .service-submit{
   background-color: #603c86;
   color: white;
-  border: none;
+  /* border: 1px solid red; */
   cursor: pointer;
+  border-radius: 25px;
   transition: background-color 0.3s ease;
   padding: 10px; /* Smaller padding */
   font-size: 15px; /* Smaller font size */
-  width: 100%; /* Button spans the full width of the form */
+  width: 60%; /* Button spans the full width of the form */
 }
 
-input[type="submit"]:hover {
+.service-submit:hover {
   background-color: #eb7801;
 }
+
+
 /* Gender Selection */
 .diagnosticservice-gender-selection {
   display: flex;
@@ -231,18 +267,45 @@ input[type="submit"]:hover {
   margin-right: 5px;
 }
 
+.diagnosticservice-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.diagnosticservice-checkbox label {
+  font-size: 14px;
+  color: #333;
+}
+
+.diagnosticservice-checkbox input[type="checkbox"] {
+  margin-right: 8px; /* Spacing between checkbox and label */
+}
+
+
 /* Close Modal Button */
 .diagnosticservice-close-modal {
-  position: absolute; /* Position relative to the modal content */
-  top: 10px; /* Adjust to the top edge */
-  right: 40px; /* Adjust to the right edge */
   background: none;
   border: none;
-  font-size: 24px;
+  color: #333;
+  font-size: 1.5rem; /* Adjust size as needed */
   cursor: pointer;
-  color: #eb7801;
-  z-index: 1; /* Ensure it's above other content */
+  position: absolute;
+  top: 10px; /* Adjust position */
+  right: 10px; /* Adjust position */
 }
+
+.diagnosticservice-close-icon {
+  font-size: 1.5rem; /* Icon size */
+  color: #333; /* Icon color */
+  transition: color 0.3s ease;
+}
+
+.diagnosticservice-close-modal:hover .diagnosticservice-close-icon {
+  color: #fd0303; /* Change color on hover */
+}
+
 
 /* Hide the default checkbox */
 input[type="checkbox"] {
@@ -273,6 +336,17 @@ input[type="checkbox"]:checked + label::after {
   top: 1px;
   left: 2px;
   color: white;
+}
+input [submit]{
+  background-color: #603c86;
+  color: white;
+  border: 1px solid red;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  padding: 10px; /* Smaller padding */
+  font-size: 15px; /* Smaller font size */
+  width: 60%;
 }
 .diagnostic-Condition {
   background-color: yellow;
@@ -306,6 +380,9 @@ input[type="checkbox"]:checked + label::after {
   .diagnosticservice-modal-image {
     height: 200px; /* Adjust modal image height */
     margin: 0 auto; /* Center image */
+  }
+  .diagnosticservice-close-modal:hover .diagnosticservice-close-icon {
+    color: #fd0303; /* Change color on hover */
   }
 }
 
@@ -341,11 +418,14 @@ input[type="checkbox"]:checked + label::after {
 
   .formBookNow input,
   .formBookNow textarea {
-    font-size: 12px; /* Adjust input font size */
+    font-size: 12px; 
   }
 
-  input[type="submit"] {
+ .service-submit {
     font-size: 14px; /* Adjust button font size */
     padding: 8px; /* Adjust padding */
+}
+.diagnosticservice-close-modal:hover .diagnosticservice-close-icon {
+  color: #fd0303; /* Change color on hover */
 }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import "./WhatisBoneDensity.css";
-import img1 from "./boneDensity2.png";
+import img1 from "./whatisbonedensitytest.png";
 
 const WhatisBoneDensity = () => {
   return (

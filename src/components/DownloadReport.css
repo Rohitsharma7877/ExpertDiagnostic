@@ -52,15 +52,19 @@
 
 /* Form Group Styling */
 .form-group {
+  /* border: 1px solid red; */
   margin-bottom: 12px; /* Reduced margin */
 }
 
 .form-group label {
-  font-size: 13px; /* Slightly smaller label font */
+  font-size: 13px; 
   font-weight: 600;
   color: #333;
   margin-bottom: 6px;
   display: block;
+}
+.form-group input{
+  /* padding-top: 10px; */
 }
 
 #patient-selector,
@@ -83,6 +87,8 @@
   border-color: #603c86;
   outline: none;
   box-shadow: 0 0 4px rgba(96, 60, 134, 0.3);
+  /* padding-top: 10px; */
+  /* border: 1px solid red; */
 }
 
 .add-patient {

@@ -1,12 +1,12 @@
 import React from "react";
-import "./mriScanSection.css"; // Import the updated CSS file
-import image from "./mriimgg3.jpeg"; // Replace with the appropriate MRI image path
+import "./mriScanSection.css"; 
+import image from "./whatismriscan.jpg"; 
 
 const MRIScanSection = () => {
   return (
     <div className="mriscan-container">
       <div className="mriscan-image">
-        <img src={image} alt="MRI Scan" />
+        <img src={image} alt="what is mri scan" />
       </div>
       <div className="mriscan-text">
         <h1>What is MRI Scan?</h1>

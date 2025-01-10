@@ -60,7 +60,7 @@ function DownloadReport() {
       </div>
       <div className="right-section">
         <h1>Download Your Medical Reports</h1>
-        <div className="form-group">
+        {/* <div className="form-group">
           <label htmlFor="patient-selector">Select Patient Name:</label>
           <select
             id="patient-selector"
@@ -74,9 +74,10 @@ function DownloadReport() {
               </option>
             ))}
           </select>
-        </div>
+        </div> */}
         <div className="form-group">
-          <label htmlFor="new-patient">Add New Patient:</label>
+
+        <label htmlFor="new-patient">Patient Name:</label>
           <div className="add-patient">
             <input
               type="text"
@@ -85,10 +86,40 @@ function DownloadReport() {
               onChange={(e) => setNewPatient(e.target.value)}
               placeholder="Enter patient name"
             />
-            <button onClick={handleNewPatientAdd} className="add-patient-btn">
+            {/* <button onClick={handleNewPatientAdd} className="add-patient-btn">
               <MdPersonAdd className="add-icon" />
               Add
-            </button>
+            </button> */}
+          </div>
+
+          <label htmlFor="new-patient">Patient Email:</label>
+          <div className="add-patient">
+            <input
+              type="text"
+              id="new-patient"
+              value={newPatient}
+              onChange={(e) => setNewPatient(e.target.value)}
+              placeholder="Enter patient name"
+            />
+            {/* <button onClick={handleNewPatientAdd} className="add-patient-btn">
+              <MdPersonAdd className="add-icon" />
+              Add
+            </button> */}
+          </div>
+
+          <label htmlFor="new-patient">Patient Phone:</label>
+          <div className="add-patient">
+            <input
+              type="text"
+              id="new-patient"
+              value={newPatient}
+              onChange={(e) => setNewPatient(e.target.value)}
+              placeholder="Enter patient name"
+            />
+            {/* <button onClick={handleNewPatientAdd} className="add-patient-btn">
+              <MdPersonAdd className="add-icon" />
+              Add
+            </button> */}
           </div>
         </div>
         <div className="form-group">
@@ -100,7 +131,7 @@ function DownloadReport() {
             onChange={handleDateChange}
           />
         </div>
-        <div className="form-group">
+        {/* <div className="form-group">
           <label htmlFor="report-selector">Select Report Type:</label>
           <select
             id="report-selector"
@@ -112,7 +143,7 @@ function DownloadReport() {
             <option value="X-Ray">X-Ray Report</option>
             <option value="MRI">MRI Scan Report</option>
           </select>
-        </div>
+        </div> */}
         <div className="actions">
           <button onClick={handleDownload} className="download-btnn">
             <MdDownload className="download-icon" />

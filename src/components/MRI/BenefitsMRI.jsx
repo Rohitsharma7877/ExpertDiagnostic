@@ -1,6 +1,6 @@
 import React from 'react'
 import './benefitsMRI.css'
-import MRIimage3 from './MRIimage3.jpg'
+import MRIimage3 from './benefitofmri.jpg'
 
 const BenefitsMRI = () => {
   return (
