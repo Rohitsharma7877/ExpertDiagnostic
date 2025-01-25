@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./diagnosticsService.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { RiLuggageCartFill } from "react-icons/ri";
 import { RiCloseFill } from "react-icons/ri";
 import d1 from "./serviceMRI.jpg";
 import d2 from "./ctscancard.jpg";
@@ -77,7 +76,8 @@ const DiagnosticService = () => {
       id: 1,
       image: d1,
       title: "MRI",
-      description: "We utilize state-of-the-art 1.5 Tesla MRI machines for high-precision imaging, ensuring detailed diagnostics and accurate results.",
+      description:
+        "We utilize state-of-the-art 1.5 Tesla MRI machines for high-precision imaging, ensuring detailed diagnostics and accurate results.",
     },
     {
       id: 2,
@@ -140,9 +140,9 @@ const DiagnosticService = () => {
       gender: "",
       email: "",
       pincode: "",
-      pickUpLocation: "", // Reset pickUpLocation
-      dropLocation: "", // Reset dropLocation
-      conditionTest: false, // Reset conditionTest
+      pickUpLocation: "",
+      dropLocation: "",
+      conditionTest: false,
     });
   };
 
@@ -179,7 +179,7 @@ const DiagnosticService = () => {
     };
 
     try {
-      const response = await fetch("api call", {
+      const response = await fetch("http://localhost:4000/api/form-data", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -213,7 +213,7 @@ const DiagnosticService = () => {
   return (
     <div className="diagnosticservice-main">
       <div className="diagnosticservice-container">
-        <h2>Our Diagnostic Center</h2>
+        <h2>Our Services </h2>
         <div className="diagnosticservice-cards">
           {services.map((service) => (
             <div key={service.id} className="diagnosticservice-card">
@@ -281,12 +281,14 @@ const DiagnosticService = () => {
                     onChange={handleInputChange}
                     required
                   />
-                  <input
+                  {/* <input
                     className="diagser"
                     type="email"
+                     name="email"
                     placeholder="Email"
+                    onChange={handleInputChange}
                     required
-                  />
+                  /> */}
                   <input
                     className="diagser"
                     type="number"
@@ -330,6 +332,14 @@ const DiagnosticService = () => {
                       Other
                     </label>
                   </div>
+                  <input
+                    className="diagser"
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    onChange={handleInputChange}
+                    required
+                  />
 
                   <input
                     className="diagser"
@@ -386,14 +396,17 @@ const DiagnosticService = () => {
                     className="service-submit"
                     type="submit"
                     value="Submit"
-                  >Submit</button>
+                  >
+                    Submit
+                  </button>
                 </form>
               </div>
             </div>
           </div>
         )}
-        <ToastContainer />
+       
       </div>
+      <ToastContainer />
     </div>
   );
 };

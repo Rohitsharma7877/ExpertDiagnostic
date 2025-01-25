@@ -43,10 +43,13 @@ width: 45%;
 }
 
 .HomeCollection-heading {
-  font-size: 2rem;
+  text-align: center;
+  font-size: 3rem; /* Reduced font size */
+  color: #eb7801; /* Accent color */
   font-weight: bold;
-  color: #603c86;
-  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
 .HomeCollection-subheading {
@@ -156,7 +159,7 @@ width: 45%;
   outline: none;
   color: #666;
   margin-bottom: 0.3rem;
-  width: 35%;
+  width: 100%;
 }
 .HomeCollection-bookNow{
   font-size: 0.8rem;
@@ -166,11 +169,11 @@ width: 45%;
   border-radius: 4px;
   outline: none;
   color: #666;
-  width: 35%;
+  width: 100%;
 }
 .HomeCollection-state{
   font-size: 0.8rem;
-  width: 35%;
+  width: 100%;
   
   color: #666;
   box-sizing: border-box;

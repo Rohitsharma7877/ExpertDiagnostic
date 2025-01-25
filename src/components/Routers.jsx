@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-// import { useAuth } from "./AuthContext";
 import DownloadReport from "./DownloadReport";
 import HomePage from "./pages/HomePage";
 import ContactUs from "./ContactUs";
@@ -25,14 +24,25 @@ import DownloadReportPage from "./pages/DownloadReportPage";
 import HomeCollection from "./HomeCollection";
 import BookAppointment from "./BookAppointment";
 import PageDoesNot from "./PageDoesNot";
+
+// Admin section routes
+
+import AdminLogin from "./Registration/AdminLogin";
+import AdminDashboard from "./Admin/AdminDashboard";
+// import CreateAdmin from "./Admin/CreateAdmin";
+import ConfirmationList from "./Admin/ConfirmationList";
+import BookingList from "./Admin/BookingList";
+// import AllAdmins from "./Admin/ViewAdmins";
+import ViewAppointments from "./Admin/ViewAppointments";
+import ViewHomeCollection from "./Admin/ViewHomeCollection";
 // import About from "./AboutSection/About";
 
+import ServiceDetail from "./ServiceDetail";
+import RegistrationForm from "./Admin/RegistrationForm";
+import FetchRegistrations from "./Admin/FetchRegistrations";
 
 const Routers = () => {
-
   // const { isLoggedIn } = useAuth();
-
-
 
   return (
     <Routes>
@@ -47,6 +57,22 @@ const Routers = () => {
       <Route path="/home-collection" element={<HomeCollection />} />
       <Route path="/book-appointment" element={<BookAppointment />} />
 
+      <Route path="/admin-login" element={<AdminLogin />} />
+      <Route path="/admin/dashboard" element={<AdminDashboard />}>
+        <Route path="bookList" element={<BookingList />} />
+        {/* <Route path="createAdmin" element={<CreateAdmin />} /> */}
+        {/* <Route path="allAdmins" element={<AllAdmins />} /> */}
+        <Route path="diagnostic" element={<ConfirmationList />} />
+        <Route path="bookappointment" element={<ViewAppointments />} />
+        <Route path="homeCollection" element={<ViewHomeCollection />} />
+        <Route path="admin-registration" element={<RegistrationForm />} />
+        <Route
+          path="admin-registration/view-registrations"
+          element={<FetchRegistrations />}
+        />{" "}
+      </Route>
+
+      <Route path="/service/:id" element={<ServiceDetail />} />
       {/* <Route
         path="/book-appointment"
         element={isLoggedIn ? <BookAppointment /> : <Navigate to="/log-in" />}
@@ -60,22 +86,29 @@ const Routers = () => {
 
       {/* special-test Routes  */}
       <Route path="/special-test/tmt" element={<TMTPage />} />
-      <Route path="/special-test/mri-mammography" element={<MammographyPage />} />
+      <Route
+        path="/special-test/mri-mammography"
+        element={<MammographyPage />}
+      />
       <Route path="/special-test/mammography" element={<Mammography2Page />} />
       <Route path="/special-test/ecg" element={<ECGPage />} />
-      <Route path="/special-test/bone-density-test" element={<BoneDensityPage />} />
+      <Route
+        path="/special-test/bone-density-test"
+        element={<BoneDensityPage />}
+      />
       <Route path="/special-test/eeg" element={<EEGPage />} />
-      <Route path="/special-test/pulmonary-function-test" element={<PulmonaryFunctionTestPage />} />
+      <Route
+        path="/special-test/pulmonary-function-test"
+        element={<PulmonaryFunctionTestPage />}
+      />
 
       {/* Expert-Care-Package Routes  */}
-      
+
       <Route path="/about" element={<AboutPage />} />
       <Route path="/download-report" element={<DownloadReport />} />
       <Route path="/contact-us" element={<ContactUs />} />
 
       <Route path="*" element={<PageDoesNot />} />
-
-
     </Routes>
   );
 };

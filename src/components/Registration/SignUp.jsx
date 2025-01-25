@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./signup.css";
 import signupimg from "./logSigimg.jpg";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios"; // Import axios
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +13,8 @@ const SignUp = () => {
   });
 
   const [uploadedFile, setUploadedFile] = useState(null);
+  const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
 
   // Handle input field changes
   const handleChange = (e) => {
@@ -29,47 +31,53 @@ const SignUp = () => {
   };
 
   // Form Submit Handler
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic validation for form fields
     const { name, email, mobile, password } = formData;
 
-    // Check if the uploaded file and all form fields are filled
-    if (!name || !email || !mobile || !password ) {
-      alert("Please fill all fields and upload a file before submitting.");
+    if (!name || !email || !mobile || !password) {
+      alert("Please fill all fields before submitting.");
       return;
     }
 
-    // Additional Email validation
+    // Email validation
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailPattern.test(email)) {
       alert("Please enter a valid email address.");
       return;
     }
 
-    // Mobile number validation (optional)
+    // Mobile validation (optional)
     const mobilePattern = /^[0-9]{10}$/;
     if (!mobilePattern.test(mobile)) {
       alert("Please enter a valid 10-digit mobile number.");
       return;
     }
 
-    console.log("Form Data:", formData);
-    console.log("Uploaded File:", uploadedFile);
+    try {
+      // Sending data to the backend API using Axios
+      const response = await axios.post(
+        "http://localhost:4000/person/signup",
+        formData
+      );
 
-    // Show success alert
-    alert("User Registration is successful!");
+      console.log("Backend Response:", response.data);
+      alert("User Registration is successful!");
+      navigate("/log-in");
+      // Reset form after successful registration
+      setFormData({
+        name: "",
+        email: "",
+        mobile: "",
+        password: "",
+      });
 
-    // Reset form data and file upload
-    setFormData({
-      name: "",
-      email: "",
-      mobile: "",
-      password: "",
-    });
-
-    setUploadedFile(null);
+      setUploadedFile(null);
+    } catch (err) {
+      console.error("Error during signup:", err);
+      alert("Registration failed. Please try again later.");
+    }
   };
 
   return (
@@ -97,17 +105,6 @@ const SignUp = () => {
               required
             />
 
-            <label htmlFor="email">Email*</label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              placeholder="Enter Your Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-
             <label htmlFor="mobile">Mobile Number*</label>
             <input
               type="text"
@@ -115,6 +112,16 @@ const SignUp = () => {
               name="mobile"
               placeholder="Enter Your Mobile Number"
               value={formData.mobile}
+              onChange={handleChange}
+              required
+            />
+            <label htmlFor="email">Email*</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Enter Your Email"
+              value={formData.email}
               onChange={handleChange}
               required
             />
@@ -130,8 +137,8 @@ const SignUp = () => {
               required
             />
 
-           {/* Add the Login Link */}
-           <p className="SignUp-login-link">
+            {/* Add the Login Link */}
+            <p className="SignUp-login-link">
               Already have an account?{" "}
               <Link to="/log-in" className="login-link">
                 Login

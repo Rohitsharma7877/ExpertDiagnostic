@@ -1,0 +1,166 @@
+/* View Appointments Page Styles */
+.viewAppointments-container {
+  padding: 20px; /* Consistent padding */
+  background-color: #ffffff; /* White background for a clean look */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+  max-width: 1200px; /* Limit the max width */
+  margin: 20px auto; /* Center the container with top margin */
+  position: relative;
+}
+
+/* Heading */
+.viewAppointments-container h2 {
+  text-align: center;
+  font-size: 3rem; /* Reduced font size */
+  color: #eb7801; /* Accent color */
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Button Container */
+.filter-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.search-filter {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 20%; /* Reduced width */
+}
+
+/* Export and Back Button */
+.export-button,
+.back-button-appointment {
+  background-color: #603c86;
+  color: white;
+  padding: 12px 18px; /* Reduced padding */
+  font-size: 1rem; /* Smaller font size */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.export-button:hover,
+.back-button-appointment:hover {
+  background-color: #eb7801;
+  transform: scale(1.05);
+}
+
+/* Back Button Alignment */
+.back-button-appointment {
+  margin-left: 82%;
+}
+
+/* Table Styles */
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px; /* Reduced margin */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.appointments-table th,
+.appointments-table td {
+  padding: 12px; /* Reduced padding */
+  text-align: left;
+  font-size: 1rem; /* Smaller font size */
+  color: #000000;
+  border-bottom: 1px solid #f0f0f0;
+  border-right: 1px solid #f0f0f0;
+}
+
+.appointments-table th {
+  background-color: #eb7801;
+  color: white;
+  font-weight: bold;
+}
+
+.appointments-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.appointments-table tr:hover {
+  background-color: #bdbdbd;
+}
+
+.appointments-table tr:last-child td {
+  border-bottom: none;
+}
+
+.appointments-table td:last-child {
+  border-right: none;
+}
+
+/* Date Filter Styles */
+.date-filter {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.date-filter input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.date-filter-button {
+  background-color: #603c86;
+  color: white;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.date-filter-button:hover {
+  background-color: #eb7801;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .viewAppointments-container {
+    margin: 20px;
+  }
+
+  .viewAppointments-container h2 {
+    font-size: 1.8rem; /* Reduced font size */
+  }
+
+  .appointments-table th,
+  .appointments-table td {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .export-button,
+  .back-button-appointment {
+    width: 180px;
+  }
+
+  .filter-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .export-button,
+  .back-button-appointment {
+    margin-top: 10px;
+    width: 100%;
+  }
+}

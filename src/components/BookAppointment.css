@@ -1,52 +1,56 @@
 /* General Styling */
-.bookAppointment-main{
+.bookAppointment-main {
   /* height: 90vh; */
   width: 100%;
   /* border: 1px solid red; */
   padding-top: 17vh;
 }
 .bookAppointment-container {
-display: flex; /* Add flexbox */
-justify-content: space-between; 
-align-items: center; 
-width: 80%;
-/* height: 80vh; */
-margin: 2rem auto;
-/* border: 1px solid red; */
-font-family: Arial, sans-serif;
-color: #333;
-gap: 2rem; 
+  display: flex; /* Add flexbox */
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  /* height: 80vh; */
+  margin: 2rem auto;
+  /* border: 1px solid red; */
+  /* font-family: Arial, sans-serif; */
+  color: #333;
+  gap: 2rem;
 }
 
 .bookAppointment-image-container {
-width: 45%; 
-height: auto;
-text-align: center; 
-/* border: 1px solid red; */
-border-radius: 10px;
-box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  width: 45%;
+  height: auto;
+  text-align: center;
+  /* border: 1px solid red; */
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .bookAppointment-image-container img {
-width: 100%; 
-height: 600px;
-object-fit: cover; 
-/* border: 1px solid red; */
-border-radius: 10px; 
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  /* border: 1px solid red; */
+  border-radius: 10px;
 }
 
-
 .bookAppointment-form-container {
-/* border: 1px solid red; */
-height: auto;
-width: 45%; 
+  /* border: 1px solid red; */
+  height: auto;
+  width: 45%;
 }
 
 .bookAppointment-heading {
-  font-size: 2rem;
+  text-align: center;
+  font-size: 3rem; /* Reduced font size */
+  color: #eb7801; /* Accent color */
   font-weight: bold;
-  color: #603c86;
-  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
 .bookAppointment-subheading {
@@ -77,11 +81,11 @@ width: 45%;
 }
 
 .bookAppointment-details-form input {
-  padding: 0.5rem; 
-  height: 40px; 
+  padding: 0.5rem;
+  height: 40px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 0.8rem; 
+  font-size: 0.8rem;
   outline: none;
   margin-bottom: 0.3rem;
   /* border: 1px solid red; */
@@ -89,7 +93,7 @@ width: 45%;
 
 .bookAppointment-details-form select {
   padding: 0.4rem;
-  height: 40px; 
+  height: 40px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 0.8rem;
@@ -145,10 +149,9 @@ width: 45%;
   border-radius: 5px;
   font-size: 0.9rem;
   outline: none;
- 
 }
 
-.bookAppointment-gender{
+.bookAppointment-gender {
   font-size: 0.8rem;
   box-sizing: border-box;
   border: 1px solid #ccc;
@@ -156,9 +159,9 @@ width: 45%;
   outline: none;
   color: #666;
   margin-bottom: 0.3rem;
-  width: 50%;
+  width: 100%;
 }
-.bookAppointment-bookNow{
+.bookAppointment-bookNow {
   font-size: 0.8rem;
   box-sizing: border-box;
   border: 1px solid #ccc;
@@ -166,12 +169,12 @@ width: 45%;
   border-radius: 4px;
   outline: none;
   color: #666;
-  width: 50%;
+  width: 100%;
 }
-.bookAppointment-state{
+.bookAppointment-state {
   font-size: 0.8rem;
-  width: 50%;
-  
+  width: 100%;
+
   color: #666;
   box-sizing: border-box;
   border: 1px solid #ccc;
@@ -179,55 +182,52 @@ width: 45%;
   outline: none;
   margin-bottom: 0.3rem;
 }
-
-
-
 
 /* Mobile Version Styling */
 @media (max-width: 768px) {
-.bookAppointment-container {
-  flex-direction: column; /* Stack elements vertically */
-  width: 90%; /* Make container slightly smaller */
-  gap: 1.5rem; /* Reduce spacing */
-}
+  .bookAppointment-container {
+    flex-direction: column; /* Stack elements vertically */
+    width: 90%; /* Make container slightly smaller */
+    gap: 1.5rem; /* Reduce spacing */
+  }
 
-.bookAppointment-image-container,
-.bookAppointment-form-container {
-  width: 100%; /* Full width for mobile */
-  height: auto; /* Allow dynamic height */
-}
+  .bookAppointment-image-container,
+  .bookAppointment-form-container {
+    width: 100%; /* Full width for mobile */
+    height: auto; /* Allow dynamic height */
+  }
 
-.bookAppointment-image-container img {
-  height: auto; /* Allow image to scale */
-  max-height: 400px; /* Optional: Limit max height */
-}
+  .bookAppointment-image-container img {
+    height: auto; /* Allow image to scale */
+    max-height: 400px; /* Optional: Limit max height */
+  }
 
- .bookAppointment-details-form input {
-  font-size: 0.8rem; /* Slightly smaller input fields */
-}
+  .bookAppointment-details-form input {
+    font-size: 0.8rem; /* Slightly smaller input fields */
+  }
 
-.bookAppointment-submit-btn {
-  font-size: 0.9rem;
- 
-  padding: 0.7rem; 
-}
+  .bookAppointment-submit-btn {
+    font-size: 0.9rem;
+
+    padding: 0.7rem;
+  }
 }
 
 /* Optional: Smaller Screens (e.g., Phones) */
 @media (max-width: 480px) {
-.bookAppointment-main {
-  padding-top: 10vh; /* Adjust padding for smaller viewports */
-}
+  .bookAppointment-main {
+    padding-top: 10vh; /* Adjust padding for smaller viewports */
+  }
 
-.bookAppointment-heading {
-  font-size: 1.5rem; /* Smaller heading */
-}
+  .bookAppointment-heading {
+    font-size: 1.5rem; /* Smaller heading */
+  }
 
-.bookAppointment-subheading {
-  font-size: 0.9rem;
-}
+  .bookAppointment-subheading {
+    font-size: 0.9rem;
+  }
 
-.bookAppointment-submit-btn {
-  font-size: 0.8rem;
-}
+  .bookAppointment-submit-btn {
+    font-size: 0.8rem;
+  }
 }

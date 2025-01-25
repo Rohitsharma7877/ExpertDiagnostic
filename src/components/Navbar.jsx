@@ -254,7 +254,7 @@ const Navbar = () => {
             </h2>
             <div className="flex flex-col md:flex-row gap-6">
               <div
-                className="flex flex-col items-center cursor-pointer  bg-white  rounded-lg p-4 transition-transform duration-300 hover:shadow-lg hover:scale-105 w-full md:w-1/2"
+                className="flex flex-col items-center cursor-pointer border border-gray-500 bg-white  rounded-lg p-4 transition-transform duration-300 hover:shadow-lg hover:scale-105 w-full md:w-1/2"
                 onClick={() => {
                   setShowForm(false);
                   navigate("/home-collection");
@@ -268,7 +268,7 @@ const Navbar = () => {
                 <p className="mt-5 text-sm md:text-base">Home Collection</p>
               </div>
               <div
-                className="flex flex-col items-center cursor-pointer bg-white   rounded-lg p-4 transition-transform duration-300 hover:shadow-lg hover:scale-105 w-full md:w-1/2"
+                className="flex flex-col items-center cursor-pointer border border-gray-500 bg-white   rounded-lg p-4 transition-transform duration-300 hover:shadow-lg hover:scale-105 w-full md:w-1/2"
                 onClick={() => {
                   setShowForm(false);
                   navigate("/book-appointment");

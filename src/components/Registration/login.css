@@ -56,6 +56,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+ 
 }
 
 .otp-label {
@@ -152,8 +153,127 @@
   color: #d06601;
 }
 
+/* Admin Login Styling */
+.admin-container {
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding: 2rem; */
+  /* background: #f9f9f9; */
+  border-radius: 10px;
+  /* border: 1px solid red; */
+  width: 100%;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  /* border: 1px solid red; */
+}
+
+.admin-container label {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #603c86;
+  margin-bottom: 0.5rem;
+}
+
+.admin-container .form-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* border: 1px solid red; */
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.admin-container .form-input:focus {
+  border-color: #603c86;
+  box-shadow: 0 0 5px rgba(96, 60, 134, 0.5);
+  outline: none;
+}
+
+.admin-container .password-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.admin-container .eye-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #603c86;
+}
+
+.admin-container .eye-icon:hover {
+  color: #d06601;
+}
+
+.admin-container .login-button {
+  width: 100%;
+  /* max-width: 200px; */
+  padding: 0.8rem;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #603c86, #d06601);
+  color: white;
+  /* border: 1px solid red; */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.admin-container .login-button:hover {
+  background-color: #d06601;
+}
+
+/* Styling for active link */
+.active-link {
+  /* font-size: 1.2rem; */
+  /* font-weight: bold; */
+  color: #603c86; /* Highlighted color */
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth color change */
+}
+
+/* Styling for inactive link */
+.inactive-link {
+  /* font-size: 1.2rem; */
+  /* font-weight: normal; */
+  color: #ccc; /* Lighter, grayed-out color */
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Optional: Hover effect */
+.active-link:hover,
+.inactive-link:hover {
+  color: #d06601; /* Hover color */
+}
+
+
 
 /* Mobile Version Styling */
+/* Adjust form alignment for mobile */
+@media (max-width: 768px) {
+  .admin-container {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .admin-container .login-button {
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 768px) {
   .Login-container {
     flex-direction: column;

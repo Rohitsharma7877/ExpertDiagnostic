@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import "./HomeCollection.css";
 import homecollection from "./assests/homecc.jpg";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const HomeCollection = () => {
   const [formData, setFormData] = useState({
@@ -77,16 +74,19 @@ const HomeCollection = () => {
 
     try {
       // API call to save the data to your database
-      const response = await fetch("/api/appointments", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "http://localhost:5000/api/home-collection",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
-        alert("Form submitted successfully!");
+        toast.success("Form submitted successfully!");
         // Reset the form after successful submission
         setFormData({
           name: "",
@@ -97,13 +97,15 @@ const HomeCollection = () => {
           state: "",
           date: "",
           time: "",
+          gender: "",
+          bookFor: "",
         });
       } else {
-        alert("Error in submitting form. Please try again.");
+        toast.error("Error in submitting form. Please try again.");
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Error in submitting form. Please try again.");
+      toast.error("Error in submitting form. Please try again.");
     }
 
     setIsSubmitting(false);
@@ -141,54 +143,26 @@ const HomeCollection = () => {
               required
             />
             {errors.name && <span className="error-text">{errors.name}</span>}
-           
-            {/* <div className="HomeCollection-gender-section">
-            <FormControl>
-              <FormLabel id="demo-row-radio-buttons-group-label">
-                Gender
-              </FormLabel>
-              <RadioGroup
-                row
-                aria-labelledby="demo-row-radio-buttons-group-label"
-                name="row-radio-buttons-group"
-              >
-                <FormControlLabel
-                  value="female"
-                  control={<Radio />}
-                  label="Female"
-                />
-                <FormControlLabel
-                  value="male"
-                  control={<Radio />}
-                  label="Male"
-                />
-                <FormControlLabel
-                  value="other"
-                  control={<Radio />}
-                  label="Other"
-                />
-              </RadioGroup>
-            </FormControl>
-            </div> */}
 
             
+
             <label htmlFor="gender">Gender*</label>
-              <select
+            <select
               className="HomeCollection-gender"
-                id="gender"
-                name="gender"
-                value={formData.gender}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-              </select>
-              {errors.gender && (
-                <span className="error-text">{errors.gender}</span>
-              )}
+              id="gender"
+              name="gender"
+              value={formData.gender}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            {errors.gender && (
+              <span className="error-text">{errors.gender}</span>
+            )}
 
             <label htmlFor="bookFor">Book For*</label>
             <select
@@ -206,10 +180,7 @@ const HomeCollection = () => {
             {errors.bookFor && (
               <span className="error-text">{errors.bookFor}</span>
             )}
-            {/* </div> */}
-
-            {/* </div> */}
-
+           
             <label htmlFor="email">Email*</label>
             <input
               type="email"
@@ -294,7 +265,7 @@ const HomeCollection = () => {
                 display: "flex",
                 gap: "1rem",
                 marginBottom: "1rem",
-                width: "35%",
+                width: "100%",
               }}
             >
               <div style={{ flex: 1 }}>
@@ -344,6 +315,8 @@ const HomeCollection = () => {
           {errors.general && <div className="error-text">{errors.general}</div>}
         </div>
       </div>
+      {/* Toast container for success/error messages */}
+      <ToastContainer />
     </div>
   );
 };

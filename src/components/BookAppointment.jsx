@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./BookAppointment.css";
 import bookAppointment from "./assests/bookappointment.jpg";
+import { ToastContainer, toast } from "react-toastify"; // Importing ToastContainer
+import "react-toastify/dist/ReactToastify.css";
 
 const BookAppointment = () => {
   const [formData, setFormData] = useState({
@@ -23,13 +25,13 @@ const BookAppointment = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
- 
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  
+  // Validate form fields
   const validateFields = () => {
     const newErrors = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -58,7 +60,7 @@ const BookAppointment = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  
+  // Submit the form
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -67,17 +69,21 @@ const BookAppointment = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://uat.crelio.solutions/patientRegister/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "http://localhost:4000/api/book-appointment",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
-        alert("Form submitted successfully!");
+        toast.success("Appointment booked successfully!"); // Success notification
 
+        // Reset form data after successful submission
         setFormData({
           name: "",
           email: "",
@@ -85,26 +91,22 @@ const BookAppointment = () => {
           address: "",
           pinCode: "",
           state: "",
-          
+          gender: "",
+          bookFor: "",
         });
       } else {
-        alert("Error in submitting form. Please try again.");
+        const errorData = await response.json();
+        toast.error(
+          errorData.message || "Error in booking appointment. Please try again."
+        ); // Error notification
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Error in submitting form. Please try again.");
+      toast.error("Error in booking appointment. Please try again."); // Error notification
     }
 
     setIsSubmitting(false);
   };
-
-  // const getTodayDate = () => {
-  //   const today = new Date();
-  //   const year = today.getFullYear();
-  //   const month = String(today.getMonth() + 1).padStart(2, "0");
-  //   const date = String(today.getDate()).padStart(2, "0");
-  //   return `${year}-${month}-${date}`;
-  // };
 
   return (
     <div className="bookAppointment-main">
@@ -133,8 +135,6 @@ const BookAppointment = () => {
             />
             {errors.name && <span className="error-text">{errors.name}</span>}
 
-            {/* <div > */}
-            {/* <div > */}
             <label htmlFor="gender">Gender*</label>
             <select
               className="bookAppointment-gender"
@@ -152,8 +152,7 @@ const BookAppointment = () => {
             {errors.gender && (
               <span className="error-text">{errors.gender}</span>
             )}
-            {/* </div> */}
-            {/* <div > */}
+
             <label htmlFor="bookFor">Book For*</label>
             <select
               className="bookAppointment-bookNow"
@@ -240,7 +239,6 @@ const BookAppointment = () => {
                   >
                     <option value="">Select State</option>
                     <option value="Karnataka">Karnataka</option>
-                   
                   </select>
                   {errors.state && (
                     <span className="error-text">{errors.state}</span>
@@ -248,42 +246,6 @@ const BookAppointment = () => {
                 </div>
               </div>
             </div>
-
-            {/* <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem", width: "50%" }}>
-              <div style={{ flex: 1 }}>
-                <label htmlFor="date">Date*</label>
-                <input
-                
-                  type="date"
-                  id="date"
-                  name="date"
-                  min={getTodayDate()}
-                  value={formData.date}
-                  onChange={handleChange}
-                  required
-                  style={{ cursor: 'pointer' }}
-                />
-                {errors.date && (
-                  <span className="error-text">{errors.date}</span>
-                )}
-              </div>
-              <div style={{ flex: 1 }}>
-                <label htmlFor="time">Time*</label>
-                <input
-                  type="time"
-                  id="time"
-                  name="time"
-                  step="3600"
-                  value={formData.time}
-                  onChange={handleChange}
-                  required
-                  style={{ cursor: 'pointer' }}
-                />
-                {errors.time && (
-                  <span className="error-text">{errors.time}</span>
-                )}
-              </div>
-            </div> */}
 
             <button
               type="submit"
@@ -297,6 +259,8 @@ const BookAppointment = () => {
           {errors.general && <div className="error-text">{errors.general}</div>}
         </div>
       </div>
+      <ToastContainer />{" "}
+      {/* Toast container to display the toast notifications */}
     </div>
   );
 };
