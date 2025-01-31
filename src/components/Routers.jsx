@@ -40,6 +40,10 @@ import ViewHomeCollection from "./Admin/ViewHomeCollection";
 import ServiceDetail from "./ServiceDetail";
 import RegistrationForm from "./Admin/RegistrationForm";
 import FetchRegistrations from "./Admin/FetchRegistrations";
+import AllTest from "./AllTest/AllTest";
+// import ServiceList from "./Admin/ServiceList";
+import Category from "./Admin/Category";
+import SubCategory from "./Admin/SubCategory";
 
 const Routers = () => {
   // const { isLoggedIn } = useAuth();
@@ -47,7 +51,7 @@ const Routers = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      {/* <Route path="/patient-portal" element={<PatientPortal />} /> */}
+      <Route path="/all-test" element={<AllTest />} />
       <Route path="/patient-portal" element={<DoctorPortal />} />
       <Route path="/upload-prescription" element={<UploadPrescription />} />
       <Route path="/cart" element={<CartPage />} />
@@ -66,13 +70,15 @@ const Routers = () => {
         <Route path="bookappointment" element={<ViewAppointments />} />
         <Route path="homeCollection" element={<ViewHomeCollection />} />
         <Route path="admin-registration" element={<RegistrationForm />} />
+        <Route path="category" element={<Category />} />
+        <Route path="sub-category" element={<SubCategory />} />
         <Route
           path="admin-registration/view-registrations"
           element={<FetchRegistrations />}
         />{" "}
       </Route>
 
-      <Route path="/service/:id" element={<ServiceDetail />} />
+      {/* <Route path="/service/:id" element={<ServiceDetail />} /> */}
       {/* <Route
         path="/book-appointment"
         element={isLoggedIn ? <BookAppointment /> : <Navigate to="/log-in" />}

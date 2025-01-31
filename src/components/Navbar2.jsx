@@ -43,11 +43,16 @@ const Navbar2 = () => {
           </li>
 
           <li className="dropdown">
+            <Link to="/all-test">
+              All Test <span className="down-icon">▼</span>
+            </Link>
+          </li>
+          {/* <li className="dropdown">
             <Link to="#">
               Lab Test <span className="down-icon">▼</span>
             </Link>
             <ul className="dropdown2-menu2">
-              {/* main div */}
+              
               <div className="droupdown-main1">
                 <div className="droupdown-box1">
                   <div className="droupdown-grid-box">
@@ -276,7 +281,7 @@ const Navbar2 = () => {
                   </div>
                 </div>
 
-                {/* button   div*/}
+                
                 <div className="droupdown-box2">
                   <div
                     className="droup-buttons"
@@ -311,7 +316,7 @@ const Navbar2 = () => {
                 </div>
               </div>
             </ul>
-          </li>
+          </li> */}
 
           <li className="dropdown">
             <Link to="#">
@@ -411,7 +416,7 @@ const Navbar2 = () => {
           <ul className="sidebar-links">
             <li>
               <Link to="/patient-portal" onClick={closeSidebar}>
-              Patient Portal
+                Patient Portal
               </Link>
             </li>
 
@@ -435,7 +440,6 @@ const Navbar2 = () => {
                       Book Now
                     </Link>
                   </li>
-                  
                 </ul>
               )}
             </li>

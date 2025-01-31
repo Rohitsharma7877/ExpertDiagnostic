@@ -69,6 +69,45 @@ function AdminDashboard() {
             View Registration
           </div>
 
+          {/* <div
+            className={`sidebar-link ${
+              activeDropdown === "admin-registration" ? "active" : ""
+            }`}
+            onClick={() => navigate("service-list")}
+          >
+            <span className="icon">
+              <i className="fas fa-calendar-check"></i>
+            </span>{" "}
+            Service-List
+          </div> */}
+
+          {/* Service-List Dropdown */}
+          <div
+            className="sidebar-link"
+            onClick={() => toggleDropdown("service-list")}
+          >
+            <span className="icon">
+              <i className="fas fa-flask"></i>
+            </span>
+            Service-List
+            <span className="arrow">{getArrow("service-list")}</span>
+          </div>
+          <div
+            className={`dropdown-container ${
+              activeDropdown === "service-list" ? "show" : ""
+            }`}
+          >
+            <Link to="category" className="dropdown-item">
+              Category
+            </Link>
+            <Link to="sub-category" className="dropdown-item">
+              Sub-Category
+            </Link>
+            <Link to="list" className="dropdown-item">
+              List
+            </Link>
+          </div>
+
           {/* View Tests Dropdown */}
           <div
             className="sidebar-link"
