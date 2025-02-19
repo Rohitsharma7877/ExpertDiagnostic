@@ -4,528 +4,106 @@ import { MdOutlineCurrencyRupee } from "react-icons/md";
 import { TiTick } from "react-icons/ti";
 
 const AllTest = () => {
-  const [data, setData] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [loading, setLoading] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState("All Test");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [suggestions, setSuggestions] = useState([]);
-  const [selectedCard, setSelectedCard] = useState(null);
-  const [subCategoryData, setSubCategoryData] = useState([]);
-  const itemsPerPage = 8;
+  const [data, setData] = useState([]); // All test data from backend
+  const [categories, setCategories] = useState([]); // Categories list
+  const [currentPage, setCurrentPage] = useState(1); // Pagination
+  const [loading, setLoading] = useState(true); // Loading state
+  const [selectedCategory, setSelectedCategory] = useState("All Test"); // Selected category
+  const [searchQuery, setSearchQuery] = useState(""); // Search bar input
+  const [suggestions, setSuggestions] = useState([]); // Search suggestions
+  const [selectedCard, setSelectedCard] = useState(null); // Selected card
+  const [subCategoryData, setSubCategoryData] = useState([]); // Subcategory data
+  const itemsPerPage = 8; // Number of cards per page
 
-  const dummyData = [
-    {
-      id: 1,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Bio Chemistry",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      // bookfor: "Available",
-    },
-    {
-      id: 2,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Clinical Pathology",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      // bookfor: "Available",
-    },
-    {
-      id: 3,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Haematology",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      // bookfor: "Available",
-    },
-    {
-      id: 4,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Hormone Assays",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      // bookfor: "Available",
-    },
-    {
-      id: 5,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Histopathology",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      // bookfor: "Available",
-    },
-    {
-      id: 6,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Microbiology",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights. ",
-      category: "Lab Tests",
-      // bookfor: "Available",
-    },
-    {
-      id: 7,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "MRI",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Radiology Tests",
-      // bookfor: "Available",
-    },
-    {
-      id: 8,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "CT-Scan",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights. ",
-      category: "Radiology Tests",
-      // bookfor: "Available",
-    },
-    {
-      id: 9,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "X-Ray",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Radiology Tests",
-      // bookfor: "Available",
-    },
-    {
-      id: 10,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Ultrasonography",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Radiology Tests",
-      // bookfor: "Available",
-    },
-    {
-      id: 11,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "TMT",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights. ",
-      category: "Special Tests",
-      // bookfor: "Available",
-    },
-    {
-      id: 12,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "MRI Mammography",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights. ",
-      category: "Special Tests",
-      // bookfor: "Available",
-    },
-    {
-      id: 13,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Mammography",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights. ",
-      category: "Special Tests",
-      // bookfor: "Available",
-    },
-    {
-      id: 14,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "ECG",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights. ",
-      category: "Special Tests",
-      // bookfor: "Available",
-    },
-    {
-      id: 15,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "EEG",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights. ",
-      category: "Special Tests",
-      // bookfor: "Available",
-    },
-    {
-      id: 16,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Bone Density Test",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights. ",
-      category: "Special Tests",
-      // bookfor: "Available",
-    },
-    {
-      id: 17,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "PFT",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights. ",
-      category: "Special Tests",
-      // bookfor: "Available",
-    },
-    {
-      id: 18,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Expert Silver Woman",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights. ",
-      category: "Expert Care Package",
-      // bookfor: "Available",
-    },
-    {
-      id: 19,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Expert Gold Woman",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights. ",
-      category: "Expert Care Package",
-      // bookfor: "Available",
-    },
-    {
-      id: 20,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Expert Dimond Woman",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights. ",
-      category: "Expert Care Package",
-      // bookfor: "Available",
-    },
-    {
-      id: 21,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Expert Kidney Health",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights. ",
-      category: "Expert Care Package",
-      // bookfor: "Available",
-    },
-    {
-      id: 22,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Expert Liver Health",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights. ",
-      category: "Expert Care Package",
-      // bookfor: "Available",
-    },
-    {
-      id: 23,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Expert Heart Health",
-      // originalPrice: "1500",
-      // discountedPrice: "1100",
-      description:
-        "A quick lab test to analyze blood components for health insights. ",
-      category: "Expert Care Package",
-      // bookfor: "Available",
-    },
-  ];
-
-  const dummyData2 = [
-    {
-      id: 1,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Albumin",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Bio Chemistry",
-      bookfor: "Unavailable",
-    },
-    {
-      id: 2,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "ammonia",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Bio Chemistry",
-      bookfor: "Unavailable",
-    },
-    {
-      id: 3,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Blood",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Bio Chemistry",
-      bookfor: "Unavailable",
-    },
-    {
-      id: 4,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Complete Urine Analysis",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Clinical Pathology",
-      bookfor: "Unavailable",
-    },
-    {
-      id: 5,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Albumin",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Clinical Pathology",
-      bookfor: "Unavailable",
-    },
-    {
-      id: 6,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Fasting Urine Sugar",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Clinical Pathology",
-      bookfor: "Unavailable",
-    },
-    {
-      id: 7,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Ascitic Fluid Analysis",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Haematology",
-      bookfor: "Unavailable",
-    },
-    {
-      id: 8,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Body Fluid Analysis",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Haematology",
-      bookfor: "Unavailable",
-    },
-    {
-      id: 9,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Bone Marrow",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Haematology",
-      bookfor: "Unavailable",
-    },
-    {
-      id: 10,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Anti Ds DNA",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Hormone Assays",
-      bookfor: "Unavailable",
-    },
-    {
-      id: 11,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Estradiol",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Hormone Assays",
-      bookfor: "Unavailable",
-    },
-    {
-      id: 12,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Free Testosterone",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Hormone Assays",
-      bookfor: "Unavailable",
-    },
-    {
-      id: 13,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Biopsy Small",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Histopathology",
-      bookfor: "Unavailable",
-    },
-    {
-      id: 14,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Biopsy large",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Histopathology",
-      bookfor: "Unavailable",
-    },
-    {
-      id: 15,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Biopsy MEDIUM",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Haematology",
-      bookfor: "Unavailable",
-    },
-    {
-      id: 8,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Body Fluid Analysis",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Microbiology",
-      bookfor: "Unavailable",
-    },
-    {
-      id: 8,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Body Fluid Analysis",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Microbiology",
-      bookfor: "Unavailable",
-    },
-    {
-      id: 8,
-      image: "https://avrscancentre.com/img/service/blood-tests.png",
-      title: "Body Fluid Analysis",
-      originalPrice: "1200",
-      discountedPrice: "900",
-      description:
-        "A quick lab test to analyze blood components for health insights.",
-      category: "Lab Tests",
-      Subcategory: "Microbiology",
-      bookfor: "Unavailable",
-    },
-  ];
-
-  const dummyCategories = [
-    "All Test",
-    "Lab Tests",
-    "Radiology Tests",
-    "Special Tests",
-    "Expert Care Package",
-  ];
-
+  // Fetch categories from API on page load
   useEffect(() => {
-    const fetchData = () => {
+    const fetchData = async () => {
       setLoading(true);
-      setTimeout(() => {
-        setData(dummyData);
-        setCategories(dummyCategories);
+      try {
+        const categoryResponse = await fetch(
+          "http://localhost:4000/api/categories"
+        );
+        const categoryResult = await categoryResponse.json();
+        console.log("Category API Response:", categoryResult);
+
+        setCategories([
+          "All Test",
+          ...new Set(categoryResult.data.map((item) => item.category)),
+        ]);
+        setData(categoryResult.data); // Store test data
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      } finally {
         setLoading(false);
-      }, 500);
+      }
     };
+
     fetchData();
   }, []);
 
-  const filteredData = data.filter((item) => {
+  // Fetch subcategory data when a category is clicked
+  const handleCategoryClick = async (category) => {
+    setSelectedCategory(category);
+    setSelectedCard(null); // Reset selected card when switching category
+    setSubCategoryData([]); // ✅ Clear subcategory data on category switch
+    setCurrentPage(1);
+
+    try {
+      if (category === "All Test") {
+        const response = await fetch("http://localhost:4000/api/categories");
+        const result = await response.json();
+        setData(result.data);
+      } else {
+        const response = await fetch(
+          `http://localhost:4000/api/categories?category=${category}`
+        );
+        const result = await response.json();
+        setData(result.data); // ✅ Store only category data
+      }
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
+  };
+
+  // Fetch detailed test data when clicking on a test card
+  const handleCardClick = async (card) => {
+    setSelectedCard(card);
+
+    try {
+      const response = await fetch(
+        `http://localhost:4000/api/subcategories?category=${selectedCategory}&subCategory=${card.title}`
+      );
+      const result = await response.json();
+
+      console.log("Detailed Test Data:", result);
+
+      // ✅ Filter only the subcategory data related to the clicked card
+      const filteredSubcategoryData = result.data.filter(
+        (item) => item.subCategory === card.title
+      );
+
+      setSubCategoryData(filteredSubcategoryData); // Store only relevant data
+    } catch (error) {
+      console.error("Error fetching test details:", error);
+    }
+  };
+
+  // Update this section to fix search functionality
+  const filteredData = (data || []).filter((item) => {
     const matchesCategory =
       selectedCategory === "All Test" || item.category === selectedCategory;
     const matchesSearch = item.title
       .toLowerCase()
-      .includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+      .includes(searchQuery.toLowerCase()); // Case-insensitive search on title
+    return matchesCategory && matchesSearch; // Filtering by category & title
   });
 
+  // Update this section to fix search suggestions
   useEffect(() => {
     if (searchQuery) {
-      const newSuggestions = data
+      const newSuggestions = (data || [])
         .filter(
-          (item) =>
-            item.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
-            item.title.toLowerCase() !== searchQuery.toLowerCase()
+          (item) => item.title.toLowerCase().includes(searchQuery.toLowerCase()) // Case-insensitive title search
         )
         .map((item) => item.title);
       setSuggestions(newSuggestions);
@@ -539,14 +117,7 @@ const AllTest = () => {
     setSuggestions([]);
   };
 
-  const handleCardClick = (card) => {
-    setSelectedCard(card);
-    const newData = dummyData2.filter(
-      (item) => item.Subcategory === card.title
-    );
-    setSubCategoryData(newData);
-  };
-
+  // Pagination Logic
   const lastIndex = currentPage * itemsPerPage;
   const firstIndex = lastIndex - itemsPerPage;
   const currentCards = selectedCard
@@ -558,15 +129,9 @@ const AllTest = () => {
   );
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
-    setSelectedCard(null);
-    setCurrentPage(1);
-  };
-
+  // Handle Add to Cart
   const handleAddToCart = (card) => {
     console.log("Added to cart:", card);
-    // Add your logic for adding to cart here
   };
 
   if (loading) {
@@ -576,6 +141,7 @@ const AllTest = () => {
   return (
     <div className="alltest-wrapper">
       <div className="alltest-main1">
+        {/* Left Side: Categories List */}
         <div className="alltest-box1">
           <ul className="categories-list">
             {categories.map((category, index) => (
@@ -590,7 +156,9 @@ const AllTest = () => {
           </ul>
         </div>
 
+        {/* Right Side: Search Bar, Heading, and Cards */}
         <div className="alltest-box2">
+          {/* Search Bar */}
           <div className="alltest-search-bar">
             <input
               type="text"
@@ -612,58 +180,81 @@ const AllTest = () => {
               </ul>
             )}
           </div>
+
+          {/* Heading */}
           <h2 className="dashboard-heading">
             {selectedCard ? selectedCard.title : selectedCategory}
           </h2>
 
+          {/* Cards Grid */}
           <div className="card-grid">
-            {currentCards.map((card) => (
-              <div
-                className="card"
-                key={card.id}
-                onClick={() => handleCardClick(card)}
-              >
-                <img src={card.image} alt={card.title} className="card-image" />
-                <div className="card-content">
-                  <h3>{card.title}</h3>
-                  {selectedCard && (
-                    <>
-                      <div className="card-price">
-                        <span className="original-price">
-                          <MdOutlineCurrencyRupee className="price-icon" />
-                          {card.originalPrice}/-
-                        </span>
-                        <span className="discounted-price">
-                          <MdOutlineCurrencyRupee className="price-icon discount-icon" />
-                          {card.discountedPrice}/-
-                        </span>
-                      </div>
-                      <div className="book-for">
-                        <TiTick className="book-for-icon" />
-                        <span className="book-for-text">
-                          Home Collection: {card.bookfor}
-                        </span>
-                      </div>
-                    </>
-                  )}
-                  <p className="card-description">{card.description}</p>
-                  <div className="card-actions">
-                    {selectedCard ? (
+            {currentCards.length > 0 ? (
+              currentCards.map((card) => (
+                <div
+                  className="card"
+                  key={card._id}
+                  onClick={() => !selectedCard && handleCardClick(card)}
+                >
+                  <img
+                    src={
+                      card.image
+                        ? `http://localhost:4000/uploads/${card.image}`
+                        : "default-image-url"
+                    }
+                    alt={card.title}
+                    className="card-image"
+                  />
+                  <div className="card-content">
+                    <h3>{card.title}</h3>
+
+                    {/* Show description in both views */}
+                    <p className="card-description">{card.description}</p>
+
+                    {selectedCard && (
+                      <>
+                        <div className="card-price">
+                          {/* <span className="original-price">
+                            <MdOutlineCurrencyRupee className="price-icon" />
+                            {card.oldPrice}/-
+                          </span> */}
+                          <span className="discounted-price">
+                            <MdOutlineCurrencyRupee className="price-icon discount-icon" />
+                            {card.discountedPrice}/- Price
+                          </span>
+                        </div>
+                        <div className="book-for">
+                          <TiTick className="book-for-icon" />
+                          <span className="book-for-text">
+                            Home Collection: {card.homeCollection}
+                          </span>
+                        </div>
+                        <div className="book-for-contras">
+                          {/* <TiTick className="book-for-icon-contras" /> */}
+                          <span className="book-for-text-contras">
+                          Contrast: 
+                          <MdOutlineCurrencyRupee className="price-icon-contras" />
+                          {card.contrastPrice}
+                          </span>
+                        </div>
+                      </>
+                    )}
+                    <div className="alltest-card">
                       <button
-                        className="add-to-cart"
+                        className="alltest-add-to-cart"
                         onClick={() => handleAddToCart(card)}
                       >
-                        Add to Cart
+                        {selectedCard ? "Add to Cart" : "Book Test"}
                       </button>
-                    ) : (
-                      <button className="add-to-cart">Click Me</button>
-                    )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))
+            ) : (
+              <p>No data available</p>
+            )}
           </div>
 
+          {/* Pagination */}
           <div className="pagination">
             <button
               className="arrow-button"

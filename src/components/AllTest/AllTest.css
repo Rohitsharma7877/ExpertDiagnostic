@@ -91,6 +91,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  /* border: 1PX solid red; */
 }
 
 .card {
@@ -98,6 +99,7 @@
   border: 1px solid #ccc;
   border-radius: 20px;
   overflow: hidden;
+  /* border: 1PX solid red; */
   transition: transform 0.3s ease;
 }
 
@@ -118,9 +120,9 @@
 }
 .card-content h3{
  display: flex;
- justify-content: start;
+ justify-content: center;
  align-items: center;
- font-size: 18px;
+ font-size: 13px;
  font-weight: bold;
  color: #eb7801;
  padding-bottom: 10px;
@@ -200,13 +202,13 @@
 }
 
 .card-description {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
-  color: #2e2c2c;
+  color: #8a8989;
   /* margin-top: 15px; */
-  height: 8vh;
-  width: 100%;
-  margin: 2%;
+  height: 10vh;
+  /* width: 100%; */
+  /* margin: 2%; */
   /* border: 1px solid red; */
 }
 
@@ -250,26 +252,82 @@
 }
 
 
+/* BookFor Section */
+.book-for-contras {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  /* font-size: 8px; */
+  /* font-weight: bold; */
+  /* color: #603c86; */
+  /* background: #75db71; */
+  margin-top: 5px;
+  width: 95%;
+  margin-bottom: 10px;
+  /* border: 1px solid red; */
+  border-radius: 20px;
+  gap: 0px;
+}
+
+.book-for-icon-contras {
+  font-size: 20px;
+  color: #000000;
+  /* padding-right: 5px; */
+  margin-right: 4px; /* Reduce space */
+  width: auto; /* Remove fixed width */
+  height: auto; /* Prevent unnecessary space */
+  line-height: 1; /* Prevent extra spacing */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid red; */
+}
+
+.book-for-text-contras {
+  display: flex; /* Ensures all items stay in one line */
+  align-items: center; /* Align items vertically */
+  gap: 1px; /* Adjust space between text and icons */
+  font-size: 13px;
+  color: #030303;
+  margin: 0px;
+  font-weight: bold;
+}
+
 .card-actions {
+  height: 6.5vh;
   display: flex;
   justify-content: center;
   /* border: 1px solid red; */
 }
 
-.add-to-cart{
+.alltest-card {
+  display: flex;
+  flex-direction: column; /* Keep elements stacked */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Align text to center */
+  position: relative; /* Needed for absolute positioning */
+  /* padding: 5px; */
+  /* border: 1px solid #ddd; */
+  border-radius: 8px;
+  /* background: #fff; */
+}
+
+.alltest-add-to-cart {
   padding: 8px 12px;
   font-size: 14px;
   border: none;
   border-radius: 5px;
   background: #603c86;
   color: white;
-
+  /* border: 1px solid red; */
   cursor: pointer;
+  margin-top: auto; /* Push button to bottom */
+  align-self: center; /* Ensure it's centered */
 }
 
-.add-to-cart {
- 
-}
+
+
 
 .read-more {
   background: #d06601;

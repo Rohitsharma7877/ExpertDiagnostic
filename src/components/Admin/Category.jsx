@@ -20,33 +20,30 @@ const Category = () => {
   const [error, setError] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [dateFilter, setDateFilter] = useState("");
-  const [editIndex, setEditIndex] = useState(null); // New state to track the index of the item being edited
+  const [editIndex, setEditIndex] = useState(null);
   const formRef = useRef(null);
 
-
-  // Load data from localStorage when the component mounts
+  // Fetch all categories from the backend when the component mounts
   useEffect(() => {
-    const storedCategoriesList = localStorage.getItem("categoriesList");
-    if (storedCategoriesList) {
-      setCategoriesList(JSON.parse(storedCategoriesList));
-    }
-
-    const storedCategories = localStorage.getItem("categories");
-    if (storedCategories) {
-      setCategories(JSON.parse(storedCategories));
-    }
+    fetchCategories();
   }, []);
 
-  // Save categoriesList to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem("categoriesList", JSON.stringify(categoriesList));
-  }, [categoriesList]);
+  // Fetch all categories from the backend
+  const fetchCategories = async () => {
+    try {
+      const response = await fetch("http://localhost:4000/api/categories");
+      const data = await response.json();
+      if (response.ok) {
+        setCategoriesList(data.data);
+      } else {
+        setError("Failed to fetch categories");
+      }
+    } catch (err) {
+      setError("Failed to fetch categories");
+    }
+  };
 
-  // Save categories to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem("categories", JSON.stringify(categories));
-  }, [categories]);
-
+  // Handle image upload
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -55,6 +52,7 @@ const Category = () => {
     }
   };
 
+  // Add a new category to the dropdown
   const handleAddCategory = () => {
     if (newCategory.trim() !== "" && !categories.includes(newCategory)) {
       setCategories([...categories, newCategory]);
@@ -62,69 +60,103 @@ const Category = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  // Handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!title || !description || !category || !testNo) {
       alert("Please fill all fields before submitting.");
       return;
     }
 
-    const formData = {
-      testNo,
-      image: image?.preview,
-      title,
-      description,
-      category,
-      newCategory,
-    };
-
-    if (editIndex !== null) {
-      // If editing an existing item, update it
-      const updatedList = [...categoriesList];
-      updatedList[editIndex] = formData;
-      setCategoriesList(updatedList);
-      setEditIndex(null); // Reset edit index after updating
-    } else {
-      // If adding a new item, append it to the list
-      setCategoriesList([...categoriesList, formData]);
+    const formData = new FormData();
+    formData.append("testNo", testNo);
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("category", category);
+    if (image?.file) {
+      formData.append("image", image.file);
     }
 
-    // Reset form fields
-    setImage(null);
-    setTitle("");
-    setDescription("");
-    setCategory("");
-    setNewCategory("");
-    setTestNo("");
+    try {
+      const url = editIndex !== null
+        ? `http://localhost:4000/api/categories/${categoriesList[editIndex]._id}`
+        : "http://localhost:4000/api/categories";
+
+      const method = editIndex !== null ? "PUT" : "POST";
+
+      const response = await fetch(url, {
+        method,
+        body: formData,
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        alert(editIndex !== null ? "Category updated successfully!" : "Category created successfully!");
+        fetchCategories(); // Refresh the list
+        resetForm();
+      } else {
+        alert(data.error || "Failed to submit category");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Failed to submit category");
+    }
   };
 
+  // Handle edit action
   const handleEdit = (index) => {
     const selectedRow = categoriesList[index];
     setTestNo(selectedRow.testNo);
     setTitle(selectedRow.title);
     setDescription(selectedRow.description);
     setCategory(selectedRow.category);
-    setNewCategory(selectedRow.newCategory);
-    setImage({ preview: selectedRow.image });
-    setEditIndex(index); // Set the index of the item being edited
-  
-    // Scroll to the form section smoothly
-  formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    setImage({ preview: selectedRow.image ? `http://localhost:4000/uploads/${selectedRow.image}` : null });
+    setEditIndex(index);
+    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const handleDelete = (index) => {
-    const updatedList = categoriesList.filter((_, i) => i !== index);
-    setCategoriesList(updatedList);
+  // Handle delete action
+  const handleDelete = async (index) => {
+    const categoryId = categoriesList[index]._id;
+    try {
+      const response = await fetch(`http://localhost:4000/api/categories/${categoryId}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        alert("Category deleted successfully!");
+        fetchCategories(); // Refresh the list
+      } else {
+        alert("Failed to delete category");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Failed to delete category");
+    }
   };
 
+  // Reset form fields
+  const resetForm = () => {
+    setImage(null);
+    setTitle("");
+    setDescription("");
+    setCategory("");
+    setNewCategory("");
+    setTestNo("");
+    setEditIndex(null);
+  };
+
+  // Handle search query change
   const handleSearchQueryChange = (e) => {
     setSearchQuery(e.target.value);
   };
 
+  // Handle date filter change
   const handleDateFilterChange = (e) => {
     setDateFilter(e.target.value);
   };
 
+  // Export to Excel
   const handleExportToExcel = () => {
     const ws = XLSX.utils.json_to_sheet(categoriesList);
     const wb = XLSX.utils.book_new();
@@ -162,7 +194,7 @@ const Category = () => {
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               >
-                <option value="">Select Category</option>
+                <option value="">Category</option>
                 {categories.map((cat, index) => (
                   <option key={index} value={cat}>
                     {cat}
@@ -182,6 +214,7 @@ const Category = () => {
               />
             </div>
             <div className="service-input-group">
+              <label>Add Button:</label>
               <button className="add-button" onClick={handleAddCategory}>
                 + Add
               </button>
@@ -201,27 +234,29 @@ const Category = () => {
               />
             </div>
             <div className="service-input-group">
-              <label>Title:</label>
+              <label>Test Name:</label>
               <input
                 name="title"
                 className="service-input-section"
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                placeholder="Enter title"
+                placeholder="Enter Test Name:"
               />
             </div>
           </div>
 
           {/* 3rd Line: Description */}
-          <div className="service-input-row ">
-            <label>Description:</label>
-            <textarea
-              name="description"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              placeholder="Enter description"
-            ></textarea>
+          <div className="service-input-group">
+            <div className="service-input-row ">
+              <label>Description:</label>
+              <textarea
+                name="description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder="Enter description"
+              ></textarea>
+            </div>
           </div>
 
           {/* Last Line: Submit Button (Aligned to Right) */}
@@ -271,9 +306,8 @@ const Category = () => {
               <thead>
                 <tr>
                   <th>Test No</th>
+                  <th>Image</th>
                   <th>Category</th>
-                  <th>AddCategory</th>
-                  <th>UploadImage</th>
                   <th>Title</th>
                   <th>Description</th>
                   <th>Actions</th>
@@ -283,12 +317,10 @@ const Category = () => {
                 {categoriesList.map((categoriesinput, index) => (
                   <tr key={index}>
                     <td>{categoriesinput.testNo}</td>
-                    <td>{categoriesinput.category}</td>
-                    <td>{categoriesinput.newCategory}</td>
                     <td>
                       {categoriesinput.image ? (
                         <img
-                          src={categoriesinput.image}
+                          src={`http://localhost:4000/uploads/${categoriesinput.image}`}
                           alt="Uploaded Preview"
                           className="category-image"
                         />
@@ -296,6 +328,7 @@ const Category = () => {
                         "No image"
                       )}
                     </td>
+                    <td>{categoriesinput.category}</td>
                     <td>{categoriesinput.title}</td>
                     <td>{categoriesinput.description}</td>
                     <td>

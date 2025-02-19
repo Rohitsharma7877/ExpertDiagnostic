@@ -376,14 +376,14 @@ const Navbar2 = () => {
           </li>
 
           <li className="dropdown">
-            <Link to="#">
+            <Link to="/health-package">
               Expert Care Package <span className="down-icon">▼</span>
             </Link>
-            <ul className="dropdown-menu">
+            {/* <ul className="dropdown-menu">
               <li>
                 <Link to="/health-package/section1">Coming Soon...</Link>
               </li>
-            </ul>
+            </ul> */}
           </li>
           <li>
             <Link to="/download-report" className="flex items-start gap-2">
@@ -548,26 +548,9 @@ const Navbar2 = () => {
             </li>
 
             <li>
-              <div
-                className="submenu-header"
-                onClick={() => toggleSubmenu("ExpertCarePackage")}
-              >
-                <span>Expert Care Package</span>
-                {openSubmenu === "ExpertCarePackage" ? (
-                  <FaMinus className="submenu-icon" />
-                ) : (
-                  <FaPlus className="submenu-icon" />
-                )}
-              </div>
-              {openSubmenu === "ExpertCarePackage" && (
-                <ul className="slider-dropdown-menu">
-                  <li>
-                    <Link to="/health-package/#" onClick={closeSidebar}>
-                      Coming Soon...
-                    </Link>
-                  </li>
-                </ul>
-              )}
+              <Link to="/health-package" onClick={closeSidebar}>
+                Expert Care Packages
+              </Link>
             </li>
 
             <li>

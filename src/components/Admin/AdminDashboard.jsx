@@ -103,8 +103,8 @@ function AdminDashboard() {
             <Link to="sub-category" className="dropdown-item">
               Sub-Category
             </Link>
-            <Link to="list" className="dropdown-item">
-              List
+            <Link to="expert-service-list" className="dropdown-item">
+              Expert-PackageList
             </Link>
           </div>
 

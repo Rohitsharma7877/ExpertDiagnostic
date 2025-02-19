@@ -44,6 +44,10 @@ import AllTest from "./AllTest/AllTest";
 // import ServiceList from "./Admin/ServiceList";
 import Category from "./Admin/Category";
 import SubCategory from "./Admin/SubCategory";
+import AmbulanceServices from "./AmbulanceServices";
+import ExpertPackagePage from "./pages/ExpertPackagePage";
+import ExpertPackageDetails from "./ExpertPackage/ExpertPackageDetails";
+import ExpertServiceList from "./Admin/ExpertServiceList";
 
 const Routers = () => {
   // const { isLoggedIn } = useAuth();
@@ -58,6 +62,7 @@ const Routers = () => {
       <Route path="/sign-up" element={<SignUpPage />} />
       <Route path="/log-in" element={<LoginPage />} />
       <Route path="/download-report" element={<DownloadReportPage />} />
+      <Route path="/ambulance-service" element={<AmbulanceServices />} />
       <Route path="/home-collection" element={<HomeCollection />} />
       <Route path="/book-appointment" element={<BookAppointment />} />
 
@@ -72,6 +77,7 @@ const Routers = () => {
         <Route path="admin-registration" element={<RegistrationForm />} />
         <Route path="category" element={<Category />} />
         <Route path="sub-category" element={<SubCategory />} />
+        <Route path="expert-service-list" element={<ExpertServiceList />} />
         <Route
           path="admin-registration/view-registrations"
           element={<FetchRegistrations />}
@@ -108,6 +114,8 @@ const Routers = () => {
         element={<PulmonaryFunctionTestPage />}
       />
 
+      <Route path="/health-package" element={<ExpertPackagePage />} />
+      <Route path="/package/:id" element={<ExpertPackageDetails />} />
       {/* Expert-Care-Package Routes  */}
 
       <Route path="/about" element={<AboutPage />} />

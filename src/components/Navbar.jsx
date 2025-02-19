@@ -11,6 +11,7 @@ import logo from "./assests/logo223.png";
 import navbarImage from "./assests/navbckimg.png";
 import homecollect from "./assests/homecollection1.png";
 import hospitalimage from "./assests/hospitalimage.png";
+import ambulance from './assests/ambulance3.png'
 import "./Navbar.css";
 
 // Dummy Data for Testing
@@ -82,7 +83,7 @@ const Navbar = () => {
           <Link to={"/"}>
             <img
               src={logo}
-              alt="Logo" 
+              alt="Logo"
               className="w-[79%] h-14 object-contain  "
             />
             <hr className="w-[65%] ml-[10%]" />
@@ -138,8 +139,6 @@ const Navbar = () => {
               )}
             </div>
           )}
-
-     
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-4">
@@ -238,7 +237,7 @@ const Navbar = () => {
       {/* Modal for Booking Tests */}
       {showForm && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50"
+          className="fixed inset-0 bg-blue bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50"
           onClick={() => setShowForm(false)}
         >
           <div
@@ -255,6 +254,20 @@ const Navbar = () => {
               Book Your Test
             </h2>
             <div className="flex flex-col md:flex-row gap-6">
+              <div
+                className="flex flex-col items-center cursor-pointer border border-gray-500 bg-white  rounded-lg p-4 transition-transform duration-300 hover:shadow-lg hover:scale-105 w-full md:w-1/2"
+                onClick={() => {
+                  setShowForm(false);
+                  navigate("/ambulance-service");
+                }}
+              >
+                <img
+                  src={ambulance}
+                  alt="Ambulance Service"
+                  className="w-28 h-16 md:w-40 md:h-20 object-cover"
+                />
+               <p className="mt-5 text-sm md:text-base font-bold">Ambulance Service</p>
+              </div>
               <div
                 className="flex flex-col items-center cursor-pointer border border-gray-500 bg-white  rounded-lg p-4 transition-transform duration-300 hover:shadow-lg hover:scale-105 w-full md:w-1/2"
                 onClick={() => {
