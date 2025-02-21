@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./signup.css";
+import "./signup2.css";
 import signupimg from "./logSigimg.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios"; // Import axios
 
-const SignUp = () => {
+const SignUp2 = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -155,4 +155,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignUp2;

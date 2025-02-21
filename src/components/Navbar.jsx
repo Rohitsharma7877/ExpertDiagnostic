@@ -87,7 +87,7 @@ const Navbar = () => {
               className="w-[79%] h-14 object-contain  "
             />
             <hr className="w-[65%] ml-[10%]" />
-            <p className="text-[10px] ml-[15%] text-[#eb7801]">
+            <p className="text-[10px] mr-[10%] text-[#eb7801]">
               Precision with care.
             </p>
           </Link>

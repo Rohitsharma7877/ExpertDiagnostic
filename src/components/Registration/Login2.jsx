@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./login.css";
+import "./login2.css";
 import loginimg from "./logSigimg.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
-const Login = () => {
+const Login2 = () => {
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
@@ -282,4 +282,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Login2;

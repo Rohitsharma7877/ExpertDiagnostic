@@ -78,24 +78,24 @@ const ExpertPackageDetails = () => {
           </div>
           <hr />
           <br />
-          <div className="price-box2">
-            <div className="price-title-box">
-              <p className="pricing-title">{packageData.testName}</p>
-              <p className="card-orignal-price">₹{packageData.oldPrice}</p>
+          <div className="package-box2">
+            <div className="expertPackage-title-box">
+              <p className="expertPackage-title">{packageData.testName}</p>
+              <p className="expertPackage-price">₹{packageData.oldPrice}</p>
             </div>
-            <div className="price-offer-box">
-              <p className="pricing-offer">Offer Price</p>
-              <p className="card-discount-price">
+            <div className="expertPackage-offer-box">
+              <p className="expertPackage-offer">Offer Price</p>
+              <p className="expertPackage-discountPrice">
                 ₹{packageData.discountPrice}
               </p>
             </div>
-
             <br />
             <br />
-            <div className="price-totla-box">
-              <p className="pricing-total">Total Price</p>
-              {/* <span>*inclusive of all the taxes, fees and subject to availability</span> */}
-              <p className="card-price">₹{packageData.discountPrice}/-</p>
+            <div className="expertPackage-totla-box">
+              <p className="expertPackage-total">Total Price</p>
+              <p className="expertPackage-card-price">
+                ₹{packageData.discountPrice}/-
+              </p>
             </div>
           </div>
 

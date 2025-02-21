@@ -37,7 +37,7 @@ import ViewAppointments from "./Admin/ViewAppointments";
 import ViewHomeCollection from "./Admin/ViewHomeCollection";
 // import About from "./AboutSection/About";
 
-import ServiceDetail from "./ServiceDetail";
+// import ServiceDetail from "./ServiceDetail";
 import RegistrationForm from "./Admin/RegistrationForm";
 import FetchRegistrations from "./Admin/FetchRegistrations";
 import AllTest from "./AllTest/AllTest";
@@ -48,6 +48,7 @@ import AmbulanceServices from "./AmbulanceServices";
 import ExpertPackagePage from "./pages/ExpertPackagePage";
 import ExpertPackageDetails from "./ExpertPackage/ExpertPackageDetails";
 import ExpertServiceList from "./Admin/ExpertServiceList";
+import UploadPrescriptionDashboard from "./Admin/UploadPrescriptionDashboard";
 
 const Routers = () => {
   // const { isLoggedIn } = useAuth();
@@ -75,6 +76,7 @@ const Routers = () => {
         <Route path="bookappointment" element={<ViewAppointments />} />
         <Route path="homeCollection" element={<ViewHomeCollection />} />
         <Route path="admin-registration" element={<RegistrationForm />} />
+        <Route path="upload-prescription" element={<UploadPrescriptionDashboard />} />
         <Route path="category" element={<Category />} />
         <Route path="sub-category" element={<SubCategory />} />
         <Route path="expert-service-list" element={<ExpertServiceList />} />

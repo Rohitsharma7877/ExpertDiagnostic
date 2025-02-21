@@ -29,6 +29,7 @@
   font-weight: bold;
   padding-top: 30px;
   /* border: 1px solid red; */
+  text-align: left;
   color: rgb(129, 129, 129);
 }
 
@@ -115,7 +116,7 @@
   padding: 15px;
   text-align: center;
   border-radius: 8px;
-  width: 95%;
+  width: 87%;
   /* border: 1px solid red; */
 }
 
@@ -136,64 +137,67 @@
   text-align: right;
 }
 
-.price-box2 {
+.package-box2 {
   /* border: 1px solid red; */
+  /* text-align: ; */
 }
 
-.price-title-box {
+.expertPackage-title-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
   /* border: 1px solid red; */
+  padding-top: 5px;
+  gap: 25vh; 
 }
-.pricing-title {
-  font-size: 2vh;
+.expertPackage-title {
+  font-size: 2.3vh;
   font-weight: bold;
-  /* border: 1px solid rgb(0, 0, 0); */
-  /* grid-column: span 2;  */
 }
-.card-orignal-price {
+.expertPackage-price {
   text-decoration: line-through;
   opacity: 0.7;
-  /* margin-right: 5px; */
-  /* width: 20%; */
   font-size: 2.5vh;
   color: black;
 }
 
-.price-offer-box {
+.expertPackage-offer-box{
   display: flex;
   justify-content: space-between;
   align-items: center;
   /* border: 1px solid red; */
+  /* padding-top: 5px; */
+  gap: 35vh; 
   margin-top: 3%;
 }
-.pricing-offer {
-  font-size: 2vh;
+.expertPackage-offer {
+  font-size: 2.3vh;
   font-weight: bold;
   color: #d9534f;
+  text-align: left;
   /* border: 1px solid red; */
 }
-
-.card-discount-price {
+.expertPackage-discountPrice{
   font-size: 2.5vh;
   color: black;
-  /* border: 1px solid red; */
-  text-align: end;
 }
 
-.price-totla-box {
+.expertPackage-totla-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* border: 1px solid red; */
+  gap: 25vh; 
 }
-.pricing-total {
+.expertPackage-total {
   font-weight: bold;
+  font-size: 2.5vh;
 }
 
-.card-price {
+.expertPackage-card-price {
   font-weight: bold;
   color: blue;
+  font-size: 2.7vh;
 }
 
 .add-to-cart,
@@ -205,4 +209,59 @@
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
+}
+
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .package-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    /* border: 1px solid red; */
+    padding-top: 11vh;
+  }
+
+  .package-details, .package-pricing {
+    width: 100%;
+    padding: 0;
+    border-left: none;
+  }
+
+  .package-tittle {
+    font-size: 3vh;
+    text-align: center;
+  }
+
+  .package-tagline {
+    font-size: 2.5vh;
+    text-align: center;
+  }
+
+  .package-description {
+    font-size: 2vh;
+    text-align: justify;
+  }
+
+  .test-list-container {
+    grid-template-columns: 1fr; /* Single column for small screens */
+    gap: 10px;
+  }
+
+  .expertPackage-title-box,
+  .expertPackage-offer-box,
+  .expertPackage-totla-box {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .pricing-box {
+    width: 100%;
+  }
+
+  .add-to-cart {
+    width: 100%;
+    font-size: 2vh;
+  }
 }

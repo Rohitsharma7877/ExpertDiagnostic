@@ -75,9 +75,16 @@ const ExpertCard = () => {
               </span>
             </p>
             <p className="expertCard-discount">{pkg.discountPercent}%</p>
-            <div className="expertCard-info">
-              <p>🧪 {pkg.howManyTest} tests included</p>
-              <p>✅ Results within {pkg.reportTime}</p>
+            <div className="expertCard-information">
+              <p>
+                🧪 <span style={{ color: "blue" }}>{pkg.howManyTest}</span> +
+                tests parameters included
+              </p>
+
+              <p>
+                ✅ Reports within{" "}
+                <span style={{ color: "blue" }}>{pkg.reportTime}</span> Hours
+              </p>
             </div>
             <div className="expertCard-buttons">
               <button

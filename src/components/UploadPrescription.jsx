@@ -27,25 +27,36 @@ const UploadPrescription = () => {
   });
 
   // Form Submit Handler
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     // Check if the uploaded file and all form fields are filled
-    if (formData.name && formData.mobile  && uploadedFile) {
-      console.log("Form Data:", formData);
-      console.log("Uploaded File:", uploadedFile);
-
-      // Show success alert
-      alert("Upload Prescription is successful!");
-
-      // Reset form data and file upload
-      setFormData({
-        name: "",
-        mobile: "",
-        // pincode: "",
-      });
-
-      setUploadedFile(null);
+    if (formData.name && formData.mobile && uploadedFile) {
+      const formDataToSend = new FormData();
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("mobile", formData.mobile);
+      formDataToSend.append("file", uploadedFile);
+  
+      try {
+        const response = await fetch("http://localhost:4000/api/prescriptions", {
+          method: "POST",
+          body: formDataToSend,
+        });
+  
+        if (response.ok) {
+          alert("Upload Prescription is successful!");
+          setFormData({
+            name: "",
+            mobile: "",
+          });
+          setUploadedFile(null);
+        } else {
+          alert("Failed to upload prescription.");
+        }
+      } catch (err) {
+        console.error("Error uploading prescription:", err);
+        alert("Failed to upload prescription.");
+      }
     } else {
       alert("Please fill all fields and upload a file before submitting.");
     }

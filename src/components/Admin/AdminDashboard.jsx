@@ -69,17 +69,17 @@ function AdminDashboard() {
             View Registration
           </div>
 
-          {/* <div
+          <div
             className={`sidebar-link ${
-              activeDropdown === "admin-registration" ? "active" : ""
+              activeDropdown === "upload-prescription" ? "active" : ""
             }`}
-            onClick={() => navigate("service-list")}
+            onClick={() => navigate("upload-prescription")}
           >
             <span className="icon">
               <i className="fas fa-calendar-check"></i>
             </span>{" "}
-            Service-List
-          </div> */}
+            Upload-Prescription
+          </div>
 
           {/* Service-List Dropdown */}
           <div
